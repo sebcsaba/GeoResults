@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refactor PUBLIC "-//Borland Software Corporation//Refactor 1.0//EN" "http://www.borland.com/devsupport/jbuilder/dtds/refactor_1_0.dtd">
+<refactor>
+  <rename-class id="4AP08QX0NFJET16UCJ7BPKH0" creation-time="Wed Feb 08 16:12:46.404 CET 2006">
+    <old-class-name>scs.javax.io.OldInputStreamWrapper</old-class-name>
+    <new-class-name>scs.javax.io.wrappers.OldInputStreamWrapper</new-class-name>
+  </rename-class>
+  <rename-class id="2AP08QX0NFJET16UCJ7BPKH0" creation-time="Wed Feb 08 16:13:14.810 CET 2006">
+    <old-class-name>scs.javax.io.wrappers.OldInputStreamWrapper</old-class-name>
+    <new-class-name>scs.javax.io.wrappers.OldInputStreamToNew</new-class-name>
+  </rename-class>
+  <rename-class id="0AP08QX0NFJET16UCJ7BPKH0" creation-time="Wed Feb 08 19:58:03.012 CET 2006">
+    <old-class-name>scs.javax.io.DataReader</old-class-name>
+    <new-class-name>scs.javax.io.InputDataStream</new-class-name>
+  </rename-class>
+  <rename-class id="Y9P08QX0NFJET16UCJ7BPKH0" creation-time="Wed Feb 08 20:00:22.965 CET 2006">
+    <old-class-name>scs.javax.io.DataWriter</old-class-name>
+    <new-class-name>scs.javax.io.OutputDataStream</new-class-name>
+  </rename-class>
+  <rename-class id="18P07NUXZZJE96875J7BPKH0" creation-time="Wed Feb 22 19:59:02.374 CET 2006">
+    <old-class-name>scs.javax.sql.StorableOjectList</old-class-name>
+    <new-class-name>scs.javax.sql.StorableObjectList</new-class-name>
+  </rename-class>
+  <rename-package id="FMF00KEWPWKEN2JX8J7BPKH0" creation-time="Fri Mar 17 17:25:27.186 CET 2006">
+    <old-package-name>scs.javax.web.taglibs.form</old-package-name>
+    <new-package-name>scs.javax.web.taglibs.formelements</new-package-name>
+  </rename-package>
+  <rename-package id="3AP0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 18:06:24.999 CEST 2006">
+    <old-package-name>scs.javax.db.mapping</old-package-name>
+    <new-package-name>scs.javax.db.mappingtags</new-package-name>
+  </rename-package>
+  <rename-package id="1AP0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:27:39.014 CEST 2006">
+    <old-package-name>scs.javax.db.sqlmapping</old-package-name>
+    <new-package-name>scs.javax.db.rdbmapping</new-package-name>
+  </rename-package>
+  <rename-package id="Z9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:29:22.311 CEST 2006">
+    <old-package-name>scs.javax.db.mappingtags</old-package-name>
+    <new-package-name>scs.javax.db.rdbmapping.tags</new-package-name>
+  </rename-package>
+  <rename-class id="X9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:31:12.827 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.ClassToSqlMappingBase</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.ClassMappingBase</new-class-name>
+  </rename-class>
+  <rename-class id="V9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:31:39.046 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.ClassToSqlMapping</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.ClassMapping</new-class-name>
+  </rename-class>
+  <rename-class id="T9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:33:06.327 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.DeclarativeClassToSqlMapping</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.DeclarativeClassMapping</new-class-name>
+  </rename-class>
+  <rename-class id="R9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:33:33.577 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.SqlComposition</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.Composition</new-class-name>
+  </rename-class>
+  <rename-class id="P9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:40:17.436 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.fields.SqlField</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.fields.RdbField</new-class-name>
+  </rename-class>
+  <rename-class id="N9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:41:25.436 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.fields.SqlBooleanField</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.fields.RdbBooleanField</new-class-name>
+  </rename-class>
+  <rename-class id="L9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:41:35.374 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.fields.SqlDateField</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.fields.RdbDateField</new-class-name>
+  </rename-class>
+  <rename-class id="J9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:41:48.842 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.fields.SqlIntegerField</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.fields.RdbIntegerField</new-class-name>
+  </rename-class>
+  <rename-class id="H9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:43:01.374 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.fields.SqlLongField</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.fields.RdbLongField</new-class-name>
+  </rename-class>
+  <rename-class id="F9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:43:17.421 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.fields.SqlMetaStringField</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.fields.RdbMetaStringField</new-class-name>
+  </rename-class>
+  <rename-class id="D9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:43:28.671 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.fields.SqlStringField</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.fields.RdbStringField</new-class-name>
+  </rename-class>
+  <rename-class id="B9P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:43:39.077 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.fields.SqlTimeField</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.fields.RdbTimeField</new-class-name>
+  </rename-class>
+  <rename-class id="99P0UX4BPAME4J0Y6J7BPKH0" creation-time="Fri Apr 21 21:55:13.921 CEST 2006">
+    <old-class-name>scs.javax.lang.Exception</old-class-name>
+    <new-class-name>scs.javax.lang.ExceptionBase</new-class-name>
+  </rename-class>
+  <rename-class id="6AP0MO8QYAMEKY7AJJ7BPKH0" creation-time="Fri Apr 21 22:15:02.031 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.SqlPrimaryKey</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.PrimaryKey</new-class-name>
+  </rename-class>
+  <rename-class id="4AP0MO8QYAMEKY7AJJ7BPKH0" creation-time="Fri Apr 21 22:16:41.375 CEST 2006">
+    <old-class-name>scs.javax.db.rdbmapping.PrimitiveSqlCondition</old-class-name>
+    <new-class-name>scs.javax.db.rdbmapping.PrimitiveRdbCondition</new-class-name>
+  </rename-class>
+  <rename-package id="2AP0MO8QYAMEKY7AJJ7BPKH0" creation-time="Fri Apr 21 22:21:46.218 CEST 2006">
+    <old-package-name>scs.javax.db</old-package-name>
+    <new-package-name>scs.javax.rdb</new-package-name>
+  </rename-package>
+  <rename-package id="0AP0MO8QYAMEKY7AJJ7BPKH0" creation-time="Fri Apr 21 22:22:20.703 CEST 2006">
+    <old-package-name>scs.javax.rdb.rdbmapping</old-package-name>
+    <new-package-name>scs.javax.rdb.mapping</new-package-name>
+  </rename-package>
+  <rename-class id="Y9P0MO8QYAMEKY7AJJ7BPKH0" creation-time="Fri Apr 21 22:34:09.953 CEST 2006">
+    <old-class-name>scs.javax.rdb.SqlSession</old-class-name>
+    <new-class-name>scs.javax.rdb.RdbSession</new-class-name>
+  </rename-class>
+  <rename-class id="W9P0MO8QYAMEKY7AJJ7BPKH0" creation-time="Sat Apr 22 00:57:07.833 CEST 2006">
+    <old-class-name>scs.javax.rdb.mapping.CtsmFactory</old-class-name>
+    <new-class-name>scs.javax.rdb.mapping.ClassMappingFactory</new-class-name>
+  </rename-class>
+  <rename-method id="6AP0KTK0DCMEJZT55J7BPKH0" creation-time="Sat Apr 22 21:42:45.137 CEST 2006">
+    <declaring-class-name>scs.javax.rdb.mapping.fields.RdbField</declaring-class-name>
+    <declared-method-signature>()Ljava/lang/String;</declared-method-signature>
+    <old-method-name>getSqlTypeName</old-method-name>
+    <new-method-name>getRdbTypeName</new-method-name>
+  </rename-method>
+  <rename-class id="DSO066FWCQME0WKXGJ7BPKH0" creation-time="Tue May 02 18:04:20.842 CEST 2006">
+    <old-class-name>scs.javax.rdb.sql.SqlHelper</old-class-name>
+    <new-class-name>scs.javax.rdb.sql.SqlEntityHelper</new-class-name>
+  </rename-class>
+  <rename-class id="BSO066FWCQME0WKXGJ7BPKH0" creation-time="Tue May 02 18:09:40.264 CEST 2006">
+    <old-class-name>scs.javax.rdb.RdbEntityHelper</old-class-name>
+    <new-class-name>scs.javax.rdb.helper.RdbEntityHelper</new-class-name>
+  </rename-class>
+  <rename-package id="I4P0P6SI2SME8UVQDJ7BPKH0" creation-time="Wed May 03 23:07:43.389 CEST 2006">
+    <old-package-name>scs.javax.geom</old-package-name>
+    <new-package-name>scs.javax.geom2d</new-package-name>
+  </rename-package>
+  <rename-class id="H8P0O6014WMED0AG1ZV0QKH0" creation-time="Sat May 06 22:29:11.480 CEST 2006">
+    <old-class-name>scs.javax.geom2d.Constants</old-class-name>
+    <new-class-name>scs.javax.geom2d.GeometricConstants</new-class-name>
+  </rename-class>
+  <rename-class id="T9P0V9K8OANEM81Y5J7BPKH0" creation-time="Tue May 16 22:12:27.232 CEST 2006">
+    <old-class-name>scs.javax.web.InvalidRequestFieldException</old-class-name>
+    <new-class-name>scs.javax.web.request.InvalidRequestFieldException</new-class-name>
+  </rename-class>
+</refactor>

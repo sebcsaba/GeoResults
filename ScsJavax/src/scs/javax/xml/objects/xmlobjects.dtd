@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DOCTYPE object PUBLIC "-//sebcsaba//XmlSerialization 1.0 DTD//EN" "[url]" -->
+
+<!-- DOKSI ELAVULT!!!
+  Objektum: definíció vagy referencia vagy null.
+  - Referenciánál csak 'reference' attribútum, gyerek nélkül.
+  - Null esetén isnull="true"
+  - Definíciónál kell konstruálási szabály és 'class'.
+  'array' és 'isnull' attribútumok értéke alapértelmezésben 'false'.
+
+  Konstruálási szabály:
+  1. Ha van 'value' attribútum, akkor annak értéke alapján, egy
+     'java.lang.String' paraméterű konstruktor hívódik.
+  2. Különben ha van 'constructor' gyerek, akkor az alapján lesz konstruktor
+     definiálva.
+  3. Végső soron default konstruktor hívódik.
+
+  Ha egy objektum 'array', akkor egy gyerekeleme lesz, amely 'collection'.
+
+  'property' elem 'class' attribútuma a statikus típus, a gyerekként adott
+  'object' elem 'class' attribútuma adja a dinamikus típust.
+  'parameter' elemnél ugyanígy.
+-->
+
+
+<!-- és ha csak egy null-t szerializálok, akkor nem object lesz a gyökérelem!!! -->
+<!ELEMENT object (constructor?,collection?,map?,property*)>
+<!ATTLIST object type CDATA #REQUIRED>
+<!ATTLIST object init CDATA #IMPLIED>
+
+<!ELEMENT null EMPTY>
+
+<!ELEMENT reference EMPTY>
+<!ATTLIST reference key CDATA #REQUIRED>
+
+<!ELEMENT property (object|null|reference)>
+<!ATTLIST property name CDATA #REQUIRED>
+<!ATTLIST property type CDATA #REQUIRED>
+
+<!ELEMENT parameter (object|null|reference)>
+<!ATTLIST parameter type CDATA #REQUIRED>
+
+<!ELEMENT constructor (parameter*)>
+
+<!ELEMENT collection ((object|null|reference)*)>
+
+<!ELEMENT map (entry*)>
+
+<!ELEMENT entry ((object|null|reference),(object|null|reference))>

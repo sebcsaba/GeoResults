@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE database PUBLIC "-//sebcsaba//RdbXmlMapping 1.0 DTD//EN" ""-->
+
+<!ELEMENT database (entity*)>
+
+<!ELEMENT entity (property*,sublist*)>
+<!ATTLIST entity type CDATA #REQUIRED>
+
+<!ELEMENT sublist (entity*)>
+<!ATTLIST sublist name CDATA #REQUIRED>
+
+<!ELEMENT property EMPTY>
+<!ATTLIST property name CDATA #REQUIRED>
+<!ATTLIST property value CDATA #IMPLIED>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+  <tlibversion>1.2</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>html</shortname>
+  <uri>http://sebcsaba.hu/taglib/html</uri>
+
+  <tag>
+    <name>img</name>
+    <tagclass>scs.javax.web.taglibs.html.ImgTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>title</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>lang</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>xmlLang</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>dir</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>ondblclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmousedown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmouseup</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmouseover</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmousemove</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmouseout</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onkeypress</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onkeydown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onkeyup</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>src</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>a</name>
+    <tagclass>scs.javax.web.taglibs.html.ATag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>title</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>lang</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>xmlLang</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>dir</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>ondblclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmousedown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmouseup</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmouseover</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmousemove</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmouseout</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onkeypress</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onkeydown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onkeyup</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>accesskey</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>tabindex</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onblur</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>href</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>hreflang</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>charset</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>type</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>name</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>rel</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>rev</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>shape</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>coords</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>div</name>
+    <tagclass>scs.javax.web.taglibs.html.DivTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>title</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>lang</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>xmlLang</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>dir</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>ondblclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmousedown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmouseup</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmouseover</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmousemove</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmouseout</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onkeypress</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onkeydown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onkeyup</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+</taglib>

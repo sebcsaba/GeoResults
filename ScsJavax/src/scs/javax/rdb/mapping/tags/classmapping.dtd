@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" ""-->
+
+<!ELEMENT mapping (field*,composition*,key,listKey,orderBy)>
+<!ATTLIST mapping className CDATA #REQUIRED>
+<!ATTLIST mapping table CDATA #REQUIRED>
+
+<!ELEMENT field (param*)>
+<!ATTLIST field name CDATA #REQUIRED>
+<!ATTLIST field type (boolean|date|integer|long|string|time) #REQUIRED>
+<!ATTLIST field nullEnabled (true|false) "false">
+<!ATTLIST field referencedClass CDATA #IMPLIED>
+
+<!ELEMENT param EMPTY>
+<!ATTLIST param name CDATA #REQUIRED>
+<!ATTLIST param value CDATA #IMPLIED>
+
+<!ELEMENT composition EMPTY>
+<!ATTLIST composition name CDATA #REQUIRED>
+<!ATTLIST composition className CDATA #REQUIRED>
+
+<!ELEMENT attribute EMPTY>
+<!ATTLIST attribute name CDATA #REQUIRED>
+
+<!ELEMENT key (attribute+)>
+<!ATTLIST key autoIncrement (true|false) "false">
+
+<!ELEMENT listKey (attribute*)>
+
+<!ELEMENT orderBy (attribute*)>
