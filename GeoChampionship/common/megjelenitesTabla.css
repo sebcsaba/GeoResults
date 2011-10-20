@@ -1,0 +1,157 @@
+/***************************** RESULT TABLE *****************************/
+TABLE.results {
+  border-collapse: collapse;
+  border-style: solid;
+}
+TH, TD {
+  vertical-align: middle;
+  border-width: 1px;
+}
+.row {
+  height: 7mm;
+}
+.clip {
+  height: 5mm;
+  margin: 1mm;
+  overflow: hidden;
+  font-size: 0.8em;
+}
+@media screen {
+  TABLE.results {
+    margin-top: 8px;
+    border-width: 2px;
+    background: aliceblue;
+    border-color: royalblue;
+    color: royalblue;
+  }
+}
+@media print {
+  THEAD, TBODY {
+    page-break-inside: avoid;
+  }
+  @page {
+    size: landscape;
+    margin: 10mm;
+  }
+}
+/******************* CELL BORDERS *******************/
+.lrtb {
+  border-left-style: solid;
+  border-right-style: solid;
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+.lrt {
+  border-left-style: solid;
+  border-right-style: solid;
+  border-top-style: solid;
+  border-bottom-style: dotted;
+}
+.lrb {
+  border-left-style: solid;
+  border-right-style: solid;
+  border-top-style: dotted;
+  border-bottom-style: solid;
+}
+.lr {
+  border-left-style: solid;
+  border-right-style: solid;
+  border-top-style: dotted;
+  border-bottom-style: dotted;
+}
+
+.ltb {
+  border-left-style: solid;
+  border-right-style: dotted;
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+.lt {
+  border-left-style: solid;
+  border-right-style: dotted;
+  border-top-style: solid;
+  border-bottom-style: dotted;
+}
+.lb {
+  border-left-style: solid;
+  border-right-style: dotted;
+  border-top-style: dotted;
+  border-bottom-style: solid;
+}
+.l {
+  border-left-style: solid;
+  border-right-style: dotted;
+  border-top-style: dotted;
+  border-bottom-style: dotted;
+}
+
+.rtb {
+  border-left-style: dotted;
+  border-right-style: solid;
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+.rt {
+  border-left-style: dotted;
+  border-right-style: solid;
+  border-top-style: solid;
+  border-bottom-style: dotted;
+}
+.rb {
+  border-left-style: dotted;
+  border-right-style: solid;
+  border-top-style: dotted;
+  border-bottom-style: solid;
+}
+.r {
+  border-left-style: dotted;
+  border-right-style: solid;
+  border-top-style: dotted;
+  border-bottom-style: dotted;
+}
+
+.tb {
+  border-left-style: dotted;
+  border-right-style: dotted;
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+.t {
+  border-left-style: dotted;
+  border-right-style: dotted;
+  border-top-style: solid;
+  border-bottom-style: dotted;
+}
+.b {
+  border-left-style: dotted;
+  border-right-style: dotted;
+  border-top-style: dotted;
+  border-bottom-style: solid;
+}
+.middleCell {
+  border-left-style: dotted;
+  border-right-style: dotted;
+  border-top-style: dotted;
+  border-bottom-style: dotted;
+}
+/******************* CELL STYLES *******************/
+.numeric {
+  text-align: center;
+}
+.important {
+  font-weight: bold;
+}
+.text {
+  text-align: left;
+                                                                                                       /* eseteleg levágás... */
+}
+.header {
+  font-weight: normal;
+  text-align: center;
+}
+.bold {
+  font-weight: bold;
+}
+.small {
+  font-size: 0.8em;
+}

@@ -1,0 +1,54 @@
+/******************************* FORM PANEL *******************************/
+
+.formTable {
+  font-size: 10pt;
+  font-family: arial;
+  font-weight: bold;
+  color: royalblue;
+  width: 100%;
+}
+
+.formFieldName {
+  padding: 8px;
+  width: 250px;
+  background: #E0F8FF;
+}
+
+.formFieldWidget {
+  padding: 8px;
+  background: #E0F8FF;
+}
+
+.formFieldDouble {
+  padding: 8px;
+  background: #E0F8FF;
+}
+
+/******************************* FIELDS *******************************/
+.dateTag_year {
+  width: 40px;
+}
+.dateTag_day {
+  width: 30px;
+}
+.timeTag_hour {
+  width: 30px;
+}
+.timeTag_min {
+  width: 30px;
+}
+/******************************* INPUTTABLE *******************************/
+.inputTable {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: royalblue;
+}
+.inputCell {
+  padding: 4px;
+  border: 1px solid royalblue;
+}
+.enlargeBox {
+  text-align: center;
+  margin-top: 8px;
+}

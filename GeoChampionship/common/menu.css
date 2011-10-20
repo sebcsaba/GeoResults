@@ -1,0 +1,32 @@
+/******************************* MENU *******************************/
+.menuBar {
+  margin: 13px;
+  width: 200px;
+  font-weight: bold;
+  padding: 2px;
+  border: 1px solid royalblue;
+}
+.menuTitle {
+  background: royalblue;
+  color: white;
+  margin: 1px;
+  padding: 3px;
+  cursor: pointer;
+}
+.menuContent {
+  margin-left: 10px;
+}
+.menuRow {
+  background: cornflowerblue;
+  color: azure;
+  margin: 1px;
+  padding: 3px;
+  padding-left: 8px;
+}
+.menuRow A {
+  color: azure;
+  text-decoration: none;
+}
+.menuRow A:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,21 @@
+/******************************* CRUD PANEL *******************************/
+
+.crudTable {
+  width: 100%;
+  font-size: 10pt;
+  color: royalblue;
+  font-weight: bold;
+}
+.crudHeader {
+  background: #E0F8FF;
+  border-bottom: 1px solid royalblue;
+}
+
+.crudCell {
+  background: #E0F8FF;
+}
+
+.crudIconCol {
+  background: #E0F8FF;
+  width: 24px;
+}
