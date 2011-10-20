@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.kozos.SzotarBejegyzes" table="k_szotarbejegyzesek">
+  <field name="lang" type="string" referencedClass="scs.georesults.om.kozos.Nyelv">
+    <param name="maximum_length" value="2"/>
+  </field>
+  <field name="keystr" type="string">
+    <param name="maximum_length" value="50"/>
+  </field>
+  <field name="valuestr" type="string">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <key>
+    <attribute name="lang"/>
+    <attribute name="keystr"/>
+  </key>
+  <listKey>
+    <attribute name="lang"/>
+  </listKey>
+  <orderBy/>
+</mapping>

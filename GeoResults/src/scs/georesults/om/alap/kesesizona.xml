@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.alap.KesesiZona" table="a_kesesizonak">
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="idoLimit" type="integer"/>
+  <field name="pont" type="integer"/>
+  <key>
+    <attribute name="vid"/>
+    <attribute name="idoLimit"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="idoLimit"/>
+  </orderBy>
+</mapping>

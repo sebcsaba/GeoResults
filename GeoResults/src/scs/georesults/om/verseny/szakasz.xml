@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.verseny.Szakasz" table="v_szakaszok">
+  <field name="szid" type="long"/>
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="nev" type="string">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <field name="megengedettKesesEtaponkent" type="integer"/>
+  <field name="kesesertBuntetoPont" type="integer"/>
+  <field name="szlalomRedukaltPontokkal" type="boolean"/>
+  <field name="ertekelendo" type="boolean"/>
+  <field name="eredmenyFrissitendo" type="boolean"/>
+  <key autoIncrement="true">
+    <attribute name="szid"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="szid"/>
+  </orderBy>
+</mapping>

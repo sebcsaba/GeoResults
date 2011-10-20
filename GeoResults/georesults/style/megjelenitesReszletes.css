@@ -1,0 +1,116 @@
+/***************************** AUTO DATA *****************************/
+@media screen  {
+  .autoPage {
+    margin: 8px;
+    margin-bottom: 32px;
+    color: royalblue;
+  }
+}
+@media print {
+  .autoPage {
+    page-break-after: always;
+  }
+
+}
+@media screen {
+  .autoHeader {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .etapData {
+    background: azure;
+  }
+}
+@media print {
+  .autoHeader {
+    margin-top: 8pt;
+    margin-bottom: 8pt;
+  }
+  .etapData {
+    page-break-inside: avoid;
+  }
+}
+.etapTable {
+  width: 100%;
+  border-style: solid;
+}
+@media print {
+  .etapTable {
+    border-width: 1pt;
+  }
+}
+@media screen {
+  .etapTable {
+    border-width: 1px;
+    border-color: royalblue;
+    color: royalblue;
+  }
+}
+.etapHeader {
+  width: 33%;
+}
+/***************************** BOXES *****************************/
+@media screen {
+  TH, TD {
+    padding: 2px;
+  }
+}
+@media print {
+  TH, TD {
+    padding: 2pt;
+  }
+}
+TH {
+  font-weight: normal;
+}
+.resultBox {
+  float: left;
+}
+.resultTable {
+  border-collapse: collapse;
+  border-style: solid;
+}
+@media screen {
+  .resultTable {
+    border-width: 1px;
+    border-color: royalblue;
+    color: royalblue;
+    margin: 4px;
+  }
+}
+@media print {
+  .resultTable {
+    margin: 4pt;
+  }
+}
+.resultCell {
+  text-align: center;
+  border-style: solid;
+}
+@media screen {
+  .resultCell {
+    border-width: 1px;
+    border-color: royalblue;
+  }
+}
+.detailHeader {
+  text-align: right;
+  border-style: solid;
+}
+@media screen {
+  .detailHeader {
+    border-width: 1px;
+    border-color: royalblue;
+  }
+}
+@media print {
+  .resultTable {
+    border-width: 1pt;
+  }
+  .detailHeader {
+    border-width: 1pt;
+  }
+  .resultCell {
+    border-width: 1pt;
+  }
+}

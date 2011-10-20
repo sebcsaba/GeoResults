@@ -1,0 +1,8 @@
+<%@page contentType="text/html; charset=UTF-8"%>
+<div class="navigBar">
+  <div class="title"><img class="title" src="<c:path/>/style/logo2.png" alt="GeoResults2006 logo" onclick="kezdolap();"/></div>
+  <div class="addons">
+    <div class="addonButton" id="print" onclick="print();"><c:write key="BS_NYOMTATAS"/></div>
+    <div class="addonButton" id="close" onclick="closeEredmenyPopup();"><c:write key="BS_VISSZA"/></div>
+  </div>
+</div>

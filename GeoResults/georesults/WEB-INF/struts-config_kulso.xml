@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <global-forwards>
+    <forward name="versenyValasztas" path="/kulso/versenyValasztas.jsp" redirect="true"/>
+    <forward name="versenyUj" path="/kulso/ujVerseny.jsp" redirect="true"/>
+  </global-forwards>
+  <action-mappings>
+
+    <action path="/kulso/config" scope="request" type="scs.georesults.logic.actions.kulso.ConfigAction">
+      <forward name="ok" path="/kulso/install.jsp" redirect="true"/>
+      <forward name="error" path="/kulso/config.jsp" redirect="false"/>
+    </action>
+
+    <action path="/kulso/install" scope="request" type="scs.georesults.logic.actions.kulso.InstallAction">
+      <forward name="ok" path="/kulso/install.jsp" redirect="false"/>
+    </action>
+
+    <action path="/kulso/nyelvValtas" scope="request" type="scs.georesults.logic.actions.kulso.NyelvValtasAction">
+    </action>
+
+    <action path="/kulso/versenyLetrehozas" scope="request" type="scs.georesults.logic.actions.kulso.VersenyLetrehozasAction">
+      <forward name="ok" path="/frames.jsp?main=%2Fverseny%2Fadatok.jsp" redirect="true"/>
+      <forward name="error" path="/kulso/ujVerseny.jsp" redirect="false"/>
+    </action>
+
+    <action path="/kulso/versenyValasztas" scope="request" type="scs.georesults.logic.actions.kulso.VersenyValasztasAction">
+      <forward name="ok" path="/frames.jsp" redirect="true"/>
+      <forward name="error" path="/kulso/versenyValasztas.jsp" redirect="false"/>
+    </action>
+
+  </action-mappings>
+</struts-config>

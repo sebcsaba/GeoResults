@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--JBuilder XML Project-->
+<project>
+  <property category="build" name="CopyExtensions.1" value="config"/>
+  <property category="build" name="CopyExtensions.2" value="css"/>
+  <property category="build" name="CopyExtensions.3" value="dtd"/>
+  <property category="build" name="CopyExtensions.4" value="js"/>
+  <property category="build" name="CopyExtensions.5" value="sql"/>
+  <property category="build" name="CopyExtensions.6" value="tld"/>
+  <property category="build" name="CopyExtensions.7" value="txt"/>
+  <property category="build" name="CopyExtensions.8" value="xml"/>
+  <property category="generalFormatting" name="baseCodeStyle" value="java/Java Standard.codestyle"/>
+  <property category="generalFormatting2" name="continuationIndent" value="8"/>
+  <property category="generalFormatting2" name="overrideBasicFormatting" value="1"/>
+  <property category="idl" name="ProcessIDL" value="false"/>
+  <property category="javaFormatting" name="EventStyle" value="0"/>
+  <property category="javaFormatting" name="alignMultilineAssign" value="1"/>
+  <property category="javaFormatting" name="arrayInitDataOnNewLine" value="0"/>
+  <property category="javaFormatting" name="blankLinesAfterClass" value="2"/>
+  <property category="javaFormatting" name="blankLinesAfterField" value="1"/>
+  <property category="javaFormatting" name="classBraceNextLine" value="1"/>
+  <property category="javaFormatting" name="createBrace" value="0"/>
+  <property category="javaFormatting" name="elseOnNewLine" value="0"/>
+  <property category="javaFormatting" name="extendsOnNewLine" value="0"/>
+  <property category="javaFormatting" name="implementsOnNewLine" value="0"/>
+  <property category="javaFormatting" name="methodBraceNextLine" value="1"/>
+  <property category="javaFormatting" name="multipleStatementsOwnLine" value="0"/>
+  <property category="javaFormatting" name="packagePrefixGroups" value="java;javax;scs.javax;scs;(*)"/>
+  <property category="javaFormatting" name="packageThreshold" value="3"/>
+  <property category="javaFormatting" name="parenthesisPadding" value="1"/>
+  <property category="javaFormatting" name="preservedBlankLinesInDecl" value="2"/>
+  <property category="javaFormatting" name="spaceBeforeMethodDefLparen" value="1"/>
+  <property category="javaFormatting" name="wrapAtColumn" value="300"/>
+  <property category="javaFormatting" name="wrapBeforeOperator" value="1"/>
+  <property category="javadoc" name="custom.tags.1" value="todo;a;To Do:"/>
+  <property category="module" name="ProjectConvertedToEnsureModulesHaveSupportedFeatures" value="1"/>
+  <property category="module" name="ProjectConvertedToUseFilesAndDependenciesAsDefaultContent" value="1"/>
+  <property category="module" name="ProjectConvertedToUseProperModuleDefaults" value="1"/>
+  <property category="module" name="last.wizard.module.name" value="georesults"/>
+  <property category="module" name="projectConvertedFromModuleExtensionsToModuleFileTypes" value="1"/>
+  <property category="optimize.0" name="OptimizableType" value="com.borland.jbuilder.optimize.IntroOptimizeitProfiler"/>
+  <property category="runtime" name="ConfigurationCount" value="3"/>
+  <property category="runtime.0" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+  <property category="runtime.0" name="ConfigurationName" value="Webserver"/>
+  <property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.ServerRunner"/>
+  <property category="runtime.0" name="appserver.parameters" value=""/>
+  <property category="runtime.0" name="appserver.servername" value=""/>
+  <property category="runtime.0" name="appserver.vmparameters" value=""/>
+  <property category="runtime.0" name="custom.init_required" value="0"/>
+  <property category="runtime.0" name="custom.required.1" value="Servlet"/>
+  <property category="runtime.0" name="custom.required.2" value="JSTL 1.1"/>
+  <property category="runtime.0" name="custom.required.3" value="../../ScsJavax/ScsJavax.jar"/>
+  <property category="runtime.0" name="custom.required.4" value="../../../../javalibs/mysql-connector-java-3.1.12/mysql-connector-java-3.1.12-bin.jar"/>
+  <property category="runtime.0" name="custom.required.5" value="Struts 1.2.8"/>
+  <property category="runtime.0" name="enable.tcpmonitor" value="0"/>
+  <property category="runtime.0" name="enable.wsimonitor" value="0"/>
+  <property category="runtime.0" name="enabled.services" value="jsp;naming"/>
+  <property category="runtime.0" name="jsp.portno" value="8000"/>
+  <property category="runtime.0" name="jsprunner.portno" value="8000"/>
+  <property category="runtime.0" name="server.arguments" value=""/>
+  <property category="runtime.0" name="server.instance.name" value=""/>
+  <property category="runtime.0" name="server.name" value="Tomcat 5.0"/>
+  <property category="runtime.0" name="server.vmparameters" value=""/>
+  <property category="runtime.0" name="tcpmonitor.listenport" value=""/>
+  <property category="runtime.0" name="tcpmonitor.targethost" value=""/>
+  <property category="runtime.0" name="tcpmonitor.targetport" value=""/>
+  <property category="runtime.0" name="wsimonitor.listenport" value=""/>
+  <property category="runtime.0" name="wsimonitor.logfile" value=""/>
+  <property category="runtime.0" name="wsimonitor.targethost" value=""/>
+  <property category="runtime.0" name="wsimonitor.targetport" value=""/>
+  <property category="runtime.1" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+  <property category="runtime.1" name="ConfigurationName" value="OM generate"/>
+  <property category="runtime.1" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.1" name="application.class" value="scs.georesults.OmGenerate"/>
+  <property category="runtime.2" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+  <property category="runtime.2" name="ConfigurationName" value="KeyFinder"/>
+  <property category="runtime.2" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.2" name="application.class" value="scs.georesults.KeyFinder"/>
+  <property category="runtime.3" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+  <property category="runtime.3" name="ConfigurationName" value="Test"/>
+  <property category="runtime.3" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.3" name="application.class" value="scs.georesults.Test"/>
+  <property category="serverservices" name="disabled.services" value="jdatastore;sqlj"/>
+  <property category="serverservices" name="single.server.name" value="Tomcat 5.0"/>
+  <property category="sys" name="AuthorLabel" value="@author"/>
+  <property category="sys" name="BackupPath" value="bak"/>
+  <property category="sys" name="CheckStable" value="1"/>
+  <property category="sys" name="Company" value=""/>
+  <property category="sys" name="CompanyLabel" value="Company:"/>
+  <property category="sys" name="Copyright" value="Copyright (c) 2006"/>
+  <property category="sys" name="CopyrightLabel" value="Copyright:"/>
+  <property category="sys" name="DefaultPath" value="src"/>
+  <property category="sys" name="Description" value=""/>
+  <property category="sys" name="DescriptionLabel" value="Description:"/>
+  <property category="sys" name="DocPath" value="doc"/>
+  <property category="sys" name="Encoding" value="UTF8"/>
+  <property category="sys" name="ExcludeClassEnabled" value="0"/>
+  <property category="sys" name="IncludeTestPath" value="1"/>
+  <property category="sys" name="InstanceVisibility" value="2"/>
+  <property category="sys" name="JDK" value="java version 1.4.2_04-b05"/>
+  <property category="sys" name="JvmVersion" value="1.2"/>
+  <property category="sys" name="LastTag" value="0"/>
+  <property category="sys" name="Libraries" value="scs-javax;Servlet;../../../../javalibs/mysql-connector-java-3.1.12-bin.jar;Struts;JSTL 1.1;BorlandXML;../../../../javalibs/commons-pool-1.3.jar;../../../../javalibs/commons-io-1.2.jar"/>
+  <property category="sys" name="MakeStable" value="0"/>
+  <property category="sys" name="OutPath" value="classes"/>
+  <property category="sys" name="SourcePath" value="src;test"/>
+  <property category="sys" name="TestPath" value="test"/>
+  <property category="sys" name="Title" value=""/>
+  <property category="sys" name="TitleLabel" value="Title:"/>
+  <property category="sys" name="Version" value="1.0"/>
+  <property category="sys" name="VersionLabel" value="@version"/>
+  <property category="sys" name="WorkingDirectory" value="."/>
+  <property category="sys" name="max.package.levels" value="2"/>
+  <property category="team" name="ignorePath.0" value="Tomcat"/>
+  <property category="webModule" name="last.wizard.module.name" value="georesults"/>
+  <node name="georesults" type="WebModuleNode">
+    <property category="archiving" name="archiverClass" value="com.borland.jbuilder.enterprise.module.web.WebModuleArchiver"/>
+    <property category="archiving" name="contentRules.1" value="i:sar"/>
+    <property category="archiving" name="contentRules.10" value="i:opentools"/>
+    <property category="archiving" name="contentRules.11" value="i:png"/>
+    <property category="archiving" name="contentRules.12" value="i:properties"/>
+    <property category="archiving" name="contentRules.13" value="i:au"/>
+    <property category="archiving" name="contentRules.14" value="i:txt"/>
+    <property category="archiving" name="contentRules.15" value="i:ram"/>
+    <property category="archiving" name="contentRules.16" value="i:css"/>
+    <property category="archiving" name="contentRules.17" value="i:wml"/>
+    <property category="archiving" name="contentRules.18" value="i:xml"/>
+    <property category="archiving" name="contentRules.19" value="i:xmi"/>
+    <property category="archiving" name="contentRules.2" value="i:gif"/>
+    <property category="archiving" name="contentRules.20" value="i:xul"/>
+    <property category="archiving" name="contentRules.21" value="i:xsl"/>
+    <property category="archiving" name="contentRules.3" value="i:html"/>
+    <property category="archiving" name="contentRules.4" value="i:class"/>
+    <property category="archiving" name="contentRules.5" value="i:jnlp"/>
+    <property category="archiving" name="contentRules.6" value="i:js"/>
+    <property category="archiving" name="contentRules.7" value="i:jpg"/>
+    <property category="archiving" name="contentRules.8" value="i:jsp"/>
+    <property category="archiving" name="contentRules.9" value="i:tld"/>
+    <property category="archiving" name="defaultLibraryState" value="3"/>
+    <property category="archiving" name="includeAll" value="1"/>
+    <property category="archiving" name="libraryStates.1" value="0:Servlet"/>
+    <property category="archiving" name="libraryStates.2" value="0:Tomcat 5.0 Servlet"/>
+    <property category="archiving" name="obfuscator" value="RetroGuard for J2ME"/>
+    <property category="archiving" name="outPathState" value="4"/>
+    <property category="archiving" name="targetPath" value="georesults.war"/>
+    <property category="archiving" name="usingRules" value="1"/>
+    <property category="kit.struts" name="struts-config.1" value="WEB-INF/struts-config_base.xml"/>
+    <property category="kit.struts" name="struts-config.10" value="%n        /WEB-INF/struts-config_importing.xml"/>
+    <property category="kit.struts" name="struts-config.11" value="%n        /WEB-INF/struts-config_kozos.xml"/>
+    <property category="kit.struts" name="struts-config.2" value="%n        /WEB-INF/struts-config_kulso.xml"/>
+    <property category="kit.struts" name="struts-config.3" value="%n        /WEB-INF/struts-config_verseny.xml"/>
+    <property category="kit.struts" name="struts-config.4" value="%n        /WEB-INF/struts-config_szakasz.xml"/>
+    <property category="kit.struts" name="struts-config.5" value="%n        /WEB-INF/struts-config_etap.xml"/>
+    <property category="kit.struts" name="struts-config.6" value="%n        /WEB-INF/struts-config_nevezes.xml"/>
+    <property category="kit.struts" name="struts-config.7" value="%n        /WEB-INF/struts-config_menetlevel.xml"/>
+    <property category="kit.struts" name="struts-config.8" value="%n        /WEB-INF/struts-config_szlalom.xml"/>
+    <property category="kit.struts" name="struts-config.9" value="%n        /WEB-INF/struts-config_eredmeny.xml"/>
+    <property category="module" name="buildModuleExplodedArchiveWithModuleNode" value="1"/>
+    <property category="module" name="buildModuleExplodedArchiveWithProject" value="1"/>
+    <property category="module" name="cleanRules.1" value="I:WEB-INF/classes/**"/>
+    <property category="module" name="cleanRules.2" value="I:WEB-INF/lib/**"/>
+    <property category="module" name="cleanRules.3" value="X:WEB-INF/**/*.ds"/>
+    <property category="module" name="cleanRules.4" value="X:WEB-INF/**/*.wsdd"/>
+    <property category="module" name="cleanRules.5" value="X:WEB-INF/*.xml"/>
+    <property category="module" name="cleanRules.6" value="X:WEB-INF/*.xmi"/>
+    <property category="module" name="cleanRules.7" value="X:WEB-INF/**/cocoon.xconf"/>
+    <property category="module" name="cleanRules.8" value="X:WEB-INF/**/logkit.xconf"/>
+    <property category="module" name="directory" value="georesults"/>
+    <property category="module" name="extraDefaultDirectoriesToKeepOnClean.1" value=".cvsignore"/>
+    <property category="module" name="lastServer" value="Tomcat 5.0"/>
+    <property category="module" name="nodeJBuilderVersion" value="JBuilder 200"/>
+    <property category="module" name="supported.features.1" value="Servlet 2.4"/>
+    <property category="module" name="supported.features.2" value="JSP 2.0"/>
+    <property category="web" name="context-root" value="georesults"/>
+    <property category="webModule" name="kit.1" value="struts"/>
+    <property category="webModule" name="kit.2" value="jstl"/>
+    <property category="webModule" name="kitlib.1" value="Struts 1.2.8"/>
+    <property category="webModule" name="kitlib.2" value="JSTL 1.1"/>
+    <property category="webModule" name="launch.uri" value="/"/>
+  </node>
+  <node name="GeoresultsApidoc" type="Javadoc">
+    <property category="docletJavadoc" name="deprecated" value="0"/>
+    <property category="javadoc" name="packages.1" value="scs.georesults"/>
+    <property category="javadoc" name="packages.10" value="scs.georesults.view.tablefields"/>
+    <property category="javadoc" name="packages.11" value="scs.georesults.view.menetlevel"/>
+    <property category="javadoc" name="packages.12" value="scs.georesults.view.fields"/>
+    <property category="javadoc" name="packages.13" value="scs.georesults.view.importing"/>
+    <property category="javadoc" name="packages.14" value="scs.georesults.view.xmltable"/>
+    <property category="javadoc" name="packages.15" value="scs.georesults.view.eredmeny"/>
+    <property category="javadoc" name="packages.16" value="scs.georesults.config"/>
+    <property category="javadoc" name="packages.17" value="scs.georesults.logic"/>
+    <property category="javadoc" name="packages.18" value="scs.georesults.logic.actions"/>
+    <property category="javadoc" name="packages.19" value="scs.georesults.logic.actions.nevezes"/>
+    <property category="javadoc" name="packages.2" value="scs.georesults.common"/>
+    <property category="javadoc" name="packages.20" value="scs.georesults.logic.actions.kulso"/>
+    <property category="javadoc" name="packages.21" value="scs.georesults.logic.actions.etap"/>
+    <property category="javadoc" name="packages.22" value="scs.georesults.logic.actions.menetlevel"/>
+    <property category="javadoc" name="packages.23" value="scs.georesults.logic.actions.importing"/>
+    <property category="javadoc" name="packages.24" value="scs.georesults.logic.actions.eredmeny"/>
+    <property category="javadoc" name="packages.25" value="scs.georesults.logic.actions.szakasz"/>
+    <property category="javadoc" name="packages.26" value="scs.georesults.logic.actions.szakasz.reszek"/>
+    <property category="javadoc" name="packages.27" value="scs.georesults.logic.actions.verseny"/>
+    <property category="javadoc" name="packages.28" value="scs.georesults.logic.actions.verseny.reszek"/>
+    <property category="javadoc" name="packages.29" value="scs.georesults.logic.actions.szlalom"/>
+    <property category="javadoc" name="packages.3" value="scs.georesults.common.iotools"/>
+    <property category="javadoc" name="packages.30" value="scs.georesults.logic.actions.kozos"/>
+    <property category="javadoc" name="packages.31" value="scs.georesults.logic.beans"/>
+    <property category="javadoc" name="packages.32" value="scs.georesults.logic.beans.importing"/>
+    <property category="javadoc" name="packages.33" value="scs.georesults.logic.beans.menetlevel"/>
+    <property category="javadoc" name="packages.34" value="scs.georesults.logic.beans.verseny"/>
+    <property category="javadoc" name="packages.35" value="scs.georesults.logic.beans.kulso"/>
+    <property category="javadoc" name="packages.36" value="scs.georesults.logic.beans.etap"/>
+    <property category="javadoc" name="packages.37" value="scs.georesults.logic.beans.addons"/>
+    <property category="javadoc" name="packages.38" value="scs.georesults.logic.beans.kozos"/>
+    <property category="javadoc" name="packages.39" value="scs.georesults.logic.beans.eredmeny"/>
+    <property category="javadoc" name="packages.4" value="scs.georesults.common.iotools.exml"/>
+    <property category="javadoc" name="packages.40" value="scs.georesults.logic.beans.szlalom"/>
+    <property category="javadoc" name="packages.41" value="scs.georesults.logic.utils"/>
+    <property category="javadoc" name="packages.42" value="scs.georesults.logic.servlets"/>
+    <property category="javadoc" name="packages.43" value="scs.georesults.om.eredmeny"/>
+    <property category="javadoc" name="packages.44" value="scs.georesults.om.verseny"/>
+    <property category="javadoc" name="packages.45" value="scs.georesults.om.szlalom"/>
+    <property category="javadoc" name="packages.46" value="scs.georesults.om.kozos"/>
+    <property category="javadoc" name="packages.47" value="scs.georesults.om.menetlevel"/>
+    <property category="javadoc" name="packages.48" value="scs.georesults.om.nevezes"/>
+    <property category="javadoc" name="packages.49" value="scs.georesults.om.alap"/>
+    <property category="javadoc" name="packages.5" value="scs.georesults.common.menetlevelformula"/>
+    <property category="javadoc" name="packages.50" value="scs.georesults.om.etap"/>
+    <property category="javadoc" name="packages.6" value="scs.georesults.common.szotar"/>
+    <property category="javadoc" name="packages.7" value="scs.georesults.view"/>
+    <property category="javadoc" name="packages.8" value="scs.georesults.view.layout"/>
+    <property category="javadoc" name="packages.9" value="scs.georesults.view.geo"/>
+    <property category="javadoc" name="scope" value="private"/>
+    <property category="nodeJavadoc" name="buildWithProject" value="0"/>
+    <property category="nodeJavadoc" name="directory" value="doc"/>
+    <property category="nodeJavadoc" name="displayAllOutput" value="0"/>
+  </node>
+  <file path="Feladatok.txt"/>
+</project>

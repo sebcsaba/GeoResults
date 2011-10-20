@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.alap.AutoTipus" table="a_autotipusok">
+  <field name="atid" type="long"/>
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="nev" type="string">
+    <param name="maximum_length" value="50"/>
+  </field>
+  <field name="kategoria" type="long" referencedClass="scs.georesults.om.alap.SzlalomKategoria"/>
+  <key autoIncrement="true">
+    <attribute name="atid"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="nev"/>
+  </orderBy>
+</mapping>

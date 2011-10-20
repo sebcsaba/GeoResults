@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.kozos.Orszag" table="k_orszagok">
+  <field name="country" type="string">
+    <param name="maximum_length" value="2"/>
+  </field>
+  <key>
+    <attribute name="country"/>
+  </key>
+  <listKey/>
+  <orderBy/>
+</mapping>

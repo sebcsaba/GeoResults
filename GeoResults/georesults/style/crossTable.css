@@ -1,0 +1,8 @@
+.crossTable {
+  border: 1px solid royalblue;
+  border-collapse: collapse;
+}
+.ct {
+  border: 1px solid royalblue;
+  padding: 4px;
+}

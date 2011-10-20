@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.menetlevel.Menetlevel" table="m_menetlevelek">
+  <field name="eid" type="long" referencedClass="scs.georesults.om.verseny.Etap"/>
+  <field name="rajtszam" type="integer" referencedClass="scs.georesults.om.nevezes.Nevezes"/>
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="indulasiIdo" type="time"/>
+  <field name="erkezesiIdo" type="time"/>
+  <composition name="darabFuggoMegoldasok" className="scs.georesults.om.menetlevel.DarabFuggoFeladatMegoldas"/>
+  <composition name="sorrendFuggoMegoldasok" className="scs.georesults.om.menetlevel.SorrendFuggoFeladatMegoldas"/>
+  <composition name="buntetesek" className="scs.georesults.om.menetlevel.Buntetes"/>
+  <key>
+    <attribute name="eid"/>
+    <attribute name="rajtszam"/>
+  </key>
+  <listKey/>
+  <orderBy/>
+</mapping>

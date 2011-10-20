@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <global-forwards>
+    <forward name="importError" path="/importing/error.jsp" redirect="false"/>
+  </global-forwards>
+  <action-mappings>
+
+    <action path="/importing/start" scope="request" type="scs.georesults.logic.actions.importing.StartAction">
+      <forward name="ok" path="/importing/chooseSource.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/chooseSource" scope="request" type="scs.georesults.logic.actions.importing.ChooseSourceAction">
+      <forward name="ok" path="/importing/categories.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/categories" scope="request" type="scs.georesults.logic.actions.importing.CategoriesAction">
+      <forward name="re" path="/importing/categories.jsp" redirect="false"/>
+      <forward name="verseny" path="/importing/versenyWarning.jsp" redirect="true"/>
+      <forward name="alapok" path="/importing/melyikAlapok.jsp" redirect="true"/>
+      <forward name="nevezesek" path="/importing/azonosRajtszamCheck.do" redirect="true"/>
+      <forward name="etapok" path="/importing/melyikEtapok.jsp" redirect="true"/>
+      <forward name="szlalomFutamok" path="/importing/szlalomFutamokHonnan.jsp" redirect="true"/>
+      <forward name="menetlevelek" path="/importing/menetlevelekHonnan.jsp" redirect="true"/>
+      <forward name="forditas" path="/importing/melyikNyelvek.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/melyikAlapok" scope="request" type="scs.georesults.logic.actions.importing.MelyikAlapokAction">
+      <forward name="re" path="/importing/melyikAlapok.jsp" redirect="false"/>
+      <forward name="recognise" path="/importing/beforeRecognise.do" redirect="true"/>
+      <forward name="ok" path="/importing/main.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/azonosRajtszamCheck" scope="request" type="scs.georesults.logic.actions.importing.AzonosRajtszamCheckAction">
+      <forward name="ok" path="/importing/importOrRecognise.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/importOrRecognise" scope="request" type="scs.georesults.logic.actions.importing.ImportOrRecogniseAction">
+      <forward name="import" path="/importing/main.jsp" redirect="true"/>
+      <forward name="recognise" path="/importing/beforeRecognise.do" redirect="true"/>
+    </action>
+
+    <action path="/importing/beforeRecognise" scope="request" type="scs.georesults.logic.actions.importing.BeforeRecogniseAction">
+      <forward name="ok" path="/importing/recognise.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/recognise" scope="request" type="scs.georesults.logic.actions.importing.RecogniseAction">
+      <forward name="ok" path="/importing/main.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/melyikEtapok" scope="request" type="scs.georesults.logic.actions.importing.MelyikEtapokAction">
+      <forward name="re" path="/importing/melyikEtapok.jsp" redirect="false"/>
+      <forward name="ok" path="/importing/etapokMelyikSzakaszba.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/etapokMelyikSzakaszba" scope="request" type="scs.georesults.logic.actions.importing.EtapokMelyikSzakaszbaAction">
+      <forward name="ok" path="/importing/importOrRecognise.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/szlalomFutamokHonnan" scope="request" type="scs.georesults.logic.actions.importing.FutamokHonnanAction">
+      <forward name="ok" path="/importing/szlalomFutamokHova.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/szlalomFutamokHova" scope="request" type="scs.georesults.logic.actions.importing.FutamokHovaAction">
+      <forward name="ok" path="/importing/letezoFutamCheck.do" redirect="true"/>
+    </action>
+
+    <action path="/importing/menetlevelekHonnan" scope="request" type="scs.georesults.logic.actions.importing.FutamokHonnanAction">
+      <forward name="ok" path="/importing/menetlevelekHova.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/menetlevelekHova" scope="request" type="scs.georesults.logic.actions.importing.FutamokHovaAction">
+      <forward name="ok" path="/importing/letezoFutamCheck.do" redirect="true"/>
+    </action>
+
+    <action path="/importing/letezoFutamCheck" scope="request" type="scs.georesults.logic.actions.importing.LetezoFutamCheckAction">
+      <forward name="ok" path="/importing/mindenRajtszamCheck.do" redirect="true"/>
+      <forward name="warning" path="/importing/letezoFutamWarning.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/mindenRajtszamCheck" scope="request" type="scs.georesults.logic.actions.importing.MindenRajtszamCheckAction">
+      <forward name="ok" path="/importing/futamSplit.do" redirect="true"/>
+      <forward name="warning" path="/importing/mindenRajtszamWarning.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/futamSplit" scope="request" type="scs.georesults.logic.actions.importing.FutamSplitAction">
+      <forward name="szlalomFutamok" path="/importing/importOrRecognise.jsp" redirect="true"/>
+      <forward name="menetlevelek" path="/importing/beforeRecognise.do" redirect="true"/>
+    </action>
+
+    <action path="/importing/accept" scope="request" type="scs.georesults.logic.actions.importing.AcceptAction">
+      <forward name="ok" path="/importing/main.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/melyikNyelvek" scope="request" type="scs.georesults.logic.actions.importing.MelyikNyelvekAction">
+      <forward name="re" path="/importing/melyikNyelvek.jsp" redirect="false"/>
+      <forward name="ok" path="/importing/main.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/main" scope="request" type="scs.georesults.logic.actions.importing.MainAction">
+      <forward name="ok" path="/importing/vege.jsp" redirect="true"/>
+    </action>
+
+    <action path="/importing/cancel" scope="request" type="scs.georesults.logic.actions.importing.CancelAction">
+      <forward name="ok" path="/importing/cancelled.jsp" redirect="true"/>
+    </action>
+
+  </action-mappings>
+</struts-config>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.nevezes.CsapatNevezes" table="n_csapatnevezesek">
+  <field name="csnid" type="long"/>
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="nev" type="string">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <field name="rajtszam1" type="integer" referencedClass="scs.georesults.om.nevezes.Nevezes"/>
+  <field name="rajtszam2" type="integer" referencedClass="scs.georesults.om.nevezes.Nevezes"/>
+  <field name="rajtszam3" type="integer" referencedClass="scs.georesults.om.nevezes.Nevezes"/>
+  <field name="rajtszam4" type="integer" nullEnabled="true" referencedClass="scs.georesults.om.nevezes.Nevezes"/>
+  <key autoIncrement="true">
+    <attribute name="csnid"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="nev"/>
+  </orderBy>
+</mapping>

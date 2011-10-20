@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.alap.EllenorzoPont" table="a_ellenorzopontok">
+  <field name="sfftid" type="long" referencedClass="scs.georesults.om.alap.SorrendFuggoFeladatTipus"/>
+  <field name="felirat" type="string">
+    <param name="maximum_length" value="20"/>
+  </field>
+  <key>
+    <attribute name="sfftid"/>
+    <attribute name="felirat"/>
+  </key>
+  <listKey>
+    <attribute name="sfftid"/>
+  </listKey>
+  <orderBy>
+    <attribute name="felirat"/>
+  </orderBy>
+</mapping>

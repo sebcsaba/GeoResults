@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.alap.SzlalomKategoria" table="a_szlalomkategoriak">
+  <field name="szkid" type="long"/>
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="nev" type="string">
+    <param name="maximum_length" value="50"/>
+  </field>
+  <key autoIncrement="true">
+    <attribute name="szkid"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="nev"/>
+  </orderBy>
+</mapping>

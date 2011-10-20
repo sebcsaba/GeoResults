@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <action-mappings>
+
+    <action path="/etap/adatokBetoltes" scope="request" type="scs.georesults.logic.actions.etap.AdatokBetoltesAction">
+      <forward name="ok" path="/etap/etap.jsp" redirect="true"/>
+    </action>
+
+    <action path="/etap/adatokMentes" scope="request" type="scs.georesults.logic.actions.etap.AdatokMentesAction">
+      <forward name="ok" path="/etap/etap.jsp" redirect="true"/>
+      <forward name="error" path="/etap/etap.jsp" redirect="false"/>
+    </action>
+
+    <action path="/etap/darabFuggoEtapFeladatok" scope="request" type="scs.georesults.logic.actions.etap.DarabFuggoEtapFeladatokAction">
+      <forward name="ok" path="/etap/darabFuggoEtapFeladat.jsp" redirect="true"/>
+      <forward name="error" path="/etap/darabFuggoEtapFeladat.jsp" redirect="false"/>
+      <forward name="errorBack" path="/etap/etap.jsp" redirect="false"/>
+      <forward name="back" path="/etap/etap.jsp" redirect="true"/>
+    </action>
+    <action path="/etap/sorrendFuggoEtapFeladatok" scope="request" type="scs.georesults.logic.actions.etap.SorrendFuggoEtapFeladatokAction">
+      <forward name="ok" path="/etap/sorrendFuggoEtapFeladat.jsp" redirect="true"/>
+      <forward name="error" path="/etap/sorrendFuggoEtapFeladat.jsp" redirect="false"/>
+      <forward name="errorBack" path="/etap/etap.jsp" redirect="false"/>
+      <forward name="back" path="/etap/etap.jsp" redirect="true"/>
+    </action>
+    <action path="/etap/sorrendFuggoEtalon" scope="request" type="scs.georesults.logic.actions.etap.SorrendFuggoEtalonAction">
+      <forward name="ok" path="/common/closer.jsp?id=bejegyzesek" redirect="true"/>
+      <forward name="again" path="/etap/sorrendFuggoEtalon.jsp" redirect="false"/>
+    </action>
+
+  </action-mappings>
+</struts-config>

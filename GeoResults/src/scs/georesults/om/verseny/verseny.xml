@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.verseny.Verseny" table="v_versenyek">
+  <field name="vid" type="long"/>
+  <field name="nev" type="string">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <field name="kezdeteDatum" type="date"/>
+  <field name="vegeDatum" type="date"/>
+  <field name="alapNyelv" type="string" referencedClass="scs.georesults.om.kozos.Nyelv">
+    <param name="maximum_length" value="2"/>
+  </field>
+  <field name="menetlevelformula" type="string">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <field name="eredmenyFrissitendoMindenEtap" type="boolean"/>
+  <field name="eredmenyFrissitendoMindenSzlalom" type="boolean"/>
+  <field name="eredmenyFrissitendoVerseny" type="boolean"/>
+  <field name="eredmenyFrissitendoCsapat" type="boolean"/>
+  <field name="lezarva" type="date" nullEnabled="true"/>
+  <key autoIncrement="true">
+    <attribute name="vid"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="vid"/>
+  </orderBy>
+</mapping>

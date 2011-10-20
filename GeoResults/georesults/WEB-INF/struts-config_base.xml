@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <global-forwards>
+    <forward name="sessionTimeout" path="/common/sessionTimeOut.jsp" redirect="true"/>
+    <forward name="globalError" path="/common/error.jsp" redirect="false"/>
+    <forward name="lezarva" path="/common/lezarva.jsp" redirect="true"/>
+    <forward name="framesreload" path="/common/framesreload.jsp" redirect="true"/>
+  </global-forwards>
+  <action-mappings>
+
+    <action path="/init" scope="request" type="scs.georesults.logic.actions.InitAction">
+      <forward name="versenyValasztas" path="/kulso/versenyValasztas.jsp" redirect="true"/>
+      <forward name="install" path="/kulso/config.jsp" redirect="true"/>
+    </action>
+
+    <action path="/cancel" scope="session" type="scs.georesults.logic.actions.CancelAction">
+      <forward name="versenyFrissites" path="/versenyFrissites.do" redirect="false" />
+      <forward name="szakaszAdatokBetoltes" path="/szakasz/adatokBetoltes.do" redirect="false"/>
+      <forward name="etapAdatokBetoltes" path="/etap/adatokBetoltes.do" redirect="false"/>
+    </action>
+
+    <action path="/versenyFrissites" scope="session" type="scs.georesults.logic.actions.VersenyFrissitesAction">
+      <forward name="versenyadatok" path="/verseny/adatok.jsp" redirect="true"/>
+      <forward name="feladattipusok" path="/verseny/feladattipusok.jsp" redirect="true"/>
+      <forward name="autotipusok" path="/verseny/autok.jsp" redirect="true"/>
+      <forward name="versenySzotar" path="/verseny/versenySzotarLista.jsp" redirect="true"/>
+      <forward name="lezaras" path="/verseny/lezaras.jsp" redirect="true"/>
+      <forward name="egyeniNevezes" path="/nevezes/egyeniLista.jsp" redirect="true"/>
+      <forward name="csapatNevezes" path="/nevezes/csapatLista.jsp" redirect="true"/>
+      <forward name="nevezesiLista" path="/nevezes/lista.jsp" redirect="true"/>
+      <forward name="athelyezesSzakaszokKozott" path="/szakasz/athelyezes.jsp" redirect="true"/>
+      <forward name="szlalomAlapBetoltes" path="/szlalom/alapBetoltes.do" redirect="true"/>
+      <forward name="menetlevelAlapBetoltes" path="/menetlevel/alapBetoltes.do" redirect="true"/>
+      <forward name="etapEredmeny" path="/eredmeny/etapLista.jsp" redirect="true"/>
+      <forward name="szlalomEredmeny" path="/eredmeny/szlalomLista.jsp" redirect="true"/>
+      <forward name="szakaszEredmeny" path="/eredmeny/szakaszLista.jsp" redirect="true"/>
+      <forward name="osszesitettEredmeny" path="/eredmeny/osszesitettEredmenyLista.jsp" redirect="true"/>
+      <forward name="reszletesEredmeny" path="/eredmeny/reszletesEredmenyMain.jsp" redirect="true"/>
+      <forward name="eredmenyExport" path="/eredmeny/export.jsp" redirect="true"/>
+    </action>
+
+  </action-mappings>
+</struts-config>

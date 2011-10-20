@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.alap.DarabFuggoFeladatTipus" table="a_darabfuggofeladattipusok">
+  <field name="dfftid" type="long"/>
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="nev" type="string">
+    <param name="maximum_length" value="50"/>
+  </field>
+  <field name="hianyHibapont" type="integer"/>
+  <field name="tobbletHibapont" type="integer"/>
+  <key autoIncrement="true">
+    <attribute name="dfftid"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="dfftid"/>
+  </orderBy>
+</mapping>

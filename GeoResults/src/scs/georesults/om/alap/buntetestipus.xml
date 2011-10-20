@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.alap.BuntetesTipus" table="a_buntetestipusok">
+  <field name="btid" type="long"/>
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="nev" type="string">
+    <param name="maximum_length" value="50"/>
+  </field>
+  <field name="pont" type="integer"/>
+  <key autoIncrement="true">
+    <attribute name="btid"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="btid"/>
+  </orderBy>
+</mapping>

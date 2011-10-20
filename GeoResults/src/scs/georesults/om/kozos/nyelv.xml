@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.kozos.Nyelv" table="k_nyelvek">
+  <field name="lang" type="string">
+    <param name="maximum_length" value="2"/>
+  </field>
+  <key>
+    <attribute name="lang"/>
+  </key>
+  <listKey/>
+  <orderBy/>
+</mapping>

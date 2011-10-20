@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.eredmeny.DarabFuggoFeladatEredmeny" table="r_darabfuggofeladateredmenyek">
+  <field name="eid" type="long" referencedClass="scs.georesults.om.verseny.Etap"/>
+  <field name="rajtszam" type="integer" referencedClass="scs.georesults.om.nevezes.Nevezes"/>
+  <field name="dfftid" type="long" referencedClass="scs.georesults.om.alap.DarabFuggoFeladatTipus"/>
+  <field name="hiany" type="integer"/>
+  <field name="tobblet" type="integer"/>
+  <field name="pontszam" type="integer"/>
+  <key>
+    <attribute name="eid"/>
+    <attribute name="rajtszam"/>
+    <attribute name="dfftid"/>
+  </key>
+  <listKey>
+    <attribute name="eid"/>
+    <attribute name="rajtszam"/>
+  </listKey>
+  <orderBy>
+    <attribute name="dfftid"/>
+  </orderBy>
+</mapping>

@@ -1,0 +1,54 @@
+BODY {
+  margin: 0px;
+  font-size: 10pt;
+  font-family: arial;
+}
+
+TABLE {
+  empty-cells: show;
+}
+
+.main {
+  position: absolute;
+  top: 5px;
+  left: 300px;
+}
+
+A {
+  color: royalblue;
+}
+A:visited {
+  color: royalblue;
+}
+
+.error {
+  background: #FFFFF0;
+  width: 600px;
+  margin: 8px;
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  border: 1px solid red;
+  font-size: 12pt;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.warning {
+  background: #FFFFF0;
+  width: 600px;
+  margin: 8px;
+  padding: 4px;
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  border: 1px solid red;
+  font-size: 12pt;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.languages {
+  text-align: center;
+  margin: 5px;
+}

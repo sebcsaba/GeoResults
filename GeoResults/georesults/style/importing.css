@@ -1,0 +1,34 @@
+.statusPanel {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+}
+
+.statusBar {
+  background: royalblue;
+}
+
+.statusLabel {
+  width: 50px;
+  text-align: right;
+  color: royalblue;
+}
+
+.formRow {
+  margin: 1em;
+}
+.fieldInfo {
+  margin-left: 5em;
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+.recog {
+  width: 100%;
+}
+.recogName {
+  width: 50%;
+}
+.recogList {
+  width: 50%;
+}

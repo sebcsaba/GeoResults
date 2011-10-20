@@ -1,0 +1,17 @@
+<%@page contentType="text/html; charset=UTF-8"%>
+<title>GeoResults 2006</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="shortcut icon" href="<c:path/>/style/favicon.ico" />
+<link rel="icon" href="<c:path/>/style/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="<c:path/>/style/base.css" />
+<link rel="stylesheet" type="text/css" href="<c:path/>/style/menu.css" />
+<link rel="stylesheet" type="text/css" href="<c:path/>/style/panel.css" />
+<link rel="stylesheet" type="text/css" href="<c:path/>/style/form.css" />
+<link rel="stylesheet" type="text/css" href="<c:path/>/style/crud.css" />
+<script type="text/javascript" src="<c:path/>/common/commonUtils.js"></script>
+<script type="text/javascript" src="<c:path/>/common/domUtils.js"></script>
+<script type="text/javascript" src="<c:path/>/common/menuUtils.js"></script>
+<script type="text/javascript" src="<c:path/>/common/formUtils.js"></script>
+<script type="text/javascript" src="<c:path/>/common/popupUtils.js"></script>
+<script type="text/javascript" src="<c:path/>/common/titleUtils.js"></script>
+<script type="text/javascript" src="<c:path/>/common/addonUtils.js"></script>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.alap.VersenySzotarBejegyzes" table="a_versenyszotarbejegyzesek">
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="vszbid" type="long"/>
+  <field name="lang" type="string" referencedClass="scs.georesults.om.kozos.Nyelv">
+    <param name="maximum_length" value="2"/>
+  </field>
+  <field name="felirat" type="string">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <key>
+    <attribute name="vid"/>
+    <attribute name="vszbid"/>
+    <attribute name="lang"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="vszbid"/>
+    <attribute name="lang"/>
+  </orderBy>
+</mapping>

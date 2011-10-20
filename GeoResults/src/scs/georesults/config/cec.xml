@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database PUBLIC "-//sebcsaba//RdbXmlMapping 1.0 DTD//EN" "">
+<database>
+
+  <entity type="scs.georesults.om.verseny.VersenyImpl">
+    <property name="vid" value="0"/>
+    <property name="nev" value=""/>
+    <property name="kezdeteDatum" value="2006-01-01"/>
+    <property name="vegeDatum" value="2006-01-01"/>
+    <property name="alapNyelv" value="en"/>
+    <property name="menetlevelformula" value="i;s:0:p:20;b:i"/>
+    <property name="eredmenyFrissitendoVerseny" value="0"/>
+    <property name="eredmenyFrissitendoCsapat" value="0"/>
+    <property name="lezarva"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.SorrendFuggoFeladatTipusImpl">
+    <property name="sfftid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="@1"/>
+    <property name="hianyHibapont" value="100"/>
+    <property name="tobbletHibapont" value="60"/>
+    <property name="reszletesBevitel" value="1"/>
+    <property name="ellenorzesTipus" value="3"/>
+    <sublist name="ellenorzoPontok"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.KesesiZonaImpl">
+    <property name="vid" value="0"/>
+    <property name="idoLimit" value="-1440"/>
+    <property name="pont" value="10"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.KesesiZonaImpl">
+    <property name="vid" value="0"/>
+    <property name="idoLimit" value="10"/>
+    <property name="pont" value="5"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.KesesiZonaImpl">
+    <property name="vid" value="0"/>
+    <property name="idoLimit" value="30"/>
+    <property name="pont" value="10"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.KesesiZonaImpl">
+    <property name="vid" value="0"/>
+    <property name="idoLimit" value="45"/>
+    <property name="pont" value="20"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.KesesiZonaImpl">
+    <property name="vid" value="0"/>
+    <property name="idoLimit" value="1440"/>
+    <property name="pont" value="1000"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.SzlalomKategoriaImpl">
+    <property name="szkid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="@2"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.AutoTipusImpl">
+    <property name="atid" value="1"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="CEC"/>
+    <property name="kategoria" value="0"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.BuntetesTipusImpl">
+    <property name="btid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="@3"/>
+    <property name="pont" value="10"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.BuntetesTipusImpl">
+    <property name="btid" value="1"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="@4"/>
+    <property name="pont" value="5000"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.SzlalomFeladatImpl">
+    <property name="szfid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="@5"/>
+    <property name="pont" value="2"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.SzlalomFeladatImpl">
+    <property name="szfid" value="1"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="@6"/>
+    <property name="pont" value="10"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.SzlalomFeladatImpl">
+    <property name="szfid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="@7"/>
+    <property name="pont" value="10"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.SzlalomFeladatImpl">
+    <property name="szfid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="@8"/>
+    <property name="pont" value="15"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.SzlalomFeladatImpl">
+    <property name="szfid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="@9"/>
+    <property name="pont" value="50"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.SzlalomFeladatImpl">
+    <property name="szfid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="@4"/>
+    <property name="pont" value="500"/>
+  </entity>
+
+  <entity type="scs.georesults.om.verseny.SzakaszImpl">
+    <property name="szid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="@10"/>
+    <property name="megengedettKesesEtaponkent" value="30"/>
+    <property name="kesesertBuntetoPont" value="5000"/>
+    <property name="szlalomRedukaltPontokkal" value="0"/>
+    <property name="ertekelendo" value="1"/>
+    <property name="eredmenyFrissitendo" value="0"/>
+  </entity>
+  <entity type="scs.georesults.om.verseny.SzakaszImpl">
+    <property name="szid" value="1"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="@11"/>
+    <property name="megengedettKesesEtaponkent" value="30"/>
+    <property name="kesesertBuntetoPont" value="5000"/>
+    <property name="szlalomRedukaltPontokkal" value="0"/>
+    <property name="ertekelendo" value="1"/>
+    <property name="eredmenyFrissitendo" value="0"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="1"/>
+    <property name="lang" value="en"/>
+    <property name="felirat" value="Checkpoint"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="1"/>
+    <property name="lang" value="hu"/>
+    <property name="felirat" value="Ellenőrzőpont"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="2"/>
+    <property name="lang" value="en"/>
+    <property name="felirat" value="CEC category"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="2"/>
+    <property name="lang" value="hu"/>
+    <property name="felirat" value="CEC kategória"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="3"/>
+    <property name="lang" value="en"/>
+    <property name="felirat" value="Radar"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="3"/>
+    <property name="lang" value="hu"/>
+    <property name="felirat" value="Radar"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="4"/>
+    <property name="lang" value="en"/>
+    <property name="felirat" value="Disqualification"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="4"/>
+    <property name="lang" value="hu"/>
+    <property name="felirat" value="Kizárás"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="5"/>
+    <property name="lang" value="en"/>
+    <property name="felirat" value="Second"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="5"/>
+    <property name="lang" value="hu"/>
+    <property name="felirat" value="Másodperc"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="6"/>
+    <property name="lang" value="en"/>
+    <property name="felirat" value="Buoy overturn"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="6"/>
+    <property name="lang" value="hu"/>
+    <property name="felirat" value="Bójadöntés"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="7"/>
+    <property name="lang" value="en"/>
+    <property name="felirat" value="Bad stop"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="7"/>
+    <property name="lang" value="hu"/>
+    <property name="felirat" value="Hibás megállás"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="8"/>
+    <property name="lang" value="en"/>
+    <property name="felirat" value="Task-mistake"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="8"/>
+    <property name="lang" value="hu"/>
+    <property name="felirat" value="Feladat-hiba"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="9"/>
+    <property name="lang" value="en"/>
+    <property name="felirat" value="Penalty"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="9"/>
+    <property name="lang" value="hu"/>
+    <property name="felirat" value="Büntetés"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="10"/>
+    <property name="lang" value="en"/>
+    <property name="felirat" value="Night section"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="10"/>
+    <property name="lang" value="hu"/>
+    <property name="felirat" value="Éjszakai szakasz"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="11"/>
+    <property name="lang" value="en"/>
+    <property name="felirat" value="Day section"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.VersenySzotarBejegyzesImpl">
+    <property name="vid" value="0"/>
+    <property name="vszbid" value="11"/>
+    <property name="lang" value="hu"/>
+    <property name="felirat" value="Nappali szakasz"/>
+  </entity>
+
+</database>

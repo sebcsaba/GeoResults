@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+  <tlibversion>1.2</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>menetlevel</shortname>
+  <uri>http://sebcsaba.hu/taglib/geo/menetlevel</uri>
+  <!-- minden value attribútum Menetlevel típusú binding -->
+  <!-- minden ef attribútum *FuggoEtapFeladat típusú binding -->
+
+  <tag>
+    <name>ido</name>
+    <tagclass>scs.georesults.view.menetlevel.IdoTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>value</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>darabInline</name>
+    <tagclass>scs.georesults.view.menetlevel.DarabInlineTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>value</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>ef</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>darabPopup</name>
+    <tagclass>scs.georesults.view.menetlevel.DarabPopupTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>ef</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>sorrendInline</name>
+    <tagclass>scs.georesults.view.menetlevel.SorrendInlineTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>value</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>ef</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>count</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>sorrendPopup</name>
+    <tagclass>scs.georesults.view.menetlevel.SorrendPopupTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>ef</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>count</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>buntetesInline</name>
+    <tagclass>scs.georesults.view.menetlevel.BuntetesInlineTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>value</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>buntetesPopup</name>
+    <tagclass>scs.georesults.view.menetlevel.BuntetesPopupTag</tagclass>
+    <bodycontent>empty</bodycontent>
+  </tag>
+
+  <tag>
+    <name>menetlevel</name>
+    <tagclass>scs.georesults.view.menetlevel.MenetlevelTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>menetlevel</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>loadEtapFeladat</name>
+    <tagclass>scs.georesults.view.menetlevel.LoadEtapfeladatTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>etapok</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>eid</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>listname</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>var</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>idname</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+</taglib>

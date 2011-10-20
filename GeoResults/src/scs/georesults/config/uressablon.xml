@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database PUBLIC "-//sebcsaba//RdbXmlMapping 1.0 DTD//EN" "">
+<database>
+
+  <entity type="scs.georesults.om.verseny.VersenyImpl">
+    <property name="vid" value="0"/>
+    <property name="nev" value=""/>
+    <property name="kezdeteDatum" value="2006-01-01"/>
+    <property name="vegeDatum" value="2006-01-01"/>
+    <property name="alapNyelv" value="hu"/>
+    <property name="menetlevelformula" value="i;b:i"/>
+    <property name="eredmenyFrissitendoVerseny" value="0"/>
+    <property name="eredmenyFrissitendoCsapat" value="0"/>
+    <property name="lezarva"/>
+  </entity>
+
+</database>

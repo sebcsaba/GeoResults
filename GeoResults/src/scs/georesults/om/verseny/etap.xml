@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.verseny.Etap" table="v_etapok">
+  <field name="eid" type="long"/>
+  <field name="szid" type="long" referencedClass="scs.georesults.om.verseny.Szakasz"/>
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="nev" type="string">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <field name="idoLimit" type="integer"/>
+  <field name="menetlevelformula" type="string" nullEnabled="true">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <field name="ertekelendo" type="boolean"/>
+  <field name="eredmenyFrissitendo" type="boolean"/>
+  <key autoIncrement="true">
+    <attribute name="eid"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="eid"/>
+  </orderBy>
+</mapping>

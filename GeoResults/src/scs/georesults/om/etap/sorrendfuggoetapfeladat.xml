@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.etap.SorrendFuggoEtapFeladat" table="e_sorrendfuggoetapfeladatok">
+  <field name="eid" type="long" referencedClass="scs.georesults.om.verseny.Etap"/>
+  <field name="sfftid" type="long" referencedClass="scs.georesults.om.alap.SorrendFuggoFeladatTipus"/>
+  <field name="reszletesBevitel" type="boolean"/>
+  <field name="ellenorzesTipus" type="integer" nullEnabled="true"/>
+  <field name="darab" type="integer" nullEnabled="true"/>
+  <composition name="bejegyzesek" className="scs.georesults.om.etap.SorrendFuggoEtapFeladatEtalonBejegyzes"/>
+  <key>
+    <attribute name="eid"/>
+    <attribute name="sfftid"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="sfftid"/>
+  </orderBy>
+</mapping>

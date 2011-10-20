@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.menetlevel.SorrendFuggoMenetlevelBejegyzes" table="m_sorrendfuggomenetlevelbejegyzesek">
+  <field name="eid" type="long" referencedClass="scs.georesults.om.verseny.Etap"/>
+  <field name="rajtszam" type="integer" referencedClass="scs.georesults.om.nevezes.Nevezes"/>
+  <field name="sfftid" type="long" referencedClass="scs.georesults.om.alap.SorrendFuggoFeladatTipus"/>
+  <field name="posindex" type="integer"/>
+  <field name="felirat" type="string">
+    <param name="maximum_length" value="20"/>
+  </field>
+  <key>
+    <attribute name="eid"/>
+    <attribute name="rajtszam"/>
+    <attribute name="sfftid"/>
+    <attribute name="posindex"/>
+  </key>
+  <listKey>
+    <attribute name="eid"/>
+    <attribute name="rajtszam"/>
+    <attribute name="sfftid"/>
+  </listKey>
+  <orderBy>
+    <attribute name="posindex"/>
+  </orderBy>
+</mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.nevezes.Nevezes" table="n_nevezesek">
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="rajtszam" type="integer"/>
+  <field name="sofor" type="string">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <field name="navigator" type="string">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <field name="utas1" type="string" nullEnabled="true">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <field name="utas2" type="string" nullEnabled="true">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <field name="utas3" type="string" nullEnabled="true">
+    <param name="maximum_length" value="250"/>
+  </field>
+  <field name="orszag" type="string" referencedClass="scs.georesults.om.kozos.Orszag">
+    <param name="maximum_length" value="2"/>
+  </field>
+  <field name="autoTipus" type="long" referencedClass="scs.georesults.om.alap.AutoTipus"/>
+  <key>
+    <attribute name="vid"/>
+    <attribute name="rajtszam"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="rajtszam"/>
+  </orderBy>
+</mapping>

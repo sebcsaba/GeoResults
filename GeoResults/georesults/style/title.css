@@ -1,0 +1,26 @@
+DIV.title {
+  background: aliceblue;
+  float: left;
+  padding-top: 3px;
+  padding-left: 3px;
+  padding-bottom: 0px;
+  height: 60px;
+}
+IMG.title {
+  margin: 0px;
+}
+.addons {
+  float: right;
+  height: 60px;
+  padding-right: 0px;
+}
+.addonButton {
+  cursor: pointer;
+  color: royalblue;
+  font-weight: bold;
+  border: 1px solid cornflowerblue;
+  padding: 2px;
+  margin: 6px;
+  text-align: center;
+  background: lavender;
+}

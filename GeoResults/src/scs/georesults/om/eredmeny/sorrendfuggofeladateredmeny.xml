@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.eredmeny.SorrendFuggoFeladatEredmeny" table="r_sorrendfuggofeladateredmenyek">
+  <field name="eid" type="long" referencedClass="scs.georesults.om.verseny.Etap"/>
+  <field name="rajtszam" type="integer" referencedClass="scs.georesults.om.nevezes.Nevezes"/>
+  <field name="sfftid" type="long" referencedClass="scs.georesults.om.alap.SorrendFuggoFeladatTipus"/>
+  <field name="hiany" type="integer"/>
+  <field name="tobblet" type="integer"/>
+  <field name="pontszam" type="integer"/>
+  <composition name="kiertekeles" className="scs.georesults.om.eredmeny.SorrendFuggoFeladatKiertekeles"/>
+  <key>
+    <attribute name="eid"/>
+    <attribute name="rajtszam"/>
+    <attribute name="sfftid"/>
+  </key>
+  <listKey>
+    <attribute name="eid"/>
+    <attribute name="rajtszam"/>
+  </listKey>
+  <orderBy>
+    <attribute name="sfftid"/>
+  </orderBy>
+</mapping>

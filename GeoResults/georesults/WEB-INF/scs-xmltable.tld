@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+  <tlibversion>1.2</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>x</shortname>
+  <uri>http://sebcsaba.hu/taglib/geo/xmltable</uri>
+
+  <tag>
+    <name>table</name>
+    <tagclass>scs.georesults.view.xmltable.TableTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>styleClass</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>rowgroup</name>
+    <tagclass>scs.georesults.view.xmltable.RowGroupTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>header</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>row</name>
+    <tagclass>scs.georesults.view.xmltable.RowTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>height</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>column</name>
+    <tagclass>scs.georesults.view.xmltable.ColumnTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>width</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>span</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>cell</name>
+    <tagclass>scs.georesults.view.xmltable.CellTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>header</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>colspan</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>rowspan</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>borderStyle</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>contentStyle</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>colIndex</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>clip</name>
+    <tagclass>scs.georesults.view.xmltable.ClipTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>styleClass</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>data</name>
+    <tagclass>scs.georesults.view.xmltable.DataTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>type</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>pageSetup</name>
+    <tagclass>scs.georesults.view.xmltable.PageSetupTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+  </tag>
+
+  <tag>
+    <name>documentProperties</name>
+    <tagclass>scs.georesults.view.xmltable.DocumentPropertiesTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>title</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>author</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+</taglib>

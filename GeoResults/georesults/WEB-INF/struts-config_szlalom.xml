@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <action-mappings>
+
+    <action path="/szlalom/alapBetoltes" scope="request" type="scs.georesults.logic.actions.szlalom.AlapBetoltesAction">
+      <forward name="ok" path="/szlalom/szlalom.jsp" redirect="true"/>
+    </action>
+
+    <action path="/szlalom/betoltes" scope="session" type="scs.georesults.logic.actions.szlalom.BetoltesAction">
+      <forward name="ok" path="/szlalom/szlalom.jsp" redirect="true"/>
+      <forward name="error" path="/szlalom/szlalom.jsp" redirect="false"/>
+    </action>
+
+    <action path="/szlalom/mentes" scope="session" type="scs.georesults.logic.actions.szlalom.MentesAction">
+      <forward name="ok" path="/szlalom/betoltes.do" redirect="false"/>
+      <forward name="error" path="/szlalom/szlalom.jsp" redirect="false"/>
+    </action>
+
+  </action-mappings>
+</struts-config>

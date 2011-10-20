@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.eredmeny.SzakaszEredmeny" table="r_szakaszeredmenyek">
+  <field name="szid" type="long" referencedClass="scs.georesults.om.verseny.Szakasz"/>
+  <field name="rajtszam" type="integer" referencedClass="scs.georesults.om.nevezes.Nevezes"/>
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="keses" type="boolean"/>
+  <field name="pontszam" type="integer"/>
+  <key>
+    <attribute name="szid"/>
+    <attribute name="rajtszam"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="pontszam"/>
+  </orderBy>
+</mapping>

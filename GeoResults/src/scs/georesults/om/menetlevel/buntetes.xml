@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.menetlevel.Buntetes" table="m_buntetesek">
+  <field name="eid" type="long" referencedClass="scs.georesults.om.verseny.Etap"/>
+  <field name="rajtszam" type="integer" referencedClass="scs.georesults.om.nevezes.Nevezes"/>
+  <field name="btid" type="long" referencedClass="scs.georesults.om.alap.BuntetesTipus"/>
+  <field name="darab" type="integer"/>
+  <key>
+    <attribute name="eid"/>
+    <attribute name="rajtszam"/>
+    <attribute name="btid"/>
+  </key>
+  <listKey>
+    <attribute name="eid"/>
+    <attribute name="rajtszam"/>
+  </listKey>
+  <orderBy>
+    <attribute name="btid"/>
+  </orderBy>
+</mapping>

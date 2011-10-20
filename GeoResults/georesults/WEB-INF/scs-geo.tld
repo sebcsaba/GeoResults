@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+  <tlibversion>1.2</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>geo</shortname>
+  <uri>http://sebcsaba.hu/taglib/geo/geo</uri>
+
+  <tag>
+    <name>error</name>
+    <tagclass>scs.georesults.view.geo.ErrorTag</tagclass>
+    <bodycontent>empty</bodycontent>
+  </tag>
+
+  <tag>
+    <name>version</name>
+    <tagclass>scs.georesults.view.geo.VersionTag</tagclass>
+    <bodycontent>empty</bodycontent>
+  </tag>
+
+  <tag>
+    <name>ellenorzopontlistak</name>
+    <tagclass>scs.georesults.view.geo.EllenorzopontListakTag</tagclass>
+    <bodycontent>empty</bodycontent>
+  </tag>
+
+  <tag>
+    <name>formulaeditor</name>
+    <tagclass>scs.georesults.view.geo.FormulaEditorTag</tagclass>
+    <bodycontent>empty</bodycontent>
+  </tag>
+
+  <tag>
+    <name>charmap</name>
+    <tagclass>scs.georesults.view.geo.CharmapTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>bean</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>languages</name>
+    <tagclass>scs.georesults.view.geo.LanguagesTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>action</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>forward</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>crossTable</name>
+    <tagclass>scs.georesults.view.geo.CrossTableTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>title</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>keys</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>action</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>popuplink</name>
+    <tagclass>scs.georesults.view.geo.PopupLinkTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>action</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>initsetfocus</name>
+    <tagclass>scs.georesults.view.geo.InitSetFocusTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>field</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>ellenorzestipusinput</name>
+    <tagclass>scs.georesults.view.geo.EllenorzesTipusInputTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>value</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>parentvalue</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>disabled</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+</taglib>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.szlalom.SzlalomFutam" table="s_szlalomfutamok">
+  <field name="szlid" type="long" referencedClass="scs.georesults.om.verseny.Szlalom"/>
+  <field name="rajtszam" type="integer" referencedClass="scs.georesults.om.nevezes.Nevezes"/>
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <composition name="bejegyzesek" className="scs.georesults.om.szlalom.SzlalomBejegyzes"/>
+  <key>
+    <attribute name="szlid"/>
+    <attribute name="rajtszam"/>
+  </key>
+  <listKey/>
+  <orderBy/>
+</mapping>

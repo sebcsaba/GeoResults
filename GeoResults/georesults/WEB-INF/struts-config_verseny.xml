@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <action-mappings>
+
+    <action path="/verseny/adatokMentes" scope="request" type="scs.georesults.logic.actions.verseny.AdatokMentesAction">
+      <forward name="ok" path="/verseny/adatok.jsp" redirect="true"/>
+      <forward name="error" path="/verseny/adatok.jsp" redirect="false"/>
+    </action>
+    <action path="/verseny/szakaszok" scope="request" type="scs.georesults.logic.actions.verseny.reszek.SzakaszokAction">
+      <forward name="ok" path="/verseny/szakasz.jsp" redirect="true"/>
+      <forward name="error" path="/verseny/szakasz.jsp" redirect="false"/>
+      <forward name="errorBack" path="/verseny/adatok.jsp" redirect="false"/>
+      <forward name="back" path="/verseny/adatok.jsp" redirect="true"/>
+    </action>
+
+    <action path="/verseny/kesesiZonak" scope="request" type="scs.georesults.logic.actions.verseny.reszek.KesesiZonakAction">
+      <forward name="ok" path="/verseny/kesesiZona.jsp" redirect="true"/>
+      <forward name="error" path="/verseny/kesesiZona.jsp" redirect="false"/>
+      <forward name="errorBack" path="/verseny/feladattipusok.jsp" redirect="false"/>
+      <forward name="back" path="/verseny/feladattipusok.jsp" redirect="true"/>
+    </action>
+    <action path="/verseny/buntetesTipusok" scope="request" type="scs.georesults.logic.actions.verseny.reszek.BuntetesTipusokAction">
+      <forward name="ok" path="/verseny/buntetesTipus.jsp" redirect="true"/>
+      <forward name="error" path="/verseny/buntetesTipus.jsp" redirect="false"/>
+      <forward name="errorBack" path="/verseny/feladattipusok.jsp" redirect="false"/>
+      <forward name="back" path="/verseny/feladattipusok.jsp" redirect="true"/>
+    </action>
+    <action path="/verseny/szlalomFeladatok" scope="request" type="scs.georesults.logic.actions.verseny.reszek.SzlalomFeladatokAction">
+      <forward name="ok" path="/verseny/szlalomFeladat.jsp" redirect="true"/>
+      <forward name="error" path="/verseny/szlalomFeladat.jsp" redirect="false"/>
+      <forward name="errorBack" path="/verseny/feladattipusok.jsp" redirect="false"/>
+      <forward name="back" path="/verseny/feladattipusok.jsp" redirect="true"/>
+    </action>
+    <action path="/verseny/darabFuggoFeladatTipusok" scope="request" type="scs.georesults.logic.actions.verseny.reszek.DarabFuggoFeladatTipusokAction">
+      <forward name="ok" path="/verseny/darabFuggoFeladatTipus.jsp" redirect="true"/>
+      <forward name="error" path="/verseny/darabFuggoFeladatTipus.jsp" redirect="false"/>
+      <forward name="errorBack" path="/verseny/feladattipusok.jsp" redirect="false"/>
+      <forward name="back" path="/verseny/feladattipusok.jsp" redirect="true"/>
+    </action>
+    <action path="/verseny/sorrendFuggoFeladatTipusok" scope="request" type="scs.georesults.logic.actions.verseny.reszek.SorrendFuggoFeladatTipusokAction">
+      <forward name="ok" path="/verseny/sorrendFuggoFeladatTipus.jsp" redirect="true"/>
+      <forward name="error" path="/verseny/sorrendFuggoFeladatTipus.jsp" redirect="false"/>
+      <forward name="errorBack" path="/verseny/feladattipusok.jsp" redirect="false"/>
+      <forward name="back" path="/verseny/feladattipusok.jsp" redirect="true"/>
+    </action>
+
+    <action path="/verseny/szlalomKategoriak" scope="request" type="scs.georesults.logic.actions.verseny.reszek.SzlalomKategoriakAction">
+      <forward name="ok" path="/verseny/szlalomKategoria.jsp" redirect="true"/>
+      <forward name="error" path="/verseny/szlalomKategoria.jsp" redirect="false"/>
+      <forward name="errorBack" path="/verseny/autok.jsp" redirect="false"/>
+      <forward name="back" path="/verseny/autok.jsp" redirect="true"/>
+    </action>
+    <action path="/verseny/autoTipusok" scope="request" type="scs.georesults.logic.actions.verseny.reszek.AutoTipusokAction">
+      <forward name="ok" path="/verseny/autoTipus.jsp" redirect="true"/>
+      <forward name="error" path="/verseny/autoTipus.jsp" redirect="false"/>
+      <forward name="errorBack" path="/verseny/autok.jsp" redirect="false"/>
+      <forward name="back" path="/verseny/autok.jsp" redirect="true"/>
+    </action>
+
+    <action path="/verseny/versenySzoForditasSzerkesztes" scope="request" type="scs.georesults.logic.actions.verseny.VersenySzoForditasSzerkesztesAction">
+      <forward name="ok" path="/verseny/versenySzotarElem.jsp" redirect="true"/>
+      <forward name="error" path="/verseny/versenySzotarElem.jsp" redirect="false"/>
+      <forward name="errorBack" path="/verseny/versenySzotarLista.jsp" redirect="false"/>
+      <forward name="back" path="/verseny/versenySzotarLista.jsp" redirect="true"/>
+    </action>
+    <action path="/verseny/versenySzoFelvitele" scope="request" type="scs.georesults.logic.actions.verseny.VersenySzoFelviteleAction">
+      <forward name="ok" path="/addons/szotarUjSzoSikeres.jsp" redirect="false"/>
+    </action>
+
+    <action path="/verseny/lezaras" scope="request" type="scs.georesults.logic.actions.verseny.LezarasAction">
+      <forward name="ok" path="/verseny/lezaras.jsp" redirect="true"/>
+    </action>
+
+  </action-mappings>
+</struts-config>

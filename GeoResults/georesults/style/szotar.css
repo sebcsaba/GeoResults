@@ -1,0 +1,30 @@
+.addTo {
+  float: right;
+}
+TABLE {
+  empty-cells: show;
+  border-collapse: collapse;
+  color: royalblue;
+}
+TD,TH {
+  border: 1px solid royalblue;
+}
+.szotarPanel {
+  background: azure;
+  float: left;
+  padding: 8px;
+}
+.word {
+  width: 100px;
+}
+SPAN.word {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.lang {
+  width: 20px;
+  text-align: center;
+}
+.nonExists {
+  font-style: italic;
+}

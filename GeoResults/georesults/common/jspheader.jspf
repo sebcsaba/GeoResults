@@ -1,0 +1,10 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@taglib uri="http://sebcsaba.hu/taglib/common" prefix="c"%>
+<%@taglib uri="http://sebcsaba.hu/taglib/html" prefix="html"%>
+<%@taglib uri="http://sebcsaba.hu/taglib/geo/geo" prefix="geo"%>
+<%@taglib uri="http://sebcsaba.hu/taglib/geo/fields" prefix="f"%>
+<%@taglib uri="http://sebcsaba.hu/taglib/geo/layout" prefix="l"%>
+<%@taglib uri="http://sebcsaba.hu/taglib/geo/tablefields" prefix="tf"%>
+<%@taglib uri="http://sebcsaba.hu/taglib/geo/menetlevel" prefix="ml"%>
+<%@taglib uri="http://sebcsaba.hu/taglib/geo/eredmeny" prefix="r"%>
+<%@taglib uri="http://sebcsaba.hu/taglib/geo/xmltable" prefix="x"%>

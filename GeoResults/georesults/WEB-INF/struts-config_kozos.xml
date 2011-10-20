@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <action-mappings>
+
+    <action path="/kozos/belsoNyelvValtas" scope="request" type="scs.georesults.logic.actions.kozos.BelsoNyelvValtasAction">
+    </action>
+
+    <action path="/kozos/forditas" scope="request" type="scs.georesults.logic.actions.kozos.ForditasAction">
+      <forward name="ok" path="/kozos/forditas.jsp" redirect="true"/>
+      <forward name="error" path="/kozos/forditas.jsp" redirect="false"/>
+    </action>
+
+    <action path="/kozos/ujNyelv" scope="request" type="scs.georesults.logic.actions.kozos.UjNyelvAction">
+      <forward name="ok" path="/kozos/nyelvek.jsp" redirect="true"/>
+      <forward name="error" path="/kozos/ujNyelv.jsp" redirect="false"/>
+    </action>
+
+    <action path="/kozos/nyelv" scope="request" type="scs.georesults.logic.actions.kozos.KozosAdatAction">
+      <forward name="ok" path="/kozos/nyelv.jsp" redirect="true"/>
+      <forward name="error" path="/kozos/nyelv.jsp" redirect="false"/>
+      <forward name="back" path="/kozos/nyelvek.jsp" redirect="true"/>
+    </action>
+
+    <action path="/kozos/ujOrszag" scope="request" type="scs.georesults.logic.actions.kozos.UjOrszagAction">
+      <forward name="ok" path="/kozos/orszagok.jsp" redirect="true"/>
+      <forward name="error" path="/kozos/ujOrszag.jsp" redirect="false"/>
+    </action>
+
+    <action path="/kozos/orszag" scope="request" type="scs.georesults.logic.actions.kozos.KozosAdatAction">
+      <forward name="ok" path="/kozos/orszag.jsp" redirect="true"/>
+      <forward name="error" path="/kozos/orszag.jsp" redirect="false"/>
+      <forward name="back" path="/kozos/orszagok.jsp" redirect="true"/>
+    </action>
+
+  </action-mappings>
+</struts-config>

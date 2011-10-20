@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <action-mappings>
+    <action path="/eredmeny/etapokFrissites" scope="request" type="scs.georesults.logic.actions.eredmeny.EtapokFrissitesAction">
+      <forward name="ok" path="/eredmeny/etapLista.jsp" redirect="true"/>
+      <forward name="error" path="/eredmeny/etapLista.jsp" redirect="false"/>
+    </action>
+    <action path="/eredmeny/szlalomokFrissites" scope="request" type="scs.georesults.logic.actions.eredmeny.SzlalomokFrissitesAction">
+      <forward name="ok" path="/eredmeny/szlalomLista.jsp" redirect="true"/>
+      <forward name="error" path="/eredmeny/szlalomLista.jsp" redirect="false"/>
+    </action>
+    <action path="/eredmeny/szakaszokFrissites" scope="request" type="scs.georesults.logic.actions.eredmeny.SzakaszokFrissitesAction">
+      <forward name="ok" path="/eredmeny/szakaszLista.jsp" redirect="true"/>
+      <forward name="error" path="/eredmeny/szakaszLista.jsp" redirect="false"/>
+    </action>
+    <action path="/eredmeny/mindenEtapFrissites" scope="request" type="scs.georesults.logic.actions.eredmeny.MindenEtapFrissitesAction">
+      <forward name="ok" path="/eredmeny/osszesitettEredmenyLista.jsp" redirect="true"/>
+      <forward name="error" path="/eredmeny/osszesitettEredmenyLista.jsp" redirect="false"/>
+    </action>
+    <action path="/eredmeny/mindenSzlalomFrissites" scope="request" type="scs.georesults.logic.actions.eredmeny.MindenSzlalomFrissitesAction">
+      <forward name="ok" path="/eredmeny/osszesitettEredmenyLista.jsp" redirect="true"/>
+      <forward name="error" path="/eredmeny/osszesitettEredmenyLista.jsp" redirect="false"/>
+    </action>
+    <action path="/eredmeny/versenyFrissites" scope="request" type="scs.georesults.logic.actions.eredmeny.VersenyFrissitesAction">
+      <forward name="ok" path="/eredmeny/osszesitettEredmenyLista.jsp" redirect="true"/>
+      <forward name="error" path="/eredmeny/osszesitettEredmenyLista.jsp" redirect="false"/>
+    </action>
+    <action path="/eredmeny/csapatFrissites" scope="request" type="scs.georesults.logic.actions.eredmeny.CsapatFrissitesAction">
+      <forward name="ok" path="/eredmeny/osszesitettEredmenyLista.jsp" redirect="true"/>
+      <forward name="error" path="/eredmeny/osszesitettEredmenyLista.jsp" redirect="false"/>
+    </action>
+    <action path="/eredmeny/reszletesMain" scope="request" type="scs.georesults.logic.actions.eredmeny.ReszletesMainAction">
+      <forward name="ok" path="/eredmeny/reszletesEredmenyMain.jsp" redirect="false"/>
+    </action>
+    <action path="/eredmeny/export" scope="request" type="scs.georesults.logic.actions.eredmeny.EredmenyExportAction">
+      <forward name="exml" path="/eredmeny/exportDataExml.jsp" redirect="true"/>
+    </action>
+  </action-mappings>
+</struts-config>

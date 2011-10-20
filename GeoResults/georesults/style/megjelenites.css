@@ -1,0 +1,44 @@
+/***************************** NAVIGATION BAR *****************************/
+@media print {
+  .navigBar {
+    display: none;
+  }
+}
+.navigBar {
+  font-weight: bold;
+  border: 1px solid cornflowerblue;
+  margin: 8px;
+  padding: 2px;
+  color: royalblue;
+  background: aliceblue;
+  height: 63px;
+}
+/***************************** TITLE BAR *****************************/
+.pageHeader {
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: left;
+}
+@media screen {
+  .displayBlock {
+    color: royalblue;
+    margin: 8px;
+  }
+  .pageHeader {
+    color: royalblue;
+    background: aliceblue;
+    border: 1px solid cornflowerblue;
+    padding: 2px;
+  }
+}
+@media print {
+  .pageHeader {
+    padding: 0.5mm;
+  }
+}
+/******************* X *******************/
+/*
+[[ 1pt ~= 0.35mm (print) ]]
+[[ 1px ~= 0.25mm (screen) ]]
+[[ 1em ~= 12pt ]]
+*/

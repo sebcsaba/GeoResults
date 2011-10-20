@@ -1,0 +1,3 @@
+<%@taglib uri="http://sebcsaba.hu/taglib/common" prefix="c"%>
+<%@taglib uri="http://sebcsaba.hu/taglib/geo/eredmeny" prefix="r"%>
+<%@taglib uri="http://sebcsaba.hu/taglib/geo/xmltable" prefix="x"%>

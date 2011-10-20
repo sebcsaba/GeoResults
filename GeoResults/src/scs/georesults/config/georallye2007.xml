@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database PUBLIC "-//sebcsaba//RdbXmlMapping 1.0 DTD//EN" "">
+<database>
+
+  <entity type="scs.georesults.om.verseny.VersenyImpl">
+    <property name="vid" value="0"/>
+    <property name="nev" value=""/>
+    <property name="kezdeteDatum" value="2006-01-01"/>
+    <property name="vegeDatum" value="2006-01-01"/>
+    <property name="alapNyelv" value="hu"/>
+    <property name="menetlevelformula" value="i;s:0:i:30;d:0:p;d:1:p;b:i"/>
+    <property name="eredmenyFrissitendoVerseny" value="0"/>
+    <property name="eredmenyFrissitendoCsapat" value="0"/>
+    <property name="lezarva"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.SorrendFuggoFeladatTipusImpl">
+    <property name="sfftid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="ÁE"/>
+    <property name="hianyHibapont" value="100"/>
+    <property name="tobbletHibapont" value="60"/>
+    <property name="reszletesBevitel" value="0"/>
+    <property name="ellenorzesTipus" value="0"/>
+    <sublist name="ellenorzoPontok"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.DarabFuggoFeladatTipusImpl">
+    <property name="dfftid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="Betűk"/>
+    <property name="hianyHibapont" value="10"/>
+    <property name="tobbletHibapont" value="20"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.DarabFuggoFeladatTipusImpl">
+    <property name="dfftid" value="1"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="Számok"/>
+    <property name="hianyHibapont" value="10"/>
+    <property name="tobbletHibapont" value="20"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.BuntetesTipusImpl">
+    <property name="btid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="Radar"/>
+    <property name="pont" value="10"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.BuntetesTipusImpl">
+    <property name="btid" value="1"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="Kizárás"/>
+    <property name="pont" value="5000"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.KesesiZonaImpl">
+    <property name="vid" value="0"/>
+    <property name="idoLimit" value="-1440"/>
+    <property name="pont" value="20"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.KesesiZonaImpl">
+    <property name="vid" value="0"/>
+    <property name="idoLimit" value="60"/>
+    <property name="pont" value="10"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.KesesiZonaImpl">
+    <property name="vid" value="0"/>
+    <property name="idoLimit" value="90"/>
+    <property name="pont" value="100"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.KesesiZonaImpl">
+    <property name="vid" value="0"/>
+    <property name="idoLimit" value="1440"/>
+    <property name="pont" value="1000"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.SzlalomFeladatImpl">
+    <property name="szfid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="Másodperc"/>
+    <property name="pont" value="6"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.SzlalomFeladatImpl">
+    <property name="szfid" value="1"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="Bójadöntés"/>
+    <property name="pont" value="15"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.SzlalomFeladatImpl">
+    <property name="szfid" value="2"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="Iránytévesztés"/>
+    <property name="pont" value="15"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.SzlalomFeladatImpl">
+    <property name="szfid" value="3"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="Feladat-kihagyás"/>
+    <property name="pont" value="60"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.SzlalomFeladatImpl">
+    <property name="szfid" value="4"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="Szabálytalanság"/>
+    <property name="pont" value="150"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.SzlalomFeladatImpl">
+    <property name="szfid" value="5"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="Kizárás"/>
+    <property name="pont" value="500"/>
+  </entity>
+
+  <entity type="scs.georesults.om.alap.SzlalomKategoriaImpl">
+    <property name="szkid" value="0"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="Kis autó"/>
+  </entity>
+  <entity type="scs.georesults.om.alap.SzlalomKategoriaImpl">
+    <property name="szkid" value="1"/>
+    <property name="vid" value="0"/>
+    <property name="nev" value="Nagy autó"/>
+  </entity>
+
+</database>

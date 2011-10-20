@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.etap.DarabFuggoEtapFeladat" table="e_darabfuggoetapfeladatok">
+  <field name="eid" type="long" referencedClass="scs.georesults.om.verseny.Etap"/>
+  <field name="dfftid" type="long" referencedClass="scs.georesults.om.alap.DarabFuggoFeladatTipus"/>
+  <composition name="bejegyzesek" className="scs.georesults.om.etap.DarabFuggoEtapFeladatEtalonBejegyzes"/>
+  <key>
+    <attribute name="eid"/>
+    <attribute name="dfftid"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="dfftid"/>
+  </orderBy>
+</mapping>

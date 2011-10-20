@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <action-mappings>
+
+    <action path="/szakasz/adatokBetoltes" scope="request" type="scs.georesults.logic.actions.szakasz.AdatokBetoltesAction">
+      <forward name="ok" path="/szakasz/adatok.jsp" redirect="true"/>
+    </action>
+    <action path="/szakasz/adatokMentes" scope="request" type="scs.georesults.logic.actions.szakasz.AdatokMentesAction">
+      <forward name="ok" path="/szakasz/adatok.jsp" redirect="true"/>
+      <forward name="error" path="/szakasz/adatok.jsp" redirect="false"/>
+    </action>
+    <action path="/szakasz/etapok" scope="request" type="scs.georesults.logic.actions.szakasz.reszek.EtapokAction">
+      <forward name="ok" path="/szakasz/etap.jsp" redirect="true"/>
+      <forward name="error" path="/szakasz/etap.jsp" redirect="false"/>
+      <forward name="errorBack" path="/szakasz/adatok.jsp" redirect="false"/>
+      <forward name="back" path="/szakasz/adatok.jsp" redirect="true"/>
+    </action>
+    <action path="/szakasz/szlalomok" scope="request" type="scs.georesults.logic.actions.szakasz.reszek.SzlalomokAction">
+      <forward name="ok" path="/szakasz/szlalom.jsp" redirect="true"/>
+      <forward name="error" path="/szakasz/szlalom.jsp" redirect="false"/>
+      <forward name="errorBack" path="/szakasz/adatok.jsp" redirect="false"/>
+      <forward name="back" path="/szakasz/adatok.jsp" redirect="true"/>
+    </action>
+    <action path="/szakasz/athelyezes" scope="request" type="scs.georesults.logic.actions.szakasz.AthelyezesAction">
+      <forward name="ok" path="/szakasz/athelyezes.jsp" redirect="true"/>
+      <forward name="error" path="/szakasz/athelyezes.jsp" redirect="false"/>
+    </action>
+
+  </action-mappings>
+</struts-config>

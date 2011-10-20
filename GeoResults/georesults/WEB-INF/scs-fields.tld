@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+  <tlibversion>1.2</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>fields</shortname>
+  <uri>http://sebcsaba.hu/taglib/geo/fields</uri>
+
+  <tag>
+    <name>form</name>
+    <tagclass>scs.georesults.view.fields.FormTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute><name>id</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>title</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>lang</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>xmlLang</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>dir</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>ondblclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmousedown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmouseup</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmouseover</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmousemove</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onmouseout</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onkeypress</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onkeydown</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>onkeyup</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>action</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>method</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>enctype</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onsubmit</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onreset</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>accept</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>acceptCharset</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>text</name>
+    <tagclass>scs.georesults.view.fields.SimpleStringTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>maxlength</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>label</name>
+    <tagclass>scs.georesults.view.fields.StringTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>maxlength</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>integer</name>
+    <tagclass>scs.georesults.view.fields.OptionalIntegerTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>optional</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>select</name>
+    <tagclass>scs.georesults.view.fields.OptionalSelectTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>optional</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>checkbox</name>
+    <tagclass>scs.georesults.view.fields.SimpleCheckboxTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>textarea</name>
+    <tagclass>scs.georesults.view.fields.SimpleTextareaTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>rows</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>cols</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>itemProperty</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>hidden</name>
+    <tagclass>scs.georesults.view.fields.SimpleHiddenTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>time</name>
+    <tagclass>scs.georesults.view.fields.TimeTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>date</name>
+    <tagclass>scs.georesults.view.fields.DateTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>radiogroup</name>
+    <tagclass>scs.georesults.view.fields.SimpleRadiogroupTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onchange</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>button</name>
+    <tagclass>scs.georesults.view.fields.OptionalButtonTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>optional</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>value</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>title</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onclick</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>accesskey</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>popuptitle</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>submit</name>
+    <tagclass>scs.georesults.view.fields.SimpleSubmitTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute><name>styleClass</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute><attribute><name>style</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>name</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>title</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>onfocus</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>accesskey</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>popuptitle</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>item</name>
+    <tagclass>scs.georesults.view.fields.ItemTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute><name>value</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>title</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>label</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>caption</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>rendered</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>disabled</name><required>false</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+  <tag>
+    <name>items</name>
+    <tagclass>scs.georesults.view.fields.ItemsTag</tagclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute><name>items</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>valuePropertyName</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+    <attribute><name>labelPropertyName</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+  </tag>
+
+</taglib>

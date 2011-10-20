@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head></head>
+
+<body bgcolor="white">Ez a csomag egy segédosztályon kívül csak konfigurációs állományokat tartalmaz. Ezek a kövekezők:
+<ul>
+  <li><tt>sablonok.config</tt>: ez tartalmazza az új verseny létrehozásakor felkínált sablonokat. 
+    A fájl felépítése a szokásos properties típusú fájloknak felel meg: egy sorban a név egy 
+    sablont tartalmazó fájl neve, az érték pedig a hozzá megjelenítendő név. Ha ez a név 
+    <tt>@</tt> karakterrel kezdődik, akkor a név többi részét a globális szótár egy kulcsának 
+    tekinti a program.</li>
+  <li><tt>*.xml</tt>: Az új verseny létrehozásakor használt sablonok, GeoResults2006 XML 
+    formátumban. Ez a formátum a <tt>scs/javax/rdb/rdbxml/rdbxmlmapping.dtd</tt> által megadott 
+    módon írja le a {@link scs.georesults.om} csomag osztályainak példányait.</li>
+  <li><tt>install.sql</tt>: a program telepítéséhez szükséges SQL utasításokat tartalmazó fájl.</li>
+</ul>
+Felhívnám a figyelmet arra, hogy a program konfigurációjakor létrejön egy 
+<tt>database.config</tt> fájl, amely az adatbázishoz kapcsolódás paramétereit tartalmazza 
+a properties fájlok formátumában. Ez a fájl a <tt>scs.georesults.config</tt> csomag könyvtárában 
+jön létre, a webalkalmazás <tt>WEB-INF/classes</tt> könyvtárán belül.
+</body>
+</html>

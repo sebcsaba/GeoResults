@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//sebcsaba//DatabaseClassMapping 1.0 DTD//EN" "">
+<mapping className="scs.georesults.om.alap.SorrendFuggoFeladatTipus" table="a_sorrendfuggofeladattipusok">
+  <field name="sfftid" type="long"/>
+  <field name="vid" type="long" referencedClass="scs.georesults.om.verseny.Verseny"/>
+  <field name="nev" type="string">
+    <param name="maximum_length" value="50"/>
+  </field>
+  <field name="hianyHibapont" type="integer"/>
+  <field name="tobbletHibapont" type="integer"/>
+  <field name="reszletesBevitel" type="boolean"/>
+  <field name="ellenorzesTipus" type="integer"/>
+  <composition name="ellenorzoPontok" className="scs.georesults.om.alap.EllenorzoPont"/>
+  <key autoIncrement="true">
+    <attribute name="sfftid"/>
+  </key>
+  <listKey/>
+  <orderBy>
+    <attribute name="sfftid"/>
+  </orderBy>
+</mapping>

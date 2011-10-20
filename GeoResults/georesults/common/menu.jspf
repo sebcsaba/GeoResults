@@ -1,0 +1,51 @@
+<%@page contentType="text/html; charset=UTF-8"%>
+<div class="menuBar">
+  <l:menu title="RB_VERSENY">
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=versenyadatok"><c:write key="BS_ADATOK"/></c:link></div>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=feladattipusok"><c:write key="RA_FELADATTIPUSOK"/></c:link></div>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=autotipusok"><c:write key="RA_AUTOTIPUSOK"/></c:link></div>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=versenySzotar"><c:write key="DC_SZOTAR"/></c:link></div>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=lezaras"><c:write key="FT_LEZARAS"/></c:link></div>
+  </l:menu>
+  <l:menu title="RB_NEVEZESEK">
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=egyeniNevezes"><c:write key="RB_EGYENI"/></c:link></div>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=csapatNevezes"><c:write key="RB_CSAPAT"/></c:link></div>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=nevezesiLista"><c:write key="RB_NEVEZESI_LISTA"/></c:link></div>
+  </l:menu>
+  <l:menu title="RB_SZAKASZOK">
+    <c:foreach items="${verseny.szakaszok}" var="szakasz">
+      <div class="menuRow">- <c:link action="/cancel.do?go=szakaszAdatokBetoltes&szid=${szakasz.szid}"><c:write label="${szakasz.nev}"/></c:link></div>
+    </c:foreach>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=athelyezesSzakaszokKozott"><c:write key="FT_ATHELYEZES_SZAKASZOK_KOZOTT"/></c:link></div>
+  </l:menu>
+  <l:menu title="RB_ETAPOK">
+    <c:foreach items="${verseny.etapok}" var="etap">
+      <div class="menuRow">- <c:link action="/cancel.do?go=etapAdatokBetoltes&eid=${etap.eid}"><c:write label="${etap.nev}"/></c:link></div>
+    </c:foreach>
+  </l:menu>
+  <l:menu title="BS_ADATBEVITEL">
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=menetlevelAlapBetoltes"><c:write key="RB_MENETLEVEL"/></c:link></div>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=szlalomAlapBetoltes"><c:write key="RB_SZLALOM"/></c:link></div>
+  </l:menu>
+  <l:menu title="BS_EREDMENYEK">
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=etapEredmeny"><c:write key="RB_ETAPOK"/></c:link></div>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=szlalomEredmeny"><c:write key="RB_SZLALOMOK"/></c:link></div>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=szakaszEredmeny"><c:write key="RB_SZAKASZOK"/></c:link></div>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=osszesitettEredmeny"><c:write key="RB_OSSZESITETT"/></c:link></div>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=reszletesEredmeny"><c:write key="RB_RESZLETES"/></c:link></div>
+    <div class="menuRow">- <c:link action="/cancel.do?go=versenyFrissites&go2=eredmenyExport"><c:write key="FT_EXPORT"/></c:link></div>
+  </l:menu>
+  <l:menu title="FT_KOZOS">
+    <div class="menuRow">- <c:link action="/kozos/nyelvvaltas.jsp"><c:write key="DC_NYELVVALTAS"/></c:link></div>
+    <div class="menuRow">- <c:link action="/kozos/orszagok.jsp"><c:write key="DC_ORSZAGOK"/></c:link></div>
+    <div class="menuRow">- <c:link action="/kozos/nyelvek.jsp"><c:write key="DC_NYELVEK"/></c:link></div>
+    <div class="menuRow">- <c:link action="/kozos/forditasMain.jsp"><c:write key="DC_FORDITASOK"/></c:link></div>
+  </l:menu>
+  <l:menu title="BS_EGYEB">
+    <div class="menuRow">- <c:link action="#" onclick="versenyValasztas('${pageContext.request.contextPath}');"><c:write key="RB_VERSENY_KIVALASZTASA"/></c:link></div>
+    <div class="menuRow">- <c:link action="/kozos/export.jsp"><c:write key="FT_EXPORT"/></c:link></div>
+    <div class="menuRow">- <c:link action="/importing/index.jsp"><c:write key="FT_IMPORT"/></c:link></div>
+    <div class="menuRow">- <c:link action="/kozos/about.jsp"><c:write key="FT_NEVJEGY"/></c:link></div>
+  </l:menu>
+</div>
+<script type="text/javascript">openFirstMenu();</script>
