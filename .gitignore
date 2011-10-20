@@ -1,0 +1,14 @@
+
+GeoChampionship/data/*.htm
+GeoChampionship/GeoChampionship.jar
+GeoChampionship/target/*
+ScsJavax/doc/*
+ScsJavax/classes/*
+ScsJavax/scs-javax.jar
+ScsJavax/ScsJavaxDoc.jar
+GeoResults/Tomcat/*
+GeoResults/georesults/WEB-INF/classes/*
+GeoResults/classes/*
+GeoResults/doc/*
+GeoResults/bak/*
+GeoResults/_model/*.xml.zip.bak
