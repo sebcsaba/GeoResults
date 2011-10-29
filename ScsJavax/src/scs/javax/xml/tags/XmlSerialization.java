@@ -101,4 +101,37 @@ public class XmlSerialization
     return elem;
   }
 
+  public static void write ( String filename, XmlTag root, String comment, XmlNamespace nsp ) throws XmlDomException, DIIException, IOException
+  {
+    DomSerialization.write( filename, write( root, comment, nsp ) );
+  }
+
+  public static void write ( Path filename, XmlTag root, String comment, XmlNamespace nsp ) throws XmlDomException, DIIException, IOException
+  {
+    DomSerialization.write( filename, write( root, comment, nsp ) );
+  }
+
+  public static void write ( OutputStream stream, XmlTag root, String comment, XmlNamespace nsp ) throws XmlDomException, DIIException, IOException
+  {
+    DomSerialization.write( stream, write( root, comment, nsp ) );
+  }
+
+  public static void write ( Writer writer, XmlTag root, String comment, XmlNamespace nsp ) throws DIIException, XmlDomException, IOException
+  {
+    DomSerialization.write( writer, write( root, comment, nsp ) );
+  }
+
+  public static Document write ( XmlTag root, String comment, XmlNamespace nsp ) throws XmlDomException, DIIException
+  {
+    Document doc = DomSerialization.newDocument();
+    DocumentType dt = doc.getImplementation().createDocumentType( nsp.getRootElementName(), nsp.getPublicID(), nsp.getSystemID() );
+    doc.appendChild( dt );
+    Element rootElem = writeTag( root, doc );
+    if ( comment != null ) {
+      doc.appendChild( doc.createComment(comment) );
+    }
+    doc.appendChild( rootElem );
+    return doc;
+  }
+
 }

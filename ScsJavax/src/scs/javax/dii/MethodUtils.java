@@ -56,6 +56,12 @@ public class MethodUtils
       throw new DIIException( ex );
     }
   }
+  
+  public static Object invokeStaticMethodAnyType ( Class clazz, String methodName, Object[] params ) throws DIIException
+  {
+	  // TODO ez csak egy alias, valaki hivatkozza - sebcsaba, 2011-10-29
+	  return invokeMethodAnyType( clazz, methodName, params );
+  }
 
   /*private static Method findMethodWithName ( Class clazz, String methodName )
   {

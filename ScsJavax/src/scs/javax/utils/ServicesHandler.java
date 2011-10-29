@@ -2,6 +2,8 @@ package scs.javax.utils;
 
 import java.net.URL;
 import java.util.*;
+
+import javax.servlet.ServletContext;
 import javax.servlet.jsp.PageContext;
 import scs.javax.dii.ClassUtils;
 import scs.javax.dii.DIIException;
@@ -21,17 +23,17 @@ public class ServicesHandler
 
   private Map services;
 
-  private ServicesHandler ( PageContext pageContext ) throws IOException
+  private ServicesHandler ( ServletContext servletContext ) throws IOException
   {
     services = new HashMap();
     processMeta();
-    if ( pageContext != null ) processWeb( pageContext );
+    if ( servletContext != null ) processWeb( servletContext );
   }
 
-  private void processWeb ( PageContext pageContext ) throws IOException
+  private void processWeb ( ServletContext servletContext ) throws IOException
   {
     try {
-      String file = pageContext.getServletContext().getRealPath( SERVICES_CONFIG_FILE_WEB );
+      String file = servletContext.getRealPath( SERVICES_CONFIG_FILE_WEB );
       InputStream s = new FileInputStream( file );
       Properties p = new Properties();
       p.load( new NewInputStreamToOld( s ) );
@@ -81,11 +83,11 @@ public class ServicesHandler
     return getCurrentInstance( null );
   }
 
-  public static ServicesHandler getCurrentInstance ( PageContext pageContext )
+  public static ServicesHandler getCurrentInstance ( ServletContext servletContext )
   {
     try {
       if ( instance == null ) {
-        instance = new ServicesHandler( pageContext );
+        instance = new ServicesHandler( servletContext );
       }
       return instance;
     }
