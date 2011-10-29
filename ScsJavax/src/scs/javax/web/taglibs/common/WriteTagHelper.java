@@ -1,5 +1,7 @@
 package scs.javax.web.taglibs.common;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;
 import scs.javax.dii.ClassUtils;
@@ -19,9 +21,9 @@ public class WriteTagHelper
 
   private TextResolver labelResolver;
 
-  private WriteTagHelper ( PageContext pageContext ) throws DIIException
+  private WriteTagHelper ( ServletContext servletContext ) throws DIIException
   {
-    ServicesHandler services = ServicesHandler.getCurrentInstance( pageContext );
+    ServicesHandler services = ServicesHandler.getCurrentInstance( servletContext );
     bundleResolver = ( TextResolver ) ClassUtils.newInstance( services.getServiceClass( KEY_BUNDLE_RESOLVER ) );
     labelResolver = ( TextResolver ) ClassUtils.newInstance( services.getServiceClass( KEY_LABEL_RESOLVER ) );
   }
@@ -36,11 +38,11 @@ public class WriteTagHelper
     return bundleResolver;
   }
 
-  public static WriteTagHelper getCurrentInstance ( PageContext pageContext )
+  public static WriteTagHelper getCurrentInstance ( ServletContext servletContext )
   {
     try {
       if ( instance == null ) {
-        instance = new WriteTagHelper( pageContext );
+        instance = new WriteTagHelper( servletContext );
       }
       return instance;
     }
@@ -51,10 +53,15 @@ public class WriteTagHelper
 
   public static String getTitleOrLabelOrCaption ( PageContext pageContext, String key, String label, String caption ) throws JspException
   {
+    return getTitleOrLabelOrCaption(pageContext.getServletContext(),(HttpServletRequest)pageContext.getRequest(), key, label, caption);
+  }
+  
+  public static String getTitleOrLabelOrCaption ( ServletContext servletContext, HttpServletRequest request, String key, String label, String caption ) throws JspException
+  {
     if ( key != null ) {
-      return getCurrentInstance( pageContext ).getBundleResolver().resolve( pageContext, key );
+      return getCurrentInstance( servletContext ).getBundleResolver().resolve( servletContext, request, key );
     } else if ( label != null ) {
-      return getCurrentInstance( pageContext ).getLabelResolver().resolve( pageContext, label );
+      return getCurrentInstance( servletContext ).getLabelResolver().resolve( servletContext, request, label );
     } else return caption;
   }
 

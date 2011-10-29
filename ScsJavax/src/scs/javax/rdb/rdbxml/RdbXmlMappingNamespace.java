@@ -69,4 +69,24 @@ public class RdbXmlMappingNamespace extends XmlNamespaceBase
     XmlSerialization.write( writer, tag, instance );
   }
 
+  public static void writeDatabase ( String filename, DatabaseTag tag, String comment ) throws IOException, DIIException, XmlDomException
+  {
+    XmlSerialization.write( filename, tag, comment, instance );
+  }
+
+  public static void writeDatabase ( Path filename, DatabaseTag tag, String comment ) throws IOException, DIIException, XmlDomException
+  {
+    XmlSerialization.write( filename, tag, comment, instance );
+  }
+
+  public static void writeDatabase ( OutputStream stream, DatabaseTag tag, String comment ) throws IOException, DIIException, XmlDomException
+  {
+    XmlSerialization.write( stream, tag, comment, instance );
+  }
+
+  public static void writeDatabase ( Writer writer, DatabaseTag tag, String comment ) throws IOException, DIIException, XmlDomException
+  {
+    XmlSerialization.write( writer, tag, comment, instance );
+  }
+
 }

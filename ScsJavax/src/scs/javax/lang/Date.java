@@ -12,6 +12,10 @@ public class Date implements Cloneable, Comparable, Serializable
 
   private static final SimpleDateFormat simpleFormat = new SimpleDateFormat( "yyyy.MM.dd" );
 
+  private static final SimpleDateFormat compactFormat = new SimpleDateFormat( "yyyyMMddHHmmss" );
+
+  private static final SimpleDateFormat detailedFormat = new SimpleDateFormat( "yyyy.MM.dd HH:mm:ss" );
+
   private java.util.Date value;
 
   public Date ()
@@ -70,6 +74,16 @@ public class Date implements Cloneable, Comparable, Serializable
   public String getDatabaseFace ()
   {
     return databaseFormat.format( value );
+  }
+
+  public String getCompactFace ()
+  {
+    return compactFormat.format( value );
+  }
+
+  public String getDetailedFace ()
+  {
+    return detailedFormat.format( value );
   }
 
   public void setSimpleFace ( String face ) throws ParseException
