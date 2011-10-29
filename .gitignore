@@ -12,3 +12,4 @@ GeoResults/classes/*
 GeoResults/doc/*
 GeoResults/bak/*
 GeoResults/_model/*.xml.zip.bak
+ScsJavax/target/*

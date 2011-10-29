@@ -58,7 +58,7 @@ public class Path
     if ( o instanceof Path ) {
       return file.compareTo( ( ( Path ) o ).file );
     } else {
-      return file.compareTo( o );
+      return file.compareTo( ( File ) o );
     }
   }
 
