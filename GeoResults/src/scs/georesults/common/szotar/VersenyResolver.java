@@ -36,7 +36,7 @@ public class VersenyResolver implements TextResolver
    * @param string A keresett kulcs vagy egyszerű szöveg
    * @return A kulcshoz tartozó szöveg vagy a szöveg maga
    */
-  public String resolve ( HttpServletRequest request, String string ) throws JspException
+  public String resolve ( ServletContext servletContext, HttpServletRequest request, String string ) throws JspException
   {
     try {
       if ( shouldBeResolved( string ) ) {
@@ -65,7 +65,7 @@ public class VersenyResolver implements TextResolver
    */
   public static String doResolve ( ServletContext servletContext, HttpServletRequest request, String key ) throws JspException
   {
-    return WriteTagHelper.getCurrentInstance( servletContext ).getLabelResolver().resolve( request, key );
+    return WriteTagHelper.getCurrentInstance( servletContext ).getLabelResolver().resolve( servletContext, request, key );
   }
 
   /**

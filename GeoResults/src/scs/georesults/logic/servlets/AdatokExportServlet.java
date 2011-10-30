@@ -37,7 +37,7 @@ public class AdatokExportServlet extends ServletBase
    * @param form A paramétereket tartalmazó objektum
    * @param response HttpServletResponse
    */
-  protected void doService ( DynamicForm form, HttpServletResponse response ) throws WebException, IOException, RdbException
+  protected void doPostService ( DynamicForm form, HttpServletResponse response ) throws WebException, IOException, RdbException
   {
     if ( !form.has( "mit" ) || !form.has( "mibe" ) )throw new GeoMessageException( "ER_ADAT_NINCS_KIJELOLVE" );
     Iterator dbit;

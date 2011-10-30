@@ -26,7 +26,7 @@ public class GlobalResolver implements TextResolver
    * @param string A keresett kulcs
    * @return A kulcshoz tartozó szöveg
    */
-  public String resolve ( HttpServletRequest request, String string ) throws JspException
+  public String resolve ( ServletContext servletContext, HttpServletRequest request, String string ) throws JspException
   {
     try {
       HttpSession session = WebSession.justGetHttpSession( request );

@@ -21,7 +21,7 @@ public class BackupInfoServlet extends ServletBase
   public BackupInfoServlet ()
   {}
 
-  protected void doService ( DynamicForm form, HttpServletResponse response ) throws WebException, IOException, RdbException, JspException
+  protected void doPostService ( DynamicForm form, HttpServletResponse response ) throws WebException, IOException, RdbException, JspException
   {
     if (INFO_MODE.equals(form.getString("mode"))) doInfo(response);
     else if (ACTION_MODE.equals(form.getString("mode"))) doAction(response);

@@ -75,11 +75,11 @@ public class FormulaEditorTag extends TagBase
     } else if ( resz.getMode() == MenetlevelFormulaResz.MODE_DARAB ) {
       DarabFuggoFeladatTipus dff = DarabFuggoFeladatTipus.newInstance( resz.getEfid() );
       dff.read( db );
-      out.writeString( versenyResolver.resolve( (HttpServletRequest)pageContext.getRequest(), dff.getNev() ) );
+      out.writeString( versenyResolver.resolve( pageContext.getServletContext(), (HttpServletRequest)pageContext.getRequest(), dff.getNev() ) );
     } else if ( resz.getMode() == MenetlevelFormulaResz.MODE_SORREND ) {
       SorrendFuggoFeladatTipus sff = SorrendFuggoFeladatTipus.newInstance( resz.getEfid() );
       sff.read( db );
-      out.writeString( versenyResolver.resolve( (HttpServletRequest)pageContext.getRequest(), sff.getNev() ) );
+      out.writeString( versenyResolver.resolve( pageContext.getServletContext(), (HttpServletRequest)pageContext.getRequest(), sff.getNev() ) );
     }
     out.endTag( "td" );
   }
