@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="GeoResults" default="dist" basedir=".">
+
+	<target name="init">
+		<ant dir="ScsJavax" target="init"/>
+		<ant dir="GeoResults" target="init"/>
+		<ant dir="GeoChampionship" target="init"/>
+	</target>
+
+	<target name="compile">
+		<ant dir="ScsJavax" target="compile"/>
+		<ant dir="GeoResults" target="compile"/>
+		<ant dir="GeoChampionship" target="compile"/>
+	</target>
+
+	<target name="dist">
+		<ant dir="ScsJavax" target="dist"/>
+		<ant dir="GeoResults" target="dist"/>
+		<ant dir="GeoChampionship" target="dist"/>
+	</target>
+
+	<target name="clean">
+		<ant dir="ScsJavax" target="clean"/>
+		<ant dir="GeoResults" target="clean"/>
+		<ant dir="GeoChampionship" target="clean"/>
+	</target>	
+
+</project>
