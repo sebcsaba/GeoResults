@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="GeoResults" default="dist" basedir=".">
+	<property name="lib" location="lib"/>
+	<property name="test-src" location="src/test"/>
+	<property name="build-test" location="target/ant-build-test"/>
+	<property name="test-result" location="target/ant-test"/>
+	
+	<path id="build-classpath">
+	    <fileset dir="${lib}">
+	        <include name="*.jar"/>
+	    </fileset>
+	</path>
+	
+	<path id="test-classpath">
+	    <fileset dir="${lib}">
+	        <include name="*.jar"/>
+	    </fileset>
+	    <fileset dir="${build-test}"/>
+	</path>
+	
+	<target name="compile-tests">
+		<mkdir dir="${build-test}"/>
+		<javac srcdir="${test-src}" destdir="${build-test}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
+	</target>
+	
+	<target name="test" depends="compile-tests">
+		<mkdir dir="${test-result}"/>
+		<junit>
+			<classpath refid="test-classpath"/>
+			<formatter type="xml"/>
+			<batchtest todir="${test-result}">
+				<fileset dir="${test-src}" includes="**/*.java"/>
+			</batchtest>
+		</junit>
+	</target>
 
 	<target name="init">
 		<ant dir="ScsJavax" target="init"/>
