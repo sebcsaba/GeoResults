@@ -2,7 +2,7 @@
 <project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="GeoResultsGeoResults">
         <wb-resource deploy-path="/" source-path="/georesults"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/top"/>
         <property name="context-root" value="georesults"/>
         <property name="java-output-path" value="/GeoResultsGeoResults/target/eclipse-classes"/>
     </wb-module>

@@ -33,4 +33,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>top</name>
+			<type>2</type>
+			<locationURI>WORKSPACE_LOC/GeoResults/src/main</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
