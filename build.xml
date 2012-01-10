@@ -6,16 +6,16 @@
 	<property name="test-result" location="target/ant-test"/>
 	
 	<path id="build-classpath">
-	    <fileset dir="${lib-test}">
-	        <include name="*.jar"/>
-	    </fileset>
+		<fileset dir="${lib-test}">
+			<include name="*.jar"/>
+		</fileset>
 	</path>
 	
 	<path id="test-classpath">
-	    <fileset dir="${lib-test}">
-	        <include name="*.jar"/>
-	    </fileset>
-	    <fileset dir="${build-test}"/>
+		<fileset dir="${lib-test}">
+			<include name="*.jar"/>
+		</fileset>
+		<pathelement path="${build-test}"/>
 	</path>
 	
 	<target name="compile-tests">
@@ -53,6 +53,7 @@
 	</target>
 
 	<target name="clean">
+		<delete dir="${build-test}"/>
 		<ant dir="ScsJavax" target="clean"/>
 		<ant dir="GeoResults" target="clean"/>
 		<ant dir="GeoChampionship" target="clean"/>
