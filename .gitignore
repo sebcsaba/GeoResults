@@ -15,3 +15,4 @@ GeoResults/_model/*.xml.zip.bak
 ScsJavax/target/*
 GeoResults/target/*
 GeoResults/webapp_workdir/*
+target/

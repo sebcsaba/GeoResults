@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="GeoChampionship/src/main"/>
+	<classpathentry kind="src" path="ScsJavax/src"/>
+	<classpathentry kind="src" path="src/test"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/borlandxml.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/commons-digester.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/commons-fileupload-1.1.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/commons-io-1.2.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/commons-lang.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/commons-pool-1.3.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/commons-validator.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/jakarta-oro.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/jdom.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/mysql-connector-java-3.1.12-bin.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/struts.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/xmlParserAPIs.jar"/>
+	<classpathentry kind="lib" path="GeoResults/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="GeoResults/lib/servlet-api.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="output" path="target/eclipse-classes"/>
+</classpath>
