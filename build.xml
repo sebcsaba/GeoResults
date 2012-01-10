@@ -25,7 +25,7 @@
 	
 	<target name="test" depends="compile-tests">
 		<mkdir dir="${test-result}"/>
-		<junit>
+		<junit haltonfailure="true">
 			<classpath refid="test-classpath"/>
 			<formatter type="xml"/>
 			<batchtest todir="${test-result}">
