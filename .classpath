@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="GeoChampionship/src/main"/>
-	<classpathentry kind="src" path="ScsJavax/src"/>
 	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/javax/java"/>
 	<classpathentry kind="lib" path="GeoResults/webcontent/WEB-INF/lib/borlandxml.jar"/>
 	<classpathentry kind="lib" path="GeoResults/webcontent/WEB-INF/lib/commons-beanutils.jar"/>
 	<classpathentry kind="lib" path="GeoResults/webcontent/WEB-INF/lib/commons-collections.jar"/>

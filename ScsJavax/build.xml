@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="GeoResultsScsJavaX" default="dist" basedir=".">
-	<property name="src" location="src"/>
+	<property name="src" location="../src/javax/java"/>
 	<property name="lib" location="lib"/>
 	<property name="build" location="target/ant-build"/>
 	<property name="dist" location="target/ant-dist"/>
