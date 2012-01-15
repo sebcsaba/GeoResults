@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="GeoResults" default="dist" basedir=".">
 	<property name="lib-test" location="lib"/>
-	<property name="test-src" location="src/test"/>
+	<property name="test-src" location="src/test/java"/>
 	<property name="build-test" location="target/ant-build-test"/>
 	<property name="test-result" location="target/ant-test"/>
 	

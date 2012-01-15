@@ -2,8 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="GeoChampionship/src/main"/>
 	<classpathentry kind="src" path="ScsJavax/src"/>
-	<classpathentry kind="src" path="src/test"/>
-	<classpathentry kind="src" path="src/main"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/borlandxml.jar"/>
 	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/commons-beanutils.jar"/>
 	<classpathentry kind="lib" path="GeoResults/georesults/WEB-INF/lib/commons-collections.jar"/>

@@ -37,7 +37,7 @@
 		<link>
 			<name>top</name>
 			<type>2</type>
-			<locationURI>WORKSPACE_LOC/GeoResults/src/main</locationURI>
+			<locationURI>WORKSPACE_LOC/GeoResults/src/main/java</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
