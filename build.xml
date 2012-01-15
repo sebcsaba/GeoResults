@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="GeoResults" default="dist" basedir=".">
 	<property name="lib-test" location="lib"/>
-	<property name="test-src" location="src/test/java"/>
+	<property name="src-test" location="src/test/java"/>
 	<property name="build-test" location="target/ant-build-test"/>
 	<property name="test-result" location="target/ant-test"/>
+	<property name="src-javax" location="src/javax/java"/>
+	<property name="res-javax" location="src/javax/resources"/>
+	<property name="lib-javax" location="lib"/>
+	<property name="build-javax" location="target/ant-build-javax"/>
+	<property name="dist-javax" location="target/ant-dist"/>
+	
+	<path id="build-javax-classpath">
+	    <fileset dir="${lib-javax}">
+	        <include name="*.jar"/>
+	    </fileset>
+	</path>
 	
 	<path id="build-classpath">
 		<fileset dir="${lib-test}">
@@ -20,7 +31,7 @@
 	
 	<target name="compile-tests">
 		<mkdir dir="${build-test}"/>
-		<javac srcdir="${test-src}" destdir="${build-test}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
+		<javac srcdir="${src-test}" destdir="${build-test}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
 	</target>
 	
 	<target name="test" depends="compile-tests">
@@ -29,32 +40,50 @@
 			<classpath refid="test-classpath"/>
 			<formatter type="xml"/>
 			<batchtest todir="${test-result}">
-				<fileset dir="${test-src}" includes="**/*.java"/>
+				<fileset dir="${src-test}" includes="**/*.java"/>
 			</batchtest>
 		</junit>
 	</target>
 
-	<target name="init">
-		<ant dir="ScsJavax" target="init"/>
+	<target name="init-javax">
+		<mkdir dir="${build-javax}"/>
+	</target>
+
+	<target name="compile-javax" depends="init-javax">
+		<javac srcdir="${src-javax}" destdir="${build-javax}" classpathref="build-javax-classpath" encoding="UTF-8" includeantruntime="false"/>
+		<copy todir="${build-javax}">
+		    <fileset dir="${src-javax}" excludes="**/*.java"/>
+		</copy>
+	</target>
+
+	<target name="dist-javax" depends="compile-javax">
+		<mkdir dir="${dist-javax}"/>
+		<jar jarfile="${dist-javax}/scs-javax.jar" basedir="${build-javax}">
+			<fileset dir="${res-javax}">
+				<include name="META-INF/**"/>
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="init" depends="init-javax">
 		<ant dir="GeoResults" target="init"/>
 		<ant dir="GeoChampionship" target="init"/>
 	</target>
 
-	<target name="compile">
-		<ant dir="ScsJavax" target="compile"/>
+	<target name="compile" depends="compile-javax">
 		<ant dir="GeoResults" target="compile"/>
 		<ant dir="GeoChampionship" target="compile"/>
 	</target>
 
-	<target name="dist">
-		<ant dir="ScsJavax" target="dist"/>
+	<target name="dist" depends="dist-javax">
 		<ant dir="GeoResults" target="dist"/>
 		<ant dir="GeoChampionship" target="dist"/>
 	</target>
 
 	<target name="clean">
 		<delete dir="${build-test}"/>
-		<ant dir="ScsJavax" target="clean"/>
+		<delete dir="${build-javax}"/>
+		<delete dir="${dist-javax}"/>
 		<ant dir="GeoResults" target="clean"/>
 		<ant dir="GeoChampionship" target="clean"/>
 	</target>	
