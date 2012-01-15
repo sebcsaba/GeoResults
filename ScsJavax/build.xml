@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="GeoResultsScsJavaX" default="dist" basedir=".">
 	<property name="src" location="../src/javax/java"/>
-	<property name="lib" location="lib"/>
-	<property name="build" location="target/ant-build"/>
-	<property name="dist" location="target/ant-dist"/>
+	<property name="res" location="../src/javax/resources"/>
+	<property name="lib" location="../lib"/>
+	<property name="build" location="../target/ant-build-javax"/>
+	<property name="dist" location="../target/ant-dist"/>
 	
 	<path id="build-classpath">
 	    <fileset dir="${lib}">
@@ -21,13 +22,12 @@
 		<copy todir="${build}">
 		    <fileset dir="${src}" excludes="**/*.java"/>
 		</copy>
-
 	</target>
 
 	<target name="dist" depends="compile">
 		<mkdir dir="${dist}"/>
 		<jar jarfile="${dist}/scs-javax.jar" basedir="${build}">
-			<fileset dir=".">
+			<fileset dir="${res}">
 				<include name="META-INF/**"/>
 			</fileset>
 		</jar>

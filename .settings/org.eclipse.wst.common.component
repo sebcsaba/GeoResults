@@ -3,6 +3,7 @@
     <wb-module deploy-name="GeoResults">
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/" source-path="/GeoResults/webcontent"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/javax/java"/>
         <property name="context-root" value="georesults2"/>
         <property name="java-output-path" value="/GeoResults/target/eclipse-classes"/>
     </wb-module>

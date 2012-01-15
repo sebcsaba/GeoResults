@@ -18,7 +18,7 @@
 	
 	<target name="init">
 		<tstamp/>
-		<copy file="../ScsJavaX/target/ant-dist/scs-javax.jar" todir="${weblib}"/>
+		<copy file="../target/ant-dist/scs-javax.jar" todir="${weblib}"/>
 		<mkdir dir="${build}"/>
 	</target>
 
