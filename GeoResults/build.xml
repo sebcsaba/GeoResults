@@ -2,8 +2,8 @@
 <project name="GeoResultsGeoResults" default="dist" basedir=".">
 	<property name="src" location="../src/main/java"/>
 	<property name="lib" location="lib"/>
-	<property name="web" location="georesults"/>
-	<property name="weblib" location="georesults/WEB-INF/lib"/>
+	<property name="web" location="webcontent"/>
+	<property name="weblib" location="${web}/WEB-INF/lib"/>
 	<property name="build" location="target/ant-build"/>
 	<property name="dist" location="target/ant-dist"/>
 	
