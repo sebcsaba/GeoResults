@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project name="GeoResultsGeoChampionship" default="dist" basedir=".">
-	<property name="src" location="src/main"/>
-	<property name="lib" location="lib"/>
-	<property name="build" location="target/ant-build"/>
-	<property name="dist" location="target/ant-dist"/>
+<project name="GeoResultsGeoChampionship" default="dist-champ" basedir=".">
+	<property name="src-champ" location="../src/championship/java"/>
+	<property name="lib-champ" location="lib"/>
+	<property name="build-champ" location="target/ant-build"/>
+	<property name="dist-champ" location="target/ant-dist"/>
 	
-	<path id="build-classpath">
-	    <fileset dir="${lib}">
+	<path id="build-classpath-champ">
+	    <fileset dir="${lib-champ}">
 	        <include name="*.jar"/>
 	    </fileset>
 	</path>
 	
-	<target name="init">
+	<target name="init-champ">
 		<tstamp/>
-		<mkdir dir="${build}"/>
+		<mkdir dir="${build-champ}"/>
 	</target>
 
-	<target name="compile" depends="init">
-		<javac srcdir="${src}" destdir="${build}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
-		<copy todir="${build}">
-		    <fileset dir="${src}" excludes="**/*.java"/>
+	<target name="compile-champ" depends="init-champ">
+		<javac srcdir="${src-champ}" destdir="${build-champ}" classpathref="build-classpath-champ" encoding="UTF-8" includeantruntime="false"/>
+		<copy todir="${build-champ}">
+		    <fileset dir="${src-champ}" excludes="**/*.java"/>
 		</copy>
 
 	</target>
 
-	<target name="dist" depends="compile">
-		<mkdir dir="${dist}"/>
-		<jar jarfile="${dist}/GeoChampionship.jar" basedir="${build}" filesetmanifest="mergewithoutmain">
-			<fileset dir="${src}">
+	<target name="dist-champ" depends="compile-champ">
+		<mkdir dir="${dist-champ}"/>
+		<jar jarfile="${dist-champ}/GeoChampionship.jar" basedir="${build-champ}" filesetmanifest="mergewithoutmain">
+			<fileset dir="${src-champ}">
 				<include name="META-INF/**"/>
 			</fileset>
-			<zipfileset src="${lib}/mysql-connector-java-5.1.7-bin.jar" excludes="META-INF/*.SF"/>
+			<zipfileset src="${lib-champ}/mysql-connector-java-5.1.7-bin.jar" excludes="META-INF/*.SF"/>
 			<manifest>
 				<attribute name="Built-By" value="${user.name}"/>
 				<attribute name="Main-Class" value="hu.sebcsaba.geochampionship.App"/>
@@ -39,9 +39,15 @@
 		</jar>
 	</target>
 
-	<target name="clean">
-		<delete dir="${build}"/>
-		<delete dir="${dist}"/>
-	</target>	
+	<target name="clean-champ">
+		<delete dir="${build-champ}"/>
+		<delete dir="${dist-champ}"/>
+	</target>
+	
+	<target name="run-champ" depends="dist-champ">
+		<java jar="${dist-champ}/GeoChampionship.jar" fork="true">
+			<arg value="championship2011.properties"/>
+		</java>
+	</target>
 
 </project>
