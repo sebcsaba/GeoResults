@@ -10,6 +10,16 @@
 	<property name="build-javax" location="target/ant-build-javax"/>
 	<property name="dist-javax" location="target/ant-dist"/>
 	<property name="doc-javax" location="target/ant-doc-javax"/>
+	<property name="src-champ" location="src/championship/java"/>
+	<property name="lib-champ" location="GeoChampionship/lib"/>
+	<property name="build-champ" location="target/ant-build-champ"/>
+	<property name="dist-champ" location="target/ant-dist-champ"/>
+	
+	<path id="build-classpath-champ">
+	    <fileset dir="${lib-champ}">
+	        <include name="*.jar"/>
+	    </fileset>
+	</path>
 	
 	<path id="build-javax-classpath">
 	    <fileset dir="${lib-javax}">
@@ -71,19 +81,49 @@
 		<jar jarfile="${dist-javax}/scs-javax-doc.jar" basedir="${doc-javax}"/>
 	</target>
 
-	<target name="init" depends="init-javax">
+	<target name="init-champ">
+		<tstamp/>
+		<mkdir dir="${build-champ}"/>
+	</target>
+
+	<target name="compile-champ" depends="init-champ">
+		<javac srcdir="${src-champ}" destdir="${build-champ}" classpathref="build-classpath-champ" encoding="UTF-8" includeantruntime="false"/>
+		<copy todir="${build-champ}">
+		    <fileset dir="${src-champ}" excludes="**/*.java"/>
+		</copy>
+	</target>
+
+	<target name="dist-champ" depends="compile-champ">
+		<mkdir dir="${dist-champ}"/>
+		<jar jarfile="${dist-champ}/GeoChampionship.jar" basedir="${build-champ}" filesetmanifest="mergewithoutmain">
+			<fileset dir="${src-champ}">
+				<include name="META-INF/**"/>
+			</fileset>
+			<zipfileset src="${lib-champ}/mysql-connector-java-5.1.7-bin.jar" excludes="META-INF/*.SF"/>
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Main-Class" value="hu.sebcsaba.geochampionship.App"/>
+				<attribute name="Class-Path" value="."/>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="run-champ" depends="dist-champ">
+		<java jar="${dist-champ}/GeoChampionship.jar" fork="true" dir="GeoChampionship">
+			<arg value="championship2011.properties"/>
+		</java>
+	</target>
+
+	<target name="init" depends="init-javax, init-champ">
 		<ant dir="GeoResults" target="init"/>
-		<ant dir="GeoChampionship" target="init"/>
 	</target>
 
-	<target name="compile" depends="compile-javax">
+	<target name="compile" depends="compile-javax, compile-champ">
 		<ant dir="GeoResults" target="compile"/>
-		<ant dir="GeoChampionship" target="compile"/>
 	</target>
 
-	<target name="dist" depends="dist-javax">
+	<target name="dist" depends="dist-javax, dist-champ">
 		<ant dir="GeoResults" target="dist"/>
-		<ant dir="GeoChampionship" target="dist"/>
 	</target>
 
 	<target name="clean">
@@ -92,8 +132,9 @@
 		<delete dir="${dist-javax}"/>
 		<delete dir="${doc-javax}"/>
 		<delete dir="${test-result}"/>
+		<delete dir="${build-champ}"/>
+		<delete dir="${dist-champ}"/>
 		<ant dir="GeoResults" target="clean"/>
-		<ant dir="GeoChampionship" target="clean"/>
 	</target>	
 
 </project>
