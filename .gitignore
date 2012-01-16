@@ -1,7 +1,4 @@
 
-GeoChampionship/data/*.htm
-GeoChampionship/GeoChampionship.jar
-GeoChampionship/target/*
 GeoResults/Tomcat/*
 GeoResults/georesults/WEB-INF/classes/*
 GeoResults/classes/*
