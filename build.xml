@@ -11,9 +11,11 @@
 	<property name="dist-javax" location="target/ant-dist"/>
 	<property name="doc-javax" location="target/ant-doc-javax"/>
 	<property name="src-champ" location="src/championship/java"/>
-	<property name="lib-champ" location="GeoChampionship/lib"/>
+	<property name="res-champ" location="src/championship/resources"/>
+	<property name="lib-champ" location="lib"/>
 	<property name="build-champ" location="target/ant-build-champ"/>
 	<property name="dist-champ" location="target/ant-dist-champ"/>
+	<property name="run-champ" location="target/ant-run-champ"/>
 	
 	<path id="build-classpath-champ">
 	    <fileset dir="${lib-champ}">
@@ -82,8 +84,8 @@
 	</target>
 
 	<target name="init-champ">
-		<tstamp/>
 		<mkdir dir="${build-champ}"/>
+		<mkdir dir="${run-champ}/data"/>
 	</target>
 
 	<target name="compile-champ" depends="init-champ">
@@ -109,9 +111,12 @@
 	</target>
 
 	<target name="run-champ" depends="dist-champ">
-		<java jar="${dist-champ}/GeoChampionship.jar" fork="true" dir="GeoChampionship">
-			<arg value="championship2011.properties"/>
+		<java jar="${dist-champ}/GeoChampionship.jar" fork="true" dir="${run-champ}">
+			<arg value="${basedir}/GeoChampionship/championship2011.properties"/>
 		</java>
+		<copy todir="${run-champ}">
+			<fileset dir="${res-champ}"/>
+		</copy>
 	</target>
 
 	<target name="init" depends="init-javax, init-champ">
@@ -134,6 +139,7 @@
 		<delete dir="${test-result}"/>
 		<delete dir="${build-champ}"/>
 		<delete dir="${dist-champ}"/>
+		<delete dir="${run-champ}"/>
 		<ant dir="GeoResults" target="clean"/>
 	</target>	
 
