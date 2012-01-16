@@ -16,6 +16,7 @@
 	<property name="build-champ" location="target/ant-build-champ"/>
 	<property name="dist-champ" location="target/ant-dist-champ"/>
 	<property name="run-champ" location="target/ant-run-champ"/>
+	<property name="run-champ-config" location="src/championship/config/championship2011.properties"/>
 	
 	<path id="build-classpath-champ">
 	    <fileset dir="${lib-champ}">
@@ -112,7 +113,7 @@
 
 	<target name="run-champ" depends="dist-champ">
 		<java jar="${dist-champ}/GeoChampionship.jar" fork="true" dir="${run-champ}">
-			<arg value="${basedir}/GeoChampionship/championship2011.properties"/>
+			<arg value="${run-champ-config}"/>
 		</java>
 		<copy todir="${run-champ}">
 			<fileset dir="${res-champ}"/>
