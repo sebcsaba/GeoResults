@@ -2,10 +2,6 @@
 GeoChampionship/data/*.htm
 GeoChampionship/GeoChampionship.jar
 GeoChampionship/target/*
-ScsJavax/doc/*
-ScsJavax/classes/*
-ScsJavax/scs-javax.jar
-ScsJavax/ScsJavaxDoc.jar
 GeoResults/Tomcat/*
 GeoResults/georesults/WEB-INF/classes/*
 GeoResults/classes/*
@@ -16,3 +12,4 @@ ScsJavax/target/*
 GeoResults/target/*
 GeoResults/webapp_workdir/*
 target/
+temp/
