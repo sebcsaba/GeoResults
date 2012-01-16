@@ -9,6 +9,7 @@
 	<property name="lib-javax" location="lib"/>
 	<property name="build-javax" location="target/ant-build-javax"/>
 	<property name="dist-javax" location="target/ant-dist"/>
+	<property name="doc-javax" location="target/ant-doc-javax"/>
 	
 	<path id="build-javax-classpath">
 	    <fileset dir="${lib-javax}">
@@ -47,6 +48,7 @@
 
 	<target name="init-javax">
 		<mkdir dir="${build-javax}"/>
+		<mkdir dir="${dist-javax}"/>
 	</target>
 
 	<target name="compile-javax" depends="init-javax">
@@ -57,12 +59,16 @@
 	</target>
 
 	<target name="dist-javax" depends="compile-javax">
-		<mkdir dir="${dist-javax}"/>
 		<jar jarfile="${dist-javax}/scs-javax.jar" basedir="${build-javax}">
 			<fileset dir="${res-javax}">
 				<include name="META-INF/**"/>
 			</fileset>
 		</jar>
+	</target>
+	
+	<target name="doc-javax" depends="init-javax">
+		<javadoc sourcepath="${src-javax}" destdir="${doc-javax}" classpathref="build-javax-classpath"/>
+		<jar jarfile="${dist-javax}/scs-javax-doc.jar" basedir="${doc-javax}"/>
 	</target>
 
 	<target name="init" depends="init-javax">
@@ -84,6 +90,8 @@
 		<delete dir="${build-test}"/>
 		<delete dir="${build-javax}"/>
 		<delete dir="${dist-javax}"/>
+		<delete dir="${doc-javax}"/>
+		<delete dir="${test-result}"/>
 		<ant dir="GeoResults" target="clean"/>
 		<ant dir="GeoChampionship" target="clean"/>
 	</target>	
