@@ -14,6 +14,7 @@
 	
 	<property name="src-main" location="src/main/java"/>
 	<property name="web-main" location="GeoResults/webcontent"/>
+	<property name="weblib" location="${web-main}/WEB-INF/lib"/>
 	<property name="build-main" location="GeoResults/target/ant-build"/>
 	<property name="dist-main" location="target/ant-dist"/>
 	<property name="doc-main" location="target/ant-doc-main"/>
@@ -35,6 +36,15 @@
 	<path id="test-classpath">
 		<path refid="build-classpath"/>
 		<pathelement path="${build-test}"/>
+	</path>
+	
+	<path id="build-main-classpath">
+	    <fileset dir="${lib}">
+	        <include name="*.jar"/>
+	    </fileset>
+	    <fileset dir="${weblib}">
+	        <include name="*.jar"/>
+	    </fileset>
 	</path>
 	
 	<target name="compile-tests">
@@ -73,8 +83,10 @@
 		</jar>
 	</target>
 	
-	<target name="init-main">
+	<target name="init-main" depends="dist-javax">
 		<mkdir dir="${run-keyfinder}"/>
+		<copy file="${dist-javax}/scs-javax.jar" todir="${weblib}"/>
+		<mkdir dir="${build-main}"/>
 	</target>
 
 	<target name="init-champ">
@@ -113,16 +125,27 @@
 		</copy>
 	</target>
 
+	<target name="compile-main" depends="init-main">
+		<javac srcdir="${src-main}" destdir="${build-main}" classpathref="build-main-classpath" encoding="UTF-8" includeantruntime="false"/>
+		<copy todir="${build-main}">
+		    <fileset dir="${src-main}" excludes="**/*.java"/>
+		</copy>
+	</target>
+
+	<target name="dist-main" depends="compile-main">
+		<mkdir dir="${dist-main}"/>
+		<war destfile="${dist-main}/georesults.war" needxmlfile="false" basedir="${web-main}">
+			<classes dir="${build-main}"/>
+		</war>
+	</target>
+
 	<target name="init" depends="init-javax, init-champ, init-main">
-		<ant dir="GeoResults" target="init"/>
 	</target>
 
-	<target name="compile" depends="compile-javax, compile-champ">
-		<ant dir="GeoResults" target="compile"/>
+	<target name="compile" depends="compile-javax, compile-champ, compile-main">
 	</target>
 
-	<target name="dist" depends="dist-javax, dist-champ">
-		<ant dir="GeoResults" target="dist"/>
+	<target name="dist" depends="dist-javax, dist-champ, dist-main">
 	</target>
 
 	<target name="doc" depends="init-javax, init-main">
@@ -142,7 +165,9 @@
 		<delete dir="${dist-champ}"/>
 		<delete dir="${run-champ}"/>
 		<delete dir="${run-keyfinder}"/>
-		<ant dir="GeoResults" target="clean"/>
+		<delete dir="${build-main}"/>
+		<delete dir="${dist-main}"/>
+		<delete dir="${doc-main}"/>
 	</target>
 	
 	<target name="run-keyfinder" depends="init-main, compile">
