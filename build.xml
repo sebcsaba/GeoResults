@@ -12,6 +12,10 @@
 	<property name="dist-javax" location="target/ant-dist"/>
 	<property name="doc-javax" location="target/ant-doc-javax"/>
 	
+	<property name="src-main" location="src/main/java"/>
+	<property name="dist-main" location="target/ant-dist"/>
+	<property name="doc-main" location="target/ant-doc-main"/>
+	
 	<property name="src-champ" location="src/championship/java"/>
 	<property name="res-champ" location="src/championship/resources"/>
 	<property name="build-champ" location="target/ant-build-champ"/>
@@ -66,9 +70,7 @@
 		</jar>
 	</target>
 	
-	<target name="doc-javax" depends="init-javax">
-		<javadoc sourcepath="${src-javax}" destdir="${doc-javax}" classpathref="build-classpath"/>
-		<jar jarfile="${dist-javax}/scs-javax-doc.jar" basedir="${doc-javax}"/>
+	<target name="init-main">
 	</target>
 
 	<target name="init-champ">
@@ -107,7 +109,7 @@
 		</copy>
 	</target>
 
-	<target name="init" depends="init-javax, init-champ">
+	<target name="init" depends="init-javax, init-champ, init-main">
 		<ant dir="GeoResults" target="init"/>
 	</target>
 
@@ -117,6 +119,13 @@
 
 	<target name="dist" depends="dist-javax, dist-champ">
 		<ant dir="GeoResults" target="dist"/>
+	</target>
+
+	<target name="doc" depends="init-javax, init-main">
+		<javadoc sourcepath="${src-javax}" destdir="${doc-javax}" classpathref="build-classpath" encoding="UTF-8"/>
+		<jar jarfile="${dist-javax}/scs-javax-doc.jar" basedir="${doc-javax}"/>
+		<javadoc sourcepath="${src-main}" destdir="${doc-main}" classpathref="build-classpath" encoding="UTF-8"/>
+		<jar jarfile="${dist-main}/georesults-doc.jar" basedir="${doc-main}"/>
 	</target>
 
 	<target name="clean">
