@@ -13,8 +13,11 @@
 	<property name="doc-javax" location="target/ant-doc-javax"/>
 	
 	<property name="src-main" location="src/main/java"/>
+	<property name="web-main" location="GeoResults/webcontent"/>
+	<property name="build-main" location="GeoResults/target/ant-build"/>
 	<property name="dist-main" location="target/ant-dist"/>
 	<property name="doc-main" location="target/ant-doc-main"/>
+	<property name="run-keyfinder" location="target/ant-run"/>
 	
 	<property name="src-champ" location="src/championship/java"/>
 	<property name="res-champ" location="src/championship/resources"/>
@@ -71,6 +74,7 @@
 	</target>
 	
 	<target name="init-main">
+		<mkdir dir="${run-keyfinder}"/>
 	</target>
 
 	<target name="init-champ">
@@ -137,7 +141,19 @@
 		<delete dir="${build-champ}"/>
 		<delete dir="${dist-champ}"/>
 		<delete dir="${run-champ}"/>
+		<delete dir="${run-keyfinder}"/>
 		<ant dir="GeoResults" target="clean"/>
-	</target>	
+	</target>
+	
+	<target name="run-keyfinder" depends="init-main, compile">
+		<java classname="scs.georesults.KeyFinder" fork="true" dir="${run-keyfinder}">
+			<classpath>
+				<pathelement location="${build-main}"/>
+				<pathelement location="${dist-javax}/scs-javax.jar"/>
+			</classpath>
+			<arg value="${src-main}"/>
+			<arg value="${web-main}"/>
+		</java>
+	</target>
 
 </project>

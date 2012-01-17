@@ -143,8 +143,9 @@ public class KeyFinder
   public static void main ( String[] args ) throws IOException
   {
     KeyFinder kf = new KeyFinder();
-    kf.processDir( new Path( "src" ) );
-    kf.processDir( new Path( "georesults" ) );
+    for(int i=0; i<args.length; ++i) {
+      kf.processDir( new Path( args[i] ) );
+    }
     OutputStream outStream = new FileOutputStream( "keys.txt" );
     DataWriter outWriter = new OutputStreamWriter( outStream );
     kf.printKeys( outWriter );
