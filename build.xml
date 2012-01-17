@@ -16,7 +16,7 @@
 	<property name="src-main" location="src/main/java"/>
 	<property name="web-main" location="GeoResults/webcontent"/>
 	<property name="weblib" location="${web-main}/WEB-INF/lib"/>
-	<property name="build-main" location="GeoResults/target/ant-build"/>
+	<property name="build-main" location="target/ant-build"/>
 	<property name="dist-main" location="target/ant-dist"/>
 	<property name="doc-main" location="target/ant-doc-main"/>
 	<property name="run-keyfinder" location="target/ant-run"/>
@@ -112,6 +112,7 @@
 		<copy file="${dist-javax-jar}" todir="${weblib}"/>
 		<war destfile="${dist-main}/georesults.war" needxmlfile="false" basedir="${web-main}">
 			<classes dir="${build-main}"/>
+			<lib dir="${lib}"/>
 		</war>
 	</target>
 
