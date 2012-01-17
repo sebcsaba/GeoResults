@@ -10,6 +10,7 @@
 	<property name="res-javax" location="src/javax/resources"/>
 	<property name="build-javax" location="target/ant-build-javax"/>
 	<property name="dist-javax" location="target/ant-dist"/>
+	<property name="dist-javax-jar" location="${dist-javax}/scs-javax.jar"/>
 	<property name="doc-javax" location="target/ant-doc-javax"/>
 	
 	<property name="src-main" location="src/main/java"/>
@@ -47,13 +48,39 @@
 	    </fileset>
 	</path>
 	
-	<target name="compile-tests">
+	<target name="init">
+		<mkdir dir="${build-champ}"/>
+		<mkdir dir="${run-champ}/data"/>
+		<mkdir dir="${run-keyfinder}"/>
+		<mkdir dir="${build-main}"/>
+		<mkdir dir="${build-javax}"/>
+		<mkdir dir="${dist-javax}"/>
 		<mkdir dir="${build-test}"/>
+		<mkdir dir="${test-result}"/>
+		<mkdir dir="${dist-champ}"/>
+		<mkdir dir="${dist-main}"/>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${src-javax}" destdir="${build-javax}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
+		<copy todir="${build-javax}">
+		    <fileset dir="${src-javax}" excludes="**/*.java"/>
+		</copy>
+		    	
+		<javac srcdir="${src-champ}" destdir="${build-champ}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
+		<copy todir="${build-champ}">
+		    <fileset dir="${src-champ}" excludes="**/*.java"/>
+		</copy>
+		
+		<javac srcdir="${src-main}" destdir="${build-main}" classpathref="build-main-classpath" encoding="UTF-8" includeantruntime="false"/>
+		<copy todir="${build-main}">
+		    <fileset dir="${src-main}" excludes="**/*.java"/>
+		</copy>
+		
 		<javac srcdir="${src-test}" destdir="${build-test}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
 	</target>
-	
-	<target name="test" depends="compile-tests">
-		<mkdir dir="${test-result}"/>
+
+	<target name="test" depends="compile">
 		<junit haltonfailure="true">
 			<classpath refid="test-classpath"/>
 			<formatter type="xml"/>
@@ -63,46 +90,13 @@
 		</junit>
 	</target>
 
-	<target name="init-javax">
-		<mkdir dir="${build-javax}"/>
-		<mkdir dir="${dist-javax}"/>
-	</target>
-
-	<target name="compile-javax" depends="init-javax">
-		<javac srcdir="${src-javax}" destdir="${build-javax}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
-		<copy todir="${build-javax}">
-		    <fileset dir="${src-javax}" excludes="**/*.java"/>
-		</copy>
-	</target>
-
-	<target name="dist-javax" depends="compile-javax">
-		<jar jarfile="${dist-javax}/scs-javax.jar" basedir="${build-javax}">
+	<target name="dist" depends="compile">
+		<jar jarfile="${dist-javax-jar}" basedir="${build-javax}">
 			<fileset dir="${res-javax}">
 				<include name="META-INF/**"/>
 			</fileset>
 		</jar>
-	</target>
-	
-	<target name="init-main" depends="dist-javax">
-		<mkdir dir="${run-keyfinder}"/>
-		<copy file="${dist-javax}/scs-javax.jar" todir="${weblib}"/>
-		<mkdir dir="${build-main}"/>
-	</target>
 
-	<target name="init-champ">
-		<mkdir dir="${build-champ}"/>
-		<mkdir dir="${run-champ}/data"/>
-	</target>
-
-	<target name="compile-champ" depends="init-champ">
-		<javac srcdir="${src-champ}" destdir="${build-champ}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
-		<copy todir="${build-champ}">
-		    <fileset dir="${src-champ}" excludes="**/*.java"/>
-		</copy>
-	</target>
-
-	<target name="dist-champ" depends="compile-champ">
-		<mkdir dir="${dist-champ}"/>
 		<jar jarfile="${dist-champ}/GeoChampionship.jar" basedir="${build-champ}" filesetmanifest="mergewithoutmain">
 			<fileset dir="${src-champ}">
 				<include name="META-INF/**"/>
@@ -114,41 +108,14 @@
 				<attribute name="Class-Path" value="."/>
 			</manifest>
 		</jar>
-	</target>
-
-	<target name="run-champ" depends="dist-champ">
-		<java jar="${dist-champ}/GeoChampionship.jar" fork="true" dir="${run-champ}">
-			<arg value="${run-champ-config}"/>
-		</java>
-		<copy todir="${run-champ}">
-			<fileset dir="${res-champ}"/>
-		</copy>
-	</target>
-
-	<target name="compile-main" depends="init-main">
-		<javac srcdir="${src-main}" destdir="${build-main}" classpathref="build-main-classpath" encoding="UTF-8" includeantruntime="false"/>
-		<copy todir="${build-main}">
-		    <fileset dir="${src-main}" excludes="**/*.java"/>
-		</copy>
-	</target>
-
-	<target name="dist-main" depends="compile-main">
-		<mkdir dir="${dist-main}"/>
+		
+		<copy file="${dist-javax-jar}" todir="${weblib}"/>
 		<war destfile="${dist-main}/georesults.war" needxmlfile="false" basedir="${web-main}">
 			<classes dir="${build-main}"/>
 		</war>
 	</target>
 
-	<target name="init" depends="init-javax, init-champ, init-main">
-	</target>
-
-	<target name="compile" depends="compile-javax, compile-champ, compile-main">
-	</target>
-
-	<target name="dist" depends="dist-javax, dist-champ, dist-main">
-	</target>
-
-	<target name="doc" depends="init-javax, init-main">
+	<target name="doc" depends="init">
 		<javadoc sourcepath="${src-javax}" destdir="${doc-javax}" classpathref="build-classpath" encoding="UTF-8"/>
 		<jar jarfile="${dist-javax}/scs-javax-doc.jar" basedir="${doc-javax}"/>
 		<javadoc sourcepath="${src-main}" destdir="${doc-main}" classpathref="build-classpath" encoding="UTF-8"/>
@@ -170,15 +137,24 @@
 		<delete dir="${doc-main}"/>
 	</target>
 	
-	<target name="run-keyfinder" depends="init-main, compile">
+	<target name="run-keyfinder" depends="init, compile">
 		<java classname="scs.georesults.KeyFinder" fork="true" dir="${run-keyfinder}">
 			<classpath>
 				<pathelement location="${build-main}"/>
-				<pathelement location="${dist-javax}/scs-javax.jar"/>
+				<pathelement location="${dist-javax-jar}"/>
 			</classpath>
 			<arg value="${src-main}"/>
 			<arg value="${web-main}"/>
 		</java>
+	</target>
+
+	<target name="run-champ" depends="dist">
+		<java jar="${dist-champ}/GeoChampionship.jar" fork="true" dir="${run-champ}">
+			<arg value="${run-champ-config}"/>
+		</java>
+		<copy todir="${run-champ}">
+			<fileset dir="${res-champ}"/>
+		</copy>
 	</target>
 
 </project>
