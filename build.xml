@@ -14,7 +14,7 @@
 	<property name="doc-javax" location="target/ant-doc-javax"/>
 	
 	<property name="src-main" location="src/main/java"/>
-	<property name="web-main" location="GeoResults/webcontent"/>
+	<property name="web-main" location="src/main/webcontent"/>
 	<property name="weblib" location="${web-main}/WEB-INF/lib"/>
 	<property name="build-main" location="target/ant-build"/>
 	<property name="dist-main" location="target/ant-dist"/>
