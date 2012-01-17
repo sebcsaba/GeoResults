@@ -31,5 +31,6 @@
 	<classpathentry kind="lib" path="/GeoResults/lib/mysql-connector-java-5.1.7-bin.jar"/>
 	<classpathentry kind="lib" path="/GeoResults/lib/standard.jar"/>
 	<classpathentry kind="lib" path="/GeoResults/lib/xmlParserAPIs.jar"/>
+	<classpathentry kind="lib" path="/GeoResults/temp/20120117-current__scs-javax.jar"/>
 	<classpathentry kind="output" path="target/eclipse-classes"/>
 </classpath>

@@ -24,7 +24,7 @@
 	<property name="src-champ" location="src/championship/java"/>
 	<property name="res-champ" location="src/championship/resources"/>
 	<property name="build-champ" location="target/ant-build-champ"/>
-	<property name="dist-champ" location="target/ant-dist-champ"/>
+	<property name="dist-champ" location="target/ant-dist"/>
 	<property name="run-champ" location="target/ant-run-champ"/>
 	<property name="run-champ-config" location="src/championship/config/championship2011.properties"/>
 	
@@ -37,15 +37,6 @@
 	<path id="test-classpath">
 		<path refid="build-classpath"/>
 		<pathelement path="${build-test}"/>
-	</path>
-	
-	<path id="build-main-classpath">
-	    <fileset dir="${lib}">
-	        <include name="*.jar"/>
-	    </fileset>
-	    <fileset dir="${weblib}">
-	        <include name="*.jar"/>
-	    </fileset>
 	</path>
 	
 	<target name="init">
@@ -72,7 +63,12 @@
 		    <fileset dir="${src-champ}" excludes="**/*.java"/>
 		</copy>
 		
-		<javac srcdir="${src-main}" destdir="${build-main}" classpathref="build-main-classpath" encoding="UTF-8" includeantruntime="false"/>
+		<javac srcdir="${src-main}" destdir="${build-main}" encoding="UTF-8" includeantruntime="false">
+			<classpath>
+				<path refid="build-classpath"/>
+				<pathelement location="${build-javax}"/>
+			</classpath>
+		</javac>
 		<copy todir="${build-main}">
 		    <fileset dir="${src-main}" excludes="**/*.java"/>
 		</copy>
@@ -109,10 +105,10 @@
 			</manifest>
 		</jar>
 		
-		<copy file="${dist-javax-jar}" todir="${weblib}"/>
 		<war destfile="${dist-main}/georesults.war" needxmlfile="false" basedir="${web-main}">
 			<classes dir="${build-main}"/>
 			<lib dir="${lib}"/>
+			<lib file="${dist-javax-jar}"/>
 		</war>
 	</target>
 
