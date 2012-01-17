@@ -1,7 +1,4 @@
 
-GeoResults/Tomcat/*
-GeoResults/target/*
-GeoResults/webapp_workdir/*
 target/
 temp/
 docs/model/*.xml.zip.bak
