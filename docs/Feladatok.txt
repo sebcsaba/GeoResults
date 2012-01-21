@@ -1,21 +1,7 @@
-+ BUGFIX: java.lang.NoClassDefFoundError: org/apache/commons/fileupload/disk/DiskFileItemFactory
-+ BUGFIX: nevezési listán "@2" szerepel kategóriának (nevezes/listaContent.jsp:64 <c:write label=...)
-+ BUGFIX: késési időzóna felvitele hibás, nullának veszi az időlimitet
-+ BUGFIX: Szlalom / kizárás: 500pt
-+ BUGFIX: cec summary of technical races, itt nincs szakasznev a fejlecben!
-+ BUGFIX: sfef reszletes, etalon bevitele: 20-ig ugye ok, utana akarom megduplazni, na ekkor hiba
-+ BUGFIX: UTF8-as stream olvasása: BOM lenyelése az elejéről
-+ FEATURE: backup funkció és fenti keretben kezelőgomb
-+ FEATURE: verzió kijelzés a nyitólapokon
-+ FEATURE: fenti keretben versenyváltás gomb
-+ FEATURE: nyitólapra verseny neve
-+ TEST: importálások teszt
-
-------------------------------------------------------------------------------------------
-
-DEBUG
+﻿BUG
 
 - ne akarja mindenkepp letrehozni a backup konyvtarat, ha mar letezik!
+- új verseny a 'sablonok.config' fájlt keresi, de már csak 'sablonok.properties' van!
 
 ? Verseny / Ellenőrzőpont-lista megadásánál "duplicate key" sql error
 ? Verseny / Menetlevélnél EP-re 40 helyet hagyok
@@ -28,6 +14,7 @@ DEBUG
 - Eredménylistánál pontazonosság esetén azonos helyezést mutasson
 - alt+s valahogy nem jól megy a futambevitelen
 - importnál X etap menetleveleit importálom, és hozzá pl nincs DFFT, akkor ne is keresse a recogniser
+- onscreen java exception: ha menetelevél felvitelénél csak büntetést adunk meg (hiba felderítése, javítása szükséges)
 
 FEATURE
 - Önkontroll-lista nyomtatása etalonból
@@ -37,7 +24,9 @@ FEATURE
 - config.jsp mentés után az install.jsp ne alapból azt mondja hogy
         'The initialization is necessary', mert lehet hogy nem is
 - feature: context-sensitive online help
-﻿- import/main.jsp szóljon hogy sokáig fog tartani... (esetleg mutasson folyamatjelzőt, de ahhoz Threadolni kellene sokat)
+- import/main.jsp szóljon hogy sokáig fog tartani... (esetleg mutasson folyamatjelzőt, de ahhoz Threadolni kellene sokat)
+- feature: emberi hibalehetőség csökkentése: nem viszek fel valakinél beűket/számokat, jelezze kiértékeléskor
+- autótípusból néhány kellene nyitólistának
 
 TEST
 - multi session test

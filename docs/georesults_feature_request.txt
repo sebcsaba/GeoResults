@@ -1,0 +1,19 @@
+﻿- Menetlevélen és etalonon is legyen egy "beszúrás" és egy "törlés gomb" a csoportos léptetésre
+- Etalonban lehessen "több alternatív útvonal" közül keresni
+- Etalonban lehessen "X és Y között bármi lehet" opciót megadni
+- Kimeneteknél lehessen GEO/CEC specifikus nyomtatás, normálisabban
+- Kimeneteknél lehessen "minden letöltése zip-ben" opció, és ott rögtön normális elérési utak legyenek
+- Kategóriák kezelése, eredménylisták dinamikusabb kezelése
+- Versenyen belüli fordítási opció fölösleges
+- Easy install, lehetőleg sqlite és jetty használata
+- Popup ablakok, frame-ek megszüntetése
+- Menetlevél/szlalom felvitelénél következő rajtszám a nevezési listából jöjjön
+- Pontazonosság esetén a helyezés eldöntését beállíthatóvá kellene tenni
+- nevezés törlésénél menetlevelek nem törlődnek
+- import szól, hogy nem létező nevezéshez az adatok nem fognak bekerülni, aztán mégis bekerültek.
+- Kimenetnél nézzen ki az eredmény kicsit olvashatóbban
+
+- Szlalomnál másik sofőr megadása
+- Tetszőleges számú utas
+- Nyomtatásnál kisebb sormagasság utasnélküli versenyen
+- Ügyességinél "nincs kategóriabontás" (pl gokart, hasonló) opció
