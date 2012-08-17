@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/javax/java"/>
 	<classpathentry kind="src" path="src/championship/java"/>
+	<classpathentry kind="src" path="src/test/integration/java"/>
+	<classpathentry kind="src" path="src/test/micro/java"/>
+	<classpathentry kind="src" path="src/main/config"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.7-bin.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>

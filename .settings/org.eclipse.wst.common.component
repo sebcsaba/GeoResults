@@ -5,6 +5,9 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/javax/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/javax/resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webcontent"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/integration/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/micro/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/config"/>
         <property name="context-root" value="georesults"/>
         <property name="java-output-path" value="/target/eclipse-classes"/>
     </wb-module>

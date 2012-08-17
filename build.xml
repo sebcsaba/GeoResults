@@ -2,31 +2,36 @@
 <project name="GeoResults" default="dist" basedir=".">
 	<property name="lib" location="lib"/>
 	
-	<property name="src-test" location="src/test/java"/>
-	<property name="build-test" location="target/ant-build-test"/>
-	<property name="test-result" location="target/ant-test"/>
+	<property name="testm-src" location="src/test/micro/java"/>
+	<property name="testm-build" location="target/ant-testm-build"/>
+	<property name="testm-result" location="target/ant-testm-result"/>
 	
-	<property name="src-javax" location="src/javax/java"/>
-	<property name="res-javax" location="src/javax/resources"/>
-	<property name="build-javax" location="target/ant-build-javax"/>
-	<property name="dist-javax" location="target/ant-dist"/>
-	<property name="dist-javax-jar" location="${dist-javax}/scs-javax.jar"/>
-	<property name="doc-javax" location="target/ant-doc-javax"/>
+	<property name="testi-src" location="src/test/integration/java"/>
+	<property name="testi-build" location="target/ant-testi-build"/>
+	<property name="testi-config" location="src/main/config"/>
+	<property name="testi-result" location="target/ant-testi-result"/>
 	
-	<property name="src-main" location="src/main/java"/>
-	<property name="web-main" location="src/main/webcontent"/>
-	<property name="weblib" location="${web-main}/WEB-INF/lib"/>
-	<property name="build-main" location="target/ant-build"/>
-	<property name="dist-main" location="target/ant-dist"/>
-	<property name="doc-main" location="target/ant-doc-main"/>
-	<property name="run-keyfinder" location="target/ant-run"/>
+	<property name="javax-src" location="src/javax/java"/>
+	<property name="javax-res" location="src/javax/resources"/>
+	<property name="javax-build" location="target/ant-javax-build"/>
+	<property name="javax-dist" location="target/ant-dist"/>
+	<property name="javax-dist-jar" location="${javax-dist}/scs-javax.jar"/>
+	<property name="javax-doc" location="target/ant-javax-doc"/>
 	
-	<property name="src-champ" location="src/championship/java"/>
-	<property name="res-champ" location="src/championship/resources"/>
-	<property name="build-champ" location="target/ant-build-champ"/>
-	<property name="dist-champ" location="target/ant-dist"/>
-	<property name="run-champ" location="target/ant-run-champ"/>
-	<property name="run-champ-config" location="src/championship/config/championship2011.properties"/>
+	<property name="main-src" location="src/main/java"/>
+	<property name="main-web" location="src/main/webcontent"/>
+	<property name="weblib" location="${main-web}/WEB-INF/lib"/>
+	<property name="main-build" location="target/ant-main-build"/>
+	<property name="main-dist" location="target/ant-dist"/>
+	<property name="main-doc" location="target/ant-main-doc"/>
+	<property name="keyfinder-result" location="target/ant-main-keyfinder-result"/>
+	
+	<property name="champ-src" location="src/championship/java"/>
+	<property name="champ-res" location="src/championship/resources"/>
+	<property name="champ-build" location="target/ant-champ-build"/>
+	<property name="champ-dist" location="target/ant-dist"/>
+	<property name="champ-result" location="target/ant-champ-result"/>
+	<property name="champ-run-config" location="src/championship/config/championship2011.properties"/>
 	
 	<path id="build-classpath">
 	    <fileset dir="${lib}">
@@ -36,65 +41,95 @@
 	
 	<path id="test-classpath">
 		<path refid="build-classpath"/>
-		<pathelement path="${build-test}"/>
+		<pathelement path="${javax-build}"/>
+		<pathelement path="${main-build}"/>
+		<pathelement path="${testm-build}"/>
+		<pathelement path="${testi-build}"/>
+		<pathelement path="${testi-config}"/>
 	</path>
 	
 	<target name="init">
-		<mkdir dir="${build-champ}"/>
-		<mkdir dir="${run-champ}/data"/>
-		<mkdir dir="${run-keyfinder}"/>
-		<mkdir dir="${build-main}"/>
-		<mkdir dir="${build-javax}"/>
-		<mkdir dir="${dist-javax}"/>
-		<mkdir dir="${build-test}"/>
-		<mkdir dir="${test-result}"/>
-		<mkdir dir="${dist-champ}"/>
-		<mkdir dir="${dist-main}"/>
+		<mkdir dir="${champ-build}"/>
+		<mkdir dir="${champ-result}/data"/>
+		<mkdir dir="${keyfinder-result}"/>
+		<mkdir dir="${main-build}"/>
+		<mkdir dir="${javax-build}"/>
+		<mkdir dir="${javax-dist}"/>
+		<mkdir dir="${testm-build}"/>
+		<mkdir dir="${testm-result}"/>
+		<mkdir dir="${testi-build}"/>
+		<mkdir dir="${testi-result}"/>
+		<mkdir dir="${champ-dist}"/>
+		<mkdir dir="${main-dist}"/>
 	</target>
 
 	<target name="compile" depends="init">
-		<javac srcdir="${src-javax}" destdir="${build-javax}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
-		<copy todir="${build-javax}">
-		    <fileset dir="${src-javax}" excludes="**/*.java"/>
+		<javac srcdir="${javax-src}" destdir="${javax-build}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
+		<copy todir="${javax-build}">
+		    <fileset dir="${javax-src}" excludes="**/*.java"/>
 		</copy>
 		    	
-		<javac srcdir="${src-champ}" destdir="${build-champ}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
-		<copy todir="${build-champ}">
-		    <fileset dir="${src-champ}" excludes="**/*.java"/>
+		<javac srcdir="${champ-src}" destdir="${champ-build}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
+		<copy todir="${champ-build}">
+		    <fileset dir="${champ-src}" excludes="**/*.java"/>
 		</copy>
 		
-		<javac srcdir="${src-main}" destdir="${build-main}" encoding="UTF-8" includeantruntime="false">
+		<javac srcdir="${main-src}" destdir="${main-build}" encoding="UTF-8" includeantruntime="false">
 			<classpath>
 				<path refid="build-classpath"/>
-				<pathelement location="${build-javax}"/>
+				<pathelement location="${javax-build}"/>
 			</classpath>
 		</javac>
-		<copy todir="${build-main}">
-		    <fileset dir="${src-main}" excludes="**/*.java"/>
+		<copy todir="${main-build}">
+		    <fileset dir="${main-src}" excludes="**/*.java"/>
 		</copy>
 		
-		<javac srcdir="${src-test}" destdir="${build-test}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
+		<javac srcdir="${testm-src}" destdir="${testm-build}" encoding="UTF-8" includeantruntime="false">
+			<classpath>
+				<path refid="build-classpath"/>
+			</classpath>
+		</javac>
+		
+		<javac srcdir="${testi-src}" destdir="${testi-build}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false">
+			<classpath>
+				<path refid="build-classpath"/>
+				<pathelement location="${javax-build}"/>
+				<pathelement location="${main-build}"/>
+			</classpath>
+		</javac>
 	</target>
 
-	<target name="test" depends="compile">
+	<target name="test-micro" depends="compile">
 		<junit haltonfailure="true">
 			<classpath refid="test-classpath"/>
 			<formatter type="xml"/>
-			<batchtest todir="${test-result}">
-				<fileset dir="${src-test}" includes="**/*.java"/>
+			<batchtest todir="${testm-result}">
+				<fileset dir="${testm-src}" includes="**/*.java"/>
 			</batchtest>
 		</junit>
 	</target>
 
+	<target name="test-integration" depends="compile">
+		<junit haltonfailure="true">
+			<classpath refid="test-classpath"/>
+			<formatter type="xml"/>
+			<batchtest todir="${testi-result}">
+				<fileset dir="${testi-src}" includes="**/*.java"/>
+			</batchtest>
+		</junit>
+	</target>
+	
+	<target name="test" depends="test-micro,test-integration"/>
+
 	<target name="dist" depends="compile">
-		<jar jarfile="${dist-javax-jar}" basedir="${build-javax}">
-			<fileset dir="${res-javax}">
+		<jar jarfile="${javax-dist-jar}" basedir="${javax-build}">
+			<fileset dir="${javax-res}">
 				<include name="META-INF/**"/>
 			</fileset>
 		</jar>
 
-		<jar jarfile="${dist-champ}/GeoChampionship.jar" basedir="${build-champ}" filesetmanifest="mergewithoutmain">
-			<fileset dir="${src-champ}">
+		<jar jarfile="${champ-dist}/GeoChampionship.jar" basedir="${champ-build}" filesetmanifest="mergewithoutmain">
+			<fileset dir="${champ-src}">
 				<include name="META-INF/**"/>
 			</fileset>
 			<zipfileset src="${lib}/mysql-connector-java-5.1.7-bin.jar" excludes="META-INF/*.SF"/>
@@ -105,52 +140,54 @@
 			</manifest>
 		</jar>
 		
-		<war destfile="${dist-main}/georesults.war" needxmlfile="false" basedir="${web-main}">
-			<classes dir="${build-main}"/>
+		<war destfile="${main-dist}/georesults.war" needxmlfile="false" basedir="${main-web}">
+			<classes dir="${main-build}"/>
 			<lib dir="${lib}"/>
-			<lib file="${dist-javax-jar}"/>
+			<lib file="${javax-dist-jar}"/>
 		</war>
 	</target>
 
 	<target name="doc" depends="init">
-		<javadoc sourcepath="${src-javax}" destdir="${doc-javax}" classpathref="build-classpath" encoding="UTF-8"/>
-		<jar jarfile="${dist-javax}/scs-javax-doc.jar" basedir="${doc-javax}"/>
-		<javadoc sourcepath="${src-main}" destdir="${doc-main}" classpathref="build-classpath" encoding="UTF-8"/>
-		<jar jarfile="${dist-main}/georesults-doc.jar" basedir="${doc-main}"/>
+		<javadoc sourcepath="${javax-src}" destdir="${javax-doc}" classpathref="build-classpath" encoding="UTF-8"/>
+		<jar jarfile="${javax-dist}/scs-javax-doc.jar" basedir="${javax-doc}"/>
+		<javadoc sourcepath="${main-src}" destdir="${main-doc}" classpathref="build-classpath" encoding="UTF-8"/>
+		<jar jarfile="${main-dist}/georesults-doc.jar" basedir="${main-doc}"/>
 	</target>
 
 	<target name="clean">
-		<delete dir="${build-test}"/>
-		<delete dir="${build-javax}"/>
-		<delete dir="${dist-javax}"/>
-		<delete dir="${doc-javax}"/>
-		<delete dir="${test-result}"/>
-		<delete dir="${build-champ}"/>
-		<delete dir="${dist-champ}"/>
-		<delete dir="${run-champ}"/>
-		<delete dir="${run-keyfinder}"/>
-		<delete dir="${build-main}"/>
-		<delete dir="${dist-main}"/>
-		<delete dir="${doc-main}"/>
+		<delete dir="${testm-build}"/>
+		<delete dir="${testm-result}"/>
+		<delete dir="${testi-build}"/>
+		<delete dir="${testi-result}"/>
+		<delete dir="${javax-build}"/>
+		<delete dir="${javax-dist}"/>
+		<delete dir="${javax-doc}"/>
+		<delete dir="${champ-build}"/>
+		<delete dir="${champ-dist}"/>
+		<delete dir="${champ-result}"/>
+		<delete dir="${keyfinder-result}"/>
+		<delete dir="${main-build}"/>
+		<delete dir="${main-dist}"/>
+		<delete dir="${main-doc}"/>
 	</target>
 	
 	<target name="run-keyfinder" depends="init, compile">
-		<java classname="scs.georesults.KeyFinder" fork="true" dir="${run-keyfinder}">
+		<java classname="scs.georesults.KeyFinder" fork="true" dir="${keyfinder-result}">
 			<classpath>
-				<pathelement location="${build-main}"/>
-				<pathelement location="${dist-javax-jar}"/>
+				<pathelement location="${main-build}"/>
+				<pathelement location="${javax-dist-jar}"/>
 			</classpath>
-			<arg value="${src-main}"/>
-			<arg value="${web-main}"/>
+			<arg value="${main-src}"/>
+			<arg value="${main-web}"/>
 		</java>
 	</target>
 
 	<target name="run-champ" depends="dist">
-		<java jar="${dist-champ}/GeoChampionship.jar" fork="true" dir="${run-champ}">
-			<arg value="${run-champ-config}"/>
+		<java jar="${champ-dist}/GeoChampionship.jar" fork="true" dir="${champ-result}">
+			<arg value="${champ-run-config}"/>
 		</java>
-		<copy todir="${run-champ}">
-			<fileset dir="${res-champ}"/>
+		<copy todir="${champ-result}">
+			<fileset dir="${champ-res}"/>
 		</copy>
 	</target>
 

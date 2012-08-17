@@ -75,6 +75,22 @@ public class ConfigUtils
     }
   }
 
+  public static Properties loadProperties ( Path path ) throws IOException
+  {
+    try {
+      if ( path.exists() ) {
+        InputStream config = new FileInputStream( path );
+        Properties props = new Properties();
+        props.load( new NewInputStreamToOld( config ) );
+        config.close();
+        return props;
+      } else return null;
+    }
+    catch ( java.io.IOException ex ) {
+      throw new IOException( ex );
+    }
+  }
+
   /**
    * Elt�rolja a megadott konfigur�ci�s f�jlban a <tt>props</tt> objektum tartalm�t.
    *

@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class JenkinsTest {
 
 	@Test
-	public void foo() {
+	public void testIfJenkinsWorksAndRunsTests() {
 		assertTrue(true);
 	}
 	
