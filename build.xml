@@ -68,6 +68,9 @@
 		<copy todir="${javax-build}">
 		    <fileset dir="${javax-src}" excludes="**/*.java"/>
 		</copy>
+		<copy todir="${javax-build}">
+		    <fileset dir="${javax-res}"/>
+		</copy>
 		    	
 		<javac srcdir="${champ-src}" destdir="${champ-build}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
 		<copy todir="${champ-build}">
