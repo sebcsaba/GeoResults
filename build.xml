@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="GeoResults" default="dist" basedir=".">
+	
+	<property name="release" value="2.0"/>
+	
 	<property name="lib" location="lib"/>
 	
 	<property name="testm-src" location="src/test/micro/java"/>
@@ -20,6 +23,7 @@
 	
 	<property name="main-src" location="src/main/java"/>
 	<property name="main-web-src" location="src/main/webcontent"/>
+	<property name="main-scripts" location="src/main/scripts"/>
 	<property name="weblib" location="${main-web-src}/WEB-INF/lib"/>
 	<property name="main-build" location="target/ant-main-build"/>
 	<property name="main-dist" location="target/ant-dist"/>
@@ -165,6 +169,15 @@
 		</jar>
 		
 		<zip destfile="${main-dist}/georesults-webcontent.zip" basedir="${main-web-src}"/>
+	</target>
+	
+	<target name="release" depends="dist">
+		<zip destfile="${main-dist}/georesults-${release}.zip">
+			<zipfileset dir="${lib}" prefix="georesults-${release}/bin/"/>
+			<zipfileset file="${main-dist}/georesults-main.jar" prefix="georesults-${release}/bin/"/>
+			<zipfileset dir="${main-web-src}" prefix="georesults-${release}/webapp/"/>
+			<zipfileset dir="${main-scripts}" prefix="georesults-${release}/"/>
+		</zip>
 	</target>
 
 	<target name="doc" depends="init">
