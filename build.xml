@@ -19,8 +19,8 @@
 	<property name="javax-doc" location="target/ant-javax-doc"/>
 	
 	<property name="main-src" location="src/main/java"/>
-	<property name="main-web" location="src/main/webcontent"/>
-	<property name="weblib" location="${main-web}/WEB-INF/lib"/>
+	<property name="main-web-src" location="src/main/webcontent"/>
+	<property name="weblib" location="${main-web-src}/WEB-INF/lib"/>
 	<property name="main-build" location="target/ant-main-build"/>
 	<property name="main-dist" location="target/ant-dist"/>
 	<property name="main-doc" location="target/ant-main-doc"/>
@@ -143,11 +143,28 @@
 			</manifest>
 		</jar>
 		
-		<war destfile="${main-dist}/georesults.war" needxmlfile="false" basedir="${main-web}">
+		<war destfile="${main-dist}/georesults.war" needxmlfile="false" basedir="${main-web-src}">
 			<classes dir="${main-build}"/>
 			<lib dir="${lib}"/>
 			<lib file="${javax-dist-jar}"/>
 		</war>
+
+		<pathconvert property="tmp-libs-in-war" pathsep=" ">
+			<mapper>
+				<flattenmapper/>
+			</mapper>
+			<path>
+				<fileset dir="${lib}"/>
+			</path>
+		</pathconvert>
+		<jar jarfile="${main-dist}/georesults-main.jar" basedir="${main-build}">
+			<manifest>
+				<attribute name="Main-Class" value="scs.georesults.App"/>
+				<attribute name="Class-Path" value="${tmp-libs-in-war}"/>
+			</manifest>
+		</jar>
+		
+		<zip destfile="${main-dist}/georesults-webcontent.zip" basedir="${main-web-src}"/>
 	</target>
 
 	<target name="doc" depends="init">
@@ -181,7 +198,7 @@
 				<pathelement location="${javax-dist-jar}"/>
 			</classpath>
 			<arg value="${main-src}"/>
-			<arg value="${main-web}"/>
+			<arg value="${main-web-src}"/>
 		</java>
 	</target>
 
