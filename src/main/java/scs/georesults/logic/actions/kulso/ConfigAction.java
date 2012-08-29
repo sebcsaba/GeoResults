@@ -2,6 +2,7 @@ package scs.georesults.logic.actions.kulso;
 
 import java.util.Properties;
 import scs.javax.io.IOException;
+import scs.javax.io.Path;
 import scs.javax.rdb.RdbException;
 import scs.javax.web.DynamicForm;
 import scs.javax.web.WebException;
@@ -36,9 +37,12 @@ public class ConfigAction extends GeoActionBase
         getRequest().setAttribute( "configBean", new ConfigBean( props ) );
         throw new PrimitiveMessageException( "Invalid parameter: cannot connect to database." );
       }
-      if ( !Config.getBackuppath().mkdirs() ) {
-        getRequest().setAttribute( "configBean", new ConfigBean( props ) );
-        throw new PrimitiveMessageException( "Invalid parameter: cannot create backup path." );
+      final Path backupPath = Config.getBackuppath();
+      if (!backupPath.isDirectory()) {
+		  if ( !backupPath.mkdirs() ) {
+	        getRequest().setAttribute( "configBean", new ConfigBean( props ) );
+	        throw new PrimitiveMessageException( "Invalid parameter: cannot create backup path." );
+	      }
       }
       ConfigUtils.storeProperties( ConfigUtils.CONFIG_DATABASE, props );
       Config.setConfigurationProperties( props );
