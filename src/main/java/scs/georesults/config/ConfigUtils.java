@@ -48,8 +48,22 @@ public class ConfigUtils
   public static Path getConfigFilePath ( String name )
   {
     String configPath = ClassUtils.getResourcePath( ConfigUtils.class.getClassLoader(), CONFIG_PATH_NAME + "ConfigUtils.class" ).toString().replaceAll( "\\\\", "/" );
-    configPath = configPath.substring( 0, configPath.lastIndexOf( "/" ) + 1 ) + name;
-    return new Path( configPath );
+    if (configPath.contains("!")) {
+      String jarPath = configPath.substring(0, configPath.indexOf('!'));
+	  if (jarPath.startsWith("file:\\") || jarPath.startsWith("file:/")) {
+		jarPath = jarPath.substring(6);
+	  } else {
+		throw new Error("invalid path: "+configPath);
+	  }
+      Path jarDir = new Path(jarPath).getParent();
+      final Path configDir = new Path(jarDir.getParent(), "config");
+      configDir.mkdirs();
+      configDir.mkdir();
+	  return new Path(configDir, name);
+    } else {
+      configPath = configPath.substring( 0, configPath.lastIndexOf( "/" ) + 1 ) + name;
+      return new Path( configPath );
+    }
   }
 
   /**
