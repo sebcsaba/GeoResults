@@ -25,8 +25,7 @@ public class VersionTag extends TagBase
   public String getVersion() throws IOException
   {
     try {
-      Path path = ClassUtils.getResourcePath( getClass().getClassLoader(), VERSION_FILE );
-      InputStream is = new FileInputStream(path);
+      InputStream is = ClassUtils.getResourceInputStream( getClass().getClassLoader(), VERSION_FILE );
       LineReader lines = new LineReader(new UTF8InputStreamReader(is));
       return lines.readLine();
     }

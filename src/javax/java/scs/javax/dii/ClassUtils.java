@@ -3,7 +3,15 @@ package scs.javax.dii;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+
+import scs.javax.io.FileInputStream;
+import scs.javax.io.FileNotFoundException;
+import scs.javax.io.IOException;
+import scs.javax.io.InputStream;
 import scs.javax.io.Path;
+import scs.javax.io.wrappers.OldInputStreamToNew;
 import scs.javax.utils.StringUtils;
 
 public class ClassUtils
@@ -75,6 +83,29 @@ public class ClassUtils
     if ( loader == null ) loader = ClassLoader.getSystemClassLoader();
     URL u = loader.getResource( resource );
     return new Path( StringUtils.urlDecode( u.getFile() ) );
+  }
+  
+  public static InputStream getResourceInputStream ( ClassLoader loader, String resource ) throws IOException
+  {
+	  // TODO hack, mivel betömörített georesults-main.jar-ral nem működött jól
+      Path path = getResourcePath( loader, resource );
+      if (path.toString().contains("!")) {
+    	  try {
+			String[] pathParts = path.toString().split("!");
+			if (pathParts[0].startsWith("file:\\")) {
+				pathParts[0] = pathParts[0].substring(6);
+			} else {
+				throw new Error("invalid path: "+path);
+			}
+			ZipFile zip = new ZipFile(pathParts[0]);
+			ZipEntry entry = zip.getEntry(pathParts[1]);
+			return new OldInputStreamToNew(zip.getInputStream(entry));
+		} catch (java.io.IOException e) {
+			throw new IOException(e);
+		}
+      } else {
+    	  return new FileInputStream(path);
+      }
   }
 
 }
