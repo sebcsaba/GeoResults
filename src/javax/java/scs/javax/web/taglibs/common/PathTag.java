@@ -11,7 +11,10 @@ public class PathTag extends TagBase
   {
     try {
       HttpServletRequest request = ( HttpServletRequest ) pageContext.getRequest();
-      out.writeString( request.getContextPath() );
+      final String contextPath = request.getContextPath();
+      if (!contextPath.equals("/")) {
+	    out.writeString( contextPath );
+      }
       return EVAL_PAGE;
     }
     catch ( Exception ex ) {
