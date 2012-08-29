@@ -3,6 +3,8 @@ package scs.javax.xml;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
+import scs.javax.dii.ClassUtils;
 import scs.javax.io.*;
 import scs.javax.io.wrappers.NewInputStreamToOld;
 import scs.javax.io.wrappers.NewOutputStreamToOld;
@@ -45,28 +47,38 @@ public class DomSerialization
 
   public static Document read ( String filename ) throws IOException, XmlDomException
   {
-    try {
-      return getDocumentBuilder().parse( filename );
-    }
-    catch ( SAXException ex ) {
-      throw new XmlDomException( filename, ex );
-    }
-    catch ( java.io.IOException ex ) {
-      throw new IOException( filename, ex );
-    }
+	  // TODO hack, mivel betömörített georesults-main.jar-ral nem működött jól
+	if (filename.toString().contains("!")) {
+		return read(ClassUtils.pathToInputStream(new Path(filename)));
+	} else {
+	    try {
+	      return getDocumentBuilder().parse( filename );
+	    }
+	    catch ( SAXException ex ) {
+	      throw new XmlDomException( filename, ex );
+	    }
+	    catch ( java.io.IOException ex ) {
+	      throw new IOException( filename, ex );
+	    }
+	}
   }
 
   public static Document read ( Path filename ) throws IOException, XmlDomException
   {
-    try {
-      return getDocumentBuilder().parse( filename.toString() );
-    }
-    catch ( SAXException ex ) {
-      throw new XmlDomException( filename.toString(), ex );
-    }
-    catch ( java.io.IOException ex ) {
-      throw new IOException( filename.toString(), ex );
-    }
+	  // TODO hack, mivel betömörített georesults-main.jar-ral nem működött jól
+	if (filename.toString().contains("!")) {
+		return read(ClassUtils.pathToInputStream(filename));
+	} else {
+	    try {
+	      return getDocumentBuilder().parse( filename.toString() );
+	    }
+	    catch ( SAXException ex ) {
+	      throw new XmlDomException( filename.toString(), ex );
+	    }
+	    catch ( java.io.IOException ex ) {
+	      throw new IOException( filename.toString(), ex );
+	    }
+	}
   }
 
   public static Document read ( InputStream stream ) throws IOException, XmlDomException

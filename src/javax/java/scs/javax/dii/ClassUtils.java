@@ -89,6 +89,10 @@ public class ClassUtils
   {
 	  // TODO hack, mivel betömörített georesults-main.jar-ral nem működött jól
       Path path = getResourcePath( loader, resource );
+      return pathToInputStream(path);
+  }
+  
+  public static InputStream pathToInputStream( Path path ) throws IOException {
       if (path.toString().contains("!")) {
     	  try {
 			String[] pathParts = path.toString().split("!");
@@ -98,7 +102,14 @@ public class ClassUtils
 				throw new Error("invalid path: "+path);
 			}
 			ZipFile zip = new ZipFile(pathParts[0]);
+			pathParts[1] = pathParts[1].replace('\\', '/');
+			if (pathParts[1].startsWith("/")) {
+				pathParts[1] = pathParts[1].substring(1);
+			}
 			ZipEntry entry = zip.getEntry(pathParts[1]);
+			if (entry==null) {
+				throw new FileNotFoundException(pathParts[1]+" in "+pathParts[0]);
+			}
 			return new OldInputStreamToNew(zip.getInputStream(entry));
 		} catch (java.io.IOException e) {
 			throw new IOException(e);
