@@ -3,7 +3,11 @@
 	
 	<property name="release" value="2.0"/>
 	
-	<property name="lib" location="lib"/>
+	<property name="lib-boot-only" location="lib/boot_only"/>
+	<property name="lib-web-only" location="lib/web_only"/>
+	<property name="lib-build-only" location="lib/build_only"/>
+	<property name="lib-build-boot" location="lib/build_boot"/>
+	<property name="lib-build-web" location="lib/build_web"/>
 	
 	<property name="testm-src" location="src/test/micro/java"/>
 	<property name="testm-build" location="target/ant-testm-build"/>
@@ -38,7 +42,13 @@
 	<property name="champ-run-config" location="src/championship/config/championship2011.properties"/>
 	
 	<path id="build-classpath">
-	    <fileset dir="${lib}">
+	    <fileset dir="${lib-build-only}">
+	        <include name="*.jar"/>
+	    </fileset>
+	    <fileset dir="${lib-build-web}">
+	        <include name="*.jar"/>
+	    </fileset>
+	    <fileset dir="${lib-build-boot}">
 	        <include name="*.jar"/>
 	    </fileset>
 	</path>
@@ -134,48 +144,59 @@
 				<include name="META-INF/**"/>
 			</fileset>
 		</jar>
-
 		<jar jarfile="${champ-dist}/GeoChampionship.jar" basedir="${champ-build}" filesetmanifest="mergewithoutmain">
 			<fileset dir="${champ-src}">
 				<include name="META-INF/**"/>
 			</fileset>
-			<zipfileset src="${lib}/mysql-connector-java-5.1.7-bin.jar" excludes="META-INF/*.SF"/>
+			<zipfileset src="${lib-build-web}/mysql-connector-java-5.1.7-bin.jar" excludes="META-INF/*.SF"/>
 			<manifest>
 				<attribute name="Built-By" value="${user.name}"/>
 				<attribute name="Main-Class" value="hu.sebcsaba.geochampionship.App"/>
 				<attribute name="Class-Path" value="."/>
 			</manifest>
 		</jar>
-		
 		<war destfile="${main-dist}/georesults.war" needxmlfile="false" basedir="${main-web-src}">
 			<classes dir="${main-build}"/>
-			<lib dir="${lib}"/>
+			<lib dir="${lib-build-web}"/>
+			<lib dir="${lib-web-only}"/>
 			<lib file="${javax-dist-jar}"/>
 		</war>
-
 		<pathconvert property="tmp-libs-in-war" pathsep=" ">
 			<mapper>
 				<flattenmapper/>
 			</mapper>
 			<path>
-				<fileset dir="${lib}"/>
+				<fileset dir="${lib-boot-only}"/>
+				<fileset dir="${lib-build-boot}"/>
+			</path>
+		</pathconvert>
+		<pathconvert property="webapp-libs-in-war" pathsep=" ../webapp/WEB-INF/lib/">
+			<!-- TODO ezt kissé máshogy kellene... -->
+			<mapper>
+				<flattenmapper/>
+			</mapper>
+			<path>
+				<fileset dir="${lib-web-only}"/>
+				<fileset dir="${lib-build-web}"/>
 			</path>
 		</pathconvert>
 		<jar jarfile="${main-dist}/georesults-main.jar" basedir="${main-build}">
 			<manifest>
 				<attribute name="Main-Class" value="scs.georesults.App"/>
-				<attribute name="Class-Path" value="${tmp-libs-in-war}"/>
+				<attribute name="Class-Path" value="${tmp-libs-in-war} ../webapp/WEB-INF/lib/scs-javax.jar ../webapp/WEB-INF/lib/${webapp-libs-in-war}"/>
 			</manifest>
 		</jar>
-		
-		<zip destfile="${main-dist}/georesults-webcontent.zip" basedir="${main-web-src}"/>
 	</target>
 	
 	<target name="release" depends="dist">
 		<zip destfile="${main-dist}/georesults-${release}.zip">
-			<zipfileset dir="${lib}" prefix="georesults-${release}/bin/"/>
+			<zipfileset dir="${lib-boot-only}" prefix="georesults-${release}/bin/"/>
+			<zipfileset dir="${lib-build-boot}" prefix="georesults-${release}/bin/"/>
 			<zipfileset file="${main-dist}/georesults-main.jar" prefix="georesults-${release}/bin/"/>
 			<zipfileset dir="${main-web-src}" prefix="georesults-${release}/webapp/"/>
+			<zipfileset dir="${lib-build-web}" prefix="georesults-${release}/webapp/WEB-INF/lib"/>
+			<zipfileset dir="${lib-web-only}" prefix="georesults-${release}/webapp/WEB-INF/lib"/>
+			<zipfileset file="${main-dist}/scs-javax.jar" prefix="georesults-${release}/webapp/WEB-INF/lib"/>
 			<zipfileset dir="${main-scripts}" prefix="georesults-${release}/"/>
 		</zip>
 	</target>
