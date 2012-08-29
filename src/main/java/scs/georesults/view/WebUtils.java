@@ -12,7 +12,12 @@ public class WebUtils
   public static String getStylePath ( PageContext pageContext )
   {
     HttpServletRequest request = ( HttpServletRequest ) pageContext.getRequest();
-    return request.getContextPath() + "/style/";
+    final String contextPath = request.getContextPath();
+    if (!contextPath.equals("/")) {
+    	return contextPath + "/style/";
+    } else {
+    	return "/style/";
+    }
   }
 
 }

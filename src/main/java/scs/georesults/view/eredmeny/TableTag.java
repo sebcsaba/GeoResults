@@ -41,6 +41,9 @@ public class TableTag extends TagBase
     try {
       HttpServletRequest request = ( HttpServletRequest ) pageContext.getRequest();
       contextPath = request.getContextPath();
+      if (contextPath.equals("/")) {
+    	  contextPath = "";
+      }
       frissitesCaption = GlobalSzotar.resolve( pageContext, "BS_FRISSITES" );
       printForm();
       return EVAL_PAGE;

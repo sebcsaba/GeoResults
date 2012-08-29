@@ -27,7 +27,11 @@ public abstract class ServletBase extends HttpServlet
 
   protected void doPost ( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException
   {
-    try {
+    String contextPath = request.getContextPath();
+    if (contextPath.equals("/")) {
+    	contextPath = "";
+    }
+	try {
       this.request = request;
       this.response = response;
       this.webSession = WebSession.getWebSession( request );
@@ -41,11 +45,11 @@ public abstract class ServletBase extends HttpServlet
     }
     catch ( SessionTimeoutException ex ) {
       request.getSession().setAttribute( GLOBAL_ERROR_KEY, ex );
-      response.sendRedirect( request.getContextPath() + "/" );
+      response.sendRedirect( contextPath + "/" );
     }
     catch ( Throwable ex ) {
       request.getSession().setAttribute( GLOBAL_ERROR_KEY, ex );
-      response.sendRedirect( request.getContextPath() + ERROR_PAGE_URL );
+      response.sendRedirect( contextPath + ERROR_PAGE_URL );
     }
     WebSession.releaseWebSession( webSession );
   }

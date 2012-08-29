@@ -138,7 +138,11 @@ public class CrudTableTag extends LayoutTagBase
   private void printImageLink ( String mode, String title, String id, boolean confirm ) throws Exception
   {
     HttpServletRequest request = ( HttpServletRequest ) pageContext.getRequest();
-    StringBuffer url = new StringBuffer( request.getContextPath() );
+    String contextPath = request.getContextPath();
+    if (contextPath.equals("/")) {
+    	contextPath = "";
+    }
+	StringBuffer url = new StringBuffer( contextPath );
     url.append( action ).append( "?mode=" ).append( mode );
     if ( id != null ) url.append( "&id=" ).append( id );
 

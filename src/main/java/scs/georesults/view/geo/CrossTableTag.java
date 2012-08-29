@@ -55,7 +55,10 @@ public class CrossTableTag extends LayoutTagBase
   {
     linkBuffer.setLength( 0 );
     linkBuffer.append( "<a href=\"" );
-    linkBuffer.append( ( ( HttpServletRequest ) pageContext.getRequest() ).getContextPath() );
+    final String contextPath = ( ( HttpServletRequest ) pageContext.getRequest() ).getContextPath();
+    if (!contextPath.equals("/")) {
+	  linkBuffer.append( contextPath );
+    }
     linkBuffer.append( action );
     linkBuffer.append( "&lang=" ).append( nyelvOszlop.getLang() );
     linkBuffer.append( "&key=" ).append( rowKey );

@@ -14,7 +14,12 @@ public class LinkTag extends ATag
       href = "#";
     } else {
       HttpServletRequest request = ( HttpServletRequest ) pageContext.getRequest();
-      href = request.getContextPath() + action;
+      final String contextPath = request.getContextPath();
+      if (!contextPath.equals("/")) {
+    	href = contextPath + action;
+      } else {
+	    href = action;
+      }
     }
     hreflang = null;
     charset = null;

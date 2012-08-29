@@ -9,7 +9,10 @@ public class FormTag extends scs.javax.web.taglibs.formelements.FormTag
   protected void doPrintHeader () throws IOException
   {
     HttpServletRequest request = ( HttpServletRequest ) pageContext.getRequest();
-    action = request.getContextPath() + action;
+    final String contextPath = request.getContextPath();
+    if (!contextPath.equals("/")) {
+	  action = contextPath + action;
+    }
     if ( method == null ) method = "post";
     super.doPrintHeader();
   }
