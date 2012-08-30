@@ -486,7 +486,7 @@ INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','ER_ADAT_NIN
 INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','ER_ALAPADAT_FFRISSITENDO','Basic data must be updated');
 INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','ER_ALAPNYELVI_SZO_NEM_TOROLHETO','Can\'t delete word from the base language');
 INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','ER_AUTO_MASIK_CSAPATBAN','A car is already nominated to another team');
-INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','ER_AZONOS_RAJTSZAMOK','A car can\'t be nominated twiceto a team');
+INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','ER_AZONOS_RAJTSZAMOK','A car can\'t be nominated twice to a team');
 INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','ER_BACKUP','Error in backup process');
 INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','ER_DUPLA_IDOLIMIT','There\'s already a timezone with the same time-limit');
 INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','ER_DUPLA_RAJTSZAM','Starting number already exists');
@@ -554,7 +554,7 @@ INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','FT_MENETLEV
 INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','FT_MILYEN_FORMABA','To what format');
 INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','FT_MINDENT_TORLES_RAKERDEZES','Do you really want to delete all items?');
 INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','FT_MINDET_TORLI','Delete all');
-INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','FT_MIT_EXPORTALJON','Whatshall we export');
+INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','FT_MIT_EXPORTALJON','What shall we export');
 INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','FT_NEVJEGY','About');
 INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','FT_NINCSENEK_HIANYZO_ADATOK','No missing data');
 INSERT INTO k_szotarbejegyzesek (lang,keystr,valuestr) VALUES ('en','FT_NO_BACKUP','No backup created yet');
