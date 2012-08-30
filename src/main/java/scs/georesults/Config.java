@@ -51,12 +51,14 @@ public class Config
   /**
    * Az adatbázis típusa. A JDBC kapcsolódásnál használja fel.
    */
-  public static final String DATABASE_TYPE = "mysql";
+  //public static final String DATABASE_TYPE = "mysql";
+  public static final String DATABASE_TYPE = "sqlite";
   
   /**
    * Az adatbázis driver-e, amelyet be kell tölteni a kapcsolódás előtt
    */
-  public static final Class DATABASE_DRIVER = com.mysql.jdbc.Driver.class;
+  //public static final Class DATABASE_DRIVER = com.mysql.jdbc.Driver.class;
+  public static final Class DATABASE_DRIVER = org.sqlite.JDBC.class;
 
   /**
    * Az a kulcs, amely az adatbázishoz kapcsolódás adatai között az adatbázis-szerver nevét azonosítja.
@@ -98,10 +100,14 @@ public class Config
   {
     StringBuffer sb = new StringBuffer();
     sb.append( "jdbc:" ).append( DATABASE_TYPE );
-    sb.append( "://" ).append( configProps.getProperty( PROP_KEY_DATABASEHOST ) );
-    sb.append( "/" ).append( configProps.getProperty( PROP_KEY_DATABASENAME ) );
-    sb.append( "?user=" ).append( configProps.getProperty( PROP_KEY_DATABASEUSER ) );
-    sb.append( "&password=" ).append( configProps.getProperty( PROP_KEY_DATABASEPASS ) );
+    if ("mysql".equals(DATABASE_TYPE)) {
+	    sb.append( "://" ).append( configProps.getProperty( PROP_KEY_DATABASEHOST ) );
+	    sb.append( "/" ).append( configProps.getProperty( PROP_KEY_DATABASENAME ) );
+	    sb.append( "?user=" ).append( configProps.getProperty( PROP_KEY_DATABASEUSER ) );
+	    sb.append( "&password=" ).append( configProps.getProperty( PROP_KEY_DATABASEPASS ) );
+    } else if ("sqlite".equals(DATABASE_TYPE)) {
+    	sb.append(":").append( configProps.getProperty( PROP_KEY_DATABASENAME ) ).append(".db");
+    }
     return sb.toString();
   }
 

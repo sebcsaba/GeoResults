@@ -13,7 +13,9 @@ public class SqlHelper implements RdbHelper
 
   public Object createShowTablesStement () throws RdbException
   {
-    return "SHOW TABLES";
+    //return "SHOW TABLES";
+	// TODO a fenti megy mysql-hez, a lenti meg sqlite-hoz:
+	return "SELECT * FROM sqlite_master WHERE type='table'";
   }
 
   public String getIntegerColumnTypeName ()

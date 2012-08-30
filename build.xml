@@ -26,6 +26,7 @@
 	<property name="javax-doc" location="target/ant-javax-doc"/>
 	
 	<property name="main-src" location="src/main/java"/>
+	<property name="main-src-config" location="src/main/java/scs/georesults/config"/>
 	<property name="main-web-src" location="src/main/webcontent"/>
 	<property name="main-scripts" location="src/main/scripts"/>
 	<property name="weblib" location="${main-web-src}/WEB-INF/lib"/>
@@ -198,6 +199,9 @@
 			<zipfileset dir="${lib-web-only}" prefix="georesults-${release}/webapp/WEB-INF/lib"/>
 			<zipfileset file="${main-dist}/scs-javax.jar" prefix="georesults-${release}/webapp/WEB-INF/lib"/>
 			<zipfileset dir="${main-scripts}" prefix="georesults-${release}/"/>
+			<zipfileset dir="${main-src-config}" prefix="georesults-${release}/config/">
+				<exclude name="*.java"/>
+			</zipfileset>
 		</zip>
 	</target>
 
