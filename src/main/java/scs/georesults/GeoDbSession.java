@@ -30,7 +30,7 @@ public class GeoDbSession extends SqlSession
    */
   private GeoDbSession () throws RdbException, XmlDomException, IOException, DIIException
   {
-    super( com.mysql.jdbc.Driver.class, Config.getJdbcConnectionString() );
+    super( Config.DATABASE_DRIVER, Config.getJdbcConnectionString() );
     setLog( Config.DEBUG_SQLLOG );
     loadMappings();
   }

@@ -52,6 +52,11 @@ public class Config
    * Az adatbázis típusa. A JDBC kapcsolódásnál használja fel.
    */
   public static final String DATABASE_TYPE = "mysql";
+  
+  /**
+   * Az adatbázis driver-e, amelyet be kell tölteni a kapcsolódás előtt
+   */
+  public static final Class DATABASE_DRIVER = com.mysql.jdbc.Driver.class;
 
   /**
    * Az a kulcs, amely az adatbázishoz kapcsolódás adatai között az adatbázis-szerver nevét azonosítja.
