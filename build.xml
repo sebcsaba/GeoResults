@@ -78,7 +78,7 @@
 	</target>
 
 	<target name="compile" depends="init">
-		<javac srcdir="${javax-src}" destdir="${javax-build}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
+		<javac srcdir="${javax-src}" destdir="${javax-build}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false" debug="true"/>
 		<copy todir="${javax-build}">
 		    <fileset dir="${javax-src}" excludes="**/*.java"/>
 		</copy>
@@ -86,12 +86,12 @@
 		    <fileset dir="${javax-res}"/>
 		</copy>
 		    	
-		<javac srcdir="${champ-src}" destdir="${champ-build}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false"/>
+		<javac srcdir="${champ-src}" destdir="${champ-build}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false" debug="true"/>
 		<copy todir="${champ-build}">
 		    <fileset dir="${champ-src}" excludes="**/*.java"/>
 		</copy>
 		
-		<javac srcdir="${main-src}" destdir="${main-build}" encoding="UTF-8" includeantruntime="false">
+		<javac srcdir="${main-src}" destdir="${main-build}" encoding="UTF-8" includeantruntime="false" debug="true">
 			<classpath>
 				<path refid="build-classpath"/>
 				<pathelement location="${javax-build}"/>
@@ -101,13 +101,13 @@
 		    <fileset dir="${main-src}" excludes="**/*.java"/>
 		</copy>
 		
-		<javac srcdir="${testm-src}" destdir="${testm-build}" encoding="UTF-8" includeantruntime="false">
+		<javac srcdir="${testm-src}" destdir="${testm-build}" encoding="UTF-8" includeantruntime="false" debug="true">
 			<classpath>
 				<path refid="build-classpath"/>
 			</classpath>
 		</javac>
 		
-		<javac srcdir="${testi-src}" destdir="${testi-build}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false">
+		<javac srcdir="${testi-src}" destdir="${testi-build}" classpathref="build-classpath" encoding="UTF-8" includeantruntime="false" debug="true">
 			<classpath>
 				<path refid="build-classpath"/>
 				<pathelement location="${javax-build}"/>
