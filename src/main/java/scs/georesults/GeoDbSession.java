@@ -4,6 +4,7 @@ import scs.javax.dii.ClassUtils;
 import scs.javax.dii.DIIException;
 import scs.javax.io.IOException;
 import scs.javax.rdb.RdbException;
+import scs.javax.rdb.helper.RdbHelper;
 import scs.javax.rdb.mapping.MappingPool;
 import scs.javax.rdb.mapping.fields.RdbMetaStringField;
 import scs.javax.rdb.sql.SqlSession;
@@ -63,9 +64,11 @@ public class GeoDbSession extends SqlSession
   {
     try {
       instance = new GeoDbSession();
-      instance.queryAll( "show tables", RdbMetaStringField.getMetaCm() );
+      RdbHelper helper = instance.getHelper();
+      instance.queryAll( helper.createShowTablesStement(), RdbMetaStringField.getMetaCm() );
     }
     catch ( Exception ex ) {
+      ex.printStackTrace();
       instance = null;
       return false;
     }
