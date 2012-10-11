@@ -1,5 +1,6 @@
 package scs.javax.rdb.sql;
 
+import scs.javax.collections.List;
 import scs.javax.rdb.RdbException;
 import scs.javax.rdb.helper.RdbEntityHelper;
 import scs.javax.rdb.helper.RdbHelper;
@@ -15,6 +16,8 @@ public class SqlEntityHelper implements RdbEntityHelper
   private String[] fieldNames;
 
   private String fieldNameList;
+  
+  private String fieldNameListWithoutAutoincrement;
 
   private String orderByClause;
 
@@ -32,8 +35,9 @@ public class SqlEntityHelper implements RdbEntityHelper
   {
     this.cm = cm;
     initFieldNameList();
+    initFieldNameListWithoutAutoincrement();
     initOrderByClause();
-    this.sql_create_part1 = "INSERT INTO " + cm.getTableName() + " (" + fieldNameList + ") VALUES (";
+    this.sql_create_part1 = "INSERT INTO " + cm.getTableName() + " (" + fieldNameListWithoutAutoincrement + ") VALUES (";
     this.sql_read_part1 = "SELECT " + fieldNameList + " FROM " + cm.getTableName() + " WHERE ";
     this.sql_count_part1 = "SELECT COUNT(*) FROM " + cm.getTableName() + " WHERE ";
     this.sql_update_part1 = "UPDATE " + cm.getTableName() + " SET ";
@@ -47,6 +51,23 @@ public class SqlEntityHelper implements RdbEntityHelper
       fieldNames[i] = cm.getField( i ).getPropertyName();
     }
     fieldNameList = StringUtils.joinStrings( fieldNames, "," );
+  }
+  
+  private void initFieldNameListWithoutAutoincrement()
+  {
+    PrimaryKey pk = cm.getPrimaryKey();
+	if (pk.isAutoIncrement()) {
+    	List fieldNames = new List();
+    	for (int i=0; i<cm.getFieldCount(); ++i) {
+    		if (!pk.hasField(cm.getField(i))) {
+    			fieldNames.add(cm.getField(i).getPropertyName());
+    		}
+    	}
+    	String[] fieldNamesArray = (String[]) fieldNames.toArray(new String[fieldNames.size()]);
+		fieldNameListWithoutAutoincrement = StringUtils.joinStrings(fieldNamesArray, ",");
+    } else {
+    	fieldNameListWithoutAutoincrement = fieldNameList;
+    }
   }
 
   private void initOrderByClause ()
@@ -70,6 +91,24 @@ public class SqlEntityHelper implements RdbEntityHelper
       fieldValues[i] = cm.getField( fieldNames[i] ).getLiteralFromEntity( entity );
     }
     return StringUtils.joinStrings( fieldValues, "," );
+  }
+
+  private String getFieldValueListWithoutAutoincrement ( Object entity ) throws RdbException
+  {
+	PrimaryKey pk = cm.getPrimaryKey();
+	if (pk.isAutoIncrement()) {
+      List fieldValues = new List();
+      for ( int i = 0; i < fieldNames.length; ++i ) {
+        RdbField field = cm.getField( fieldNames[i] );
+        if (!pk.hasField(field)) {
+		  fieldValues.add( field.getLiteralFromEntity( entity ));
+        }
+      }
+      String[] fieldValuesArray = (String[]) fieldValues.toArray(new String[fieldValues.size()]);
+	return StringUtils.joinStrings( fieldValuesArray, "," );
+	} else {
+	  return getFieldValueList(entity);
+	}
   }
 
   private String getUpdateFieldValueList ( Object entity ) throws RdbException
@@ -99,7 +138,7 @@ public class SqlEntityHelper implements RdbEntityHelper
 
   public Object createCreateStatement ( Object entity ) throws RdbException
   {
-    return sql_create_part1 + getFieldValueList( entity ) + ")";
+    return sql_create_part1 + getFieldValueListWithoutAutoincrement( entity ) + ")";
   }
 
   public Object createReadStatement ( Object entity ) throws RdbException

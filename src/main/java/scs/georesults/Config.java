@@ -1,6 +1,8 @@
 package scs.georesults;
 
 import java.util.Properties;
+
+import scs.georesults.config.ConfigUtils;
 import scs.javax.io.Path;
 
 /**
@@ -106,7 +108,11 @@ public class Config
 	    sb.append( "?user=" ).append( configProps.getProperty( PROP_KEY_DATABASEUSER ) );
 	    sb.append( "&password=" ).append( configProps.getProperty( PROP_KEY_DATABASEPASS ) );
     } else if ("sqlite".equals(DATABASE_TYPE)) {
-    	sb.append(":").append( configProps.getProperty( PROP_KEY_DATABASENAME ) ).append(".db");
+    	Path basedir = ConfigUtils.getConfigFilePath("sablonok.properties").getParent().getParent();
+    	String dbname = configProps.getProperty( PROP_KEY_DATABASENAME );
+    	Path dbfile = new Path(basedir, "data/"+dbname+".db");
+    	dbfile.getParent().mkdirs();
+    	sb.append(":").append( dbfile.getAbsolutePath() );
     }
     return sb.toString();
   }
