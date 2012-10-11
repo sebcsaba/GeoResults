@@ -22,7 +22,7 @@
       function updateBackupTitle(bk,mode)
       {
         new Ajax.Request('<c:path/>/kozos/doBackupInfo?mode='+mode,{
-          method: 'get',
+          method: 'post',
           onSuccess: function(transport) {
             bk.title = transport.responseText;
           },
