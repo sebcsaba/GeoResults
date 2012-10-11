@@ -44,6 +44,9 @@ function closePopup()
 
 function versenyValasztas(url)
 {
+  if (url=='') {
+	url = '/';
+  }
   window.parent.location = url;
 }
 
