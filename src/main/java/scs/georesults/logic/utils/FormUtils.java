@@ -120,7 +120,7 @@ public class FormUtils extends RequestBeanBase
   {
     try {
       List results = new List();
-      Properties sablonok = ConfigUtils.loadProperties( "sablonok.config" );
+      Properties sablonok = ConfigUtils.loadProperties( "sablonok.properties" );
       for ( Enumeration en = sablonok.propertyNames(); en.hasMoreElements(); ) {
         String filename = ( String ) en.nextElement();
         String title = sablonok.getProperty( filename );
